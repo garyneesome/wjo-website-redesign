@@ -4,24 +4,26 @@ Interactive front-end concept for the **World Jado Kuin Do Organisation** websit
 
 ## Current version
 
-**V66**
+**V67**
 
-This repository is now the source-control home for the WJO redesign mockup.
+V67 builds on the V66 responsive website and front-end CMS baseline, with a venue-image audit across the school/location data. Missing photographs have been added where the venue could be confidently verified, and the incorrect placeholder images for Gateway School and The Barn Houlton have been replaced.
 
-The V66 baseline includes the responsive public website, training programmes, school finder, instructors and committee, events/calendar, news, safeguarding content, shop mockups, student areas and the front-end committee/admin CMS concept.
+The public venue pages, admin/CMS image previews and School Locations media library now use the same venue-image mapping.
 
-## Run V66
+Wollaston Village Hall at **52 High Street, Wollaston, NN29 7QQ** deliberately remains on the WJO crest fallback because searches repeatedly surfaced a different Wollaston Village Hall near Stourbridge. V67 does not substitute an unverified image.
 
-For the easiest local copy of the original self-contained demo:
+## Run V67
+
+For the self-contained demo:
 
 ```bash
-python tools/rebuild_v66.py
+python tools/rebuild_v67.py
 ```
 
 That creates:
 
 ```
-WJO_V66_SINGLE_FILE_DEMO.html
+WJO_V67_SINGLE_FILE_DEMO.html
 ```
 
 Then open that HTML file in a browser.
@@ -32,20 +34,17 @@ You can also serve the repository over HTTP and open `index.html`:
 python -m http.server
 ```
 
-Then browse to the local address shown by Python.
+V67 is stored as a small versioned patch over the complete V66 baseline, avoiding another duplicate 30+ MB source set while still reproducing the exact V67 single-file build.
 
-The repository stores the large V66 single-file source in ordered chunks under `source/v66/`. The manifest and rebuild script reassemble those chunks into the original standalone HTML mockup.
+## V67 baseline
 
-## V66 baseline
+- Everything from the V66 responsive/public/CMS baseline
+- Venue image audit across all school locations
+- New verified imagery for previously blank venue records
+- Correct Gateway School and The Barn Houlton imagery
+- Admin venue previews synchronised with public venue pages
+- New venue sources visible in the Media Library under **School Locations**
+- Image provenance documented in `releases/V67_VENUE_IMAGE_SOURCES.md`
+- Existing approved Jado crest, gi imagery and plain Black Belt presentation retained
 
-- Corrected global JADO / KUIN / DO crest
-- Corrected opening Grand Master Jake Ogden popup logo
-- Corrected favicon/branding
-- Plain black Black Belt presentation
-- Approved varied Jado training image set
-- Responsive/mobile layouts
-- Interactive front-end admin/CMS concept
-
-Future releases should be committed here so approved content, images and functionality remain under version control.
-
-**Current baseline: V66**
+**Current baseline: V67**
