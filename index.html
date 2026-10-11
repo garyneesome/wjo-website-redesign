@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>World Jado Kuin Do Organisation • V66</title>
+<style>
+html,body{margin:0;min-height:100%;background:#08090b;color:#f5f1eb;font-family:Arial,Helvetica,sans-serif}
+#loading{min-height:100vh;display:grid;place-items:center;text-align:center;padding:32px;box-sizing:border-box}
+.card{max-width:620px;border:1px solid #333b45;border-radius:24px;padding:32px;background:#12151a}
+h1{margin:0 0 12px;font-size:clamp(28px,7vw,48px)}
+p{color:#b7bec8;line-height:1.6}
+</style>
+</head>
+<body>
+<div id="loading"><div class="card"><h1>Loading WJO V66…</h1><p>The interactive mockup is being assembled from its version-controlled source files.</p></div></div>
+<script>
+(async()=>{
+  try{
+    const manifest=await fetch("source/v66/manifest.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw new Error("manifest");return r.json()});
+    const chunks=await Promise.all(manifest.parts.map(p=>fetch(p,{cache:"no-store"}).then(r=>{if(!r.ok)throw new Error(p);return r.text()})));
+    document.open();
+    document.write(chunks.join(""));
+    document.close();
+  }catch(err){
+    document.getElementById("loading").innerHTML='<div class="card"><h1>V66 source is ready</h1><p>This loader needs to be served over HTTP. Use GitHub Pages, run <strong>python -m http.server</strong> in the repository, or run <strong>python tools/rebuild_v66.py</strong> to recreate the original self-contained HTML file.</p></div>';
+    console.error(err);
+  }
+})();
+</script>
+</body>
+</html>
