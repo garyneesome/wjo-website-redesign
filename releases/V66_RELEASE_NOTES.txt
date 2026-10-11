@@ -1,0 +1,13 @@
+WJO WEBSITE REDESIGN — V66
+
+Baseline release checked into GitHub.
+
+V66 fixes:
+- Restored and corrected the global JADO / KUIN / DO crest.
+- Corrected the logo shown in the Grand Master Jake Ogden opening popup.
+- Corrected favicon/browser-tab branding.
+- Restored the Black Belt to plain black.
+- Retained the approved varied Jado training image set from V65.
+- Preserved the responsive public-site mockup and interactive front-end admin/CMS functionality.
+
+This version should be used as the baseline for V67 and later work.
