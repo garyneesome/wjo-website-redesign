@@ -1,0 +1,15 @@
+WJO WEBSITE REDESIGN — V69
+11 October 2026
+
+Real Brackley club photography
+
+- Replace the homepage hero with students celebrating their new belts.
+- Give the hero photo its own panel on desktop and place it below the introduction on mobile, keeping text away from faces.
+- Use the celebration photo for Confident Kidz and real partner practice for the teens/adults overview and supporting content.
+- Replace the programme montage and its internal design commentary with a real partner-practice photo and visitor-facing wording.
+- Add the three optimised WebP originals to assets/photos and the existing admin media library.
+- Retain Super J's imagery: these approved photographs do not clearly represent the 3–6 age group.
+- Preserve the existing three WJO YouTube testimonial links, venue images, crest, belt content and CMS functions.
+- Reuse permission confirmed by the project owner: Mark is happy for the recommended photographs to be used (11 October 2026).
+
+Build: python tools/rebuild_v69.py
