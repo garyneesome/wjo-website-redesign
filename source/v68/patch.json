@@ -1,0 +1,27 @@
+{
+  "version": "V68",
+  "base": "V67",
+  "base_sha256": "68d4bc8dde1d77f47d2484b34bebae92b121d23f697ee4eca99cb0bd81257a3a",
+  "replacements": [
+    {
+      "find": "<title>World Jado Kuin Do Organisation • V67</title>",
+      "replace": "<title>World Jado Kuin Do Organisation • V68</title>"
+    },
+    {
+      "find": "<meta name=\"wjo-build\" content=\"V67\">",
+      "replace": "<meta name=\"wjo-build\" content=\"V68\">"
+    },
+    {
+      "find": "<meta name=\"wjo-v67-fixes\" content=\"venue-photo-audit;new-real-venue-images;admin-venue-image-sync;venue-image-library\">",
+      "replace": "<meta name=\"wjo-v67-fixes\" content=\"venue-photo-audit;new-real-venue-images;admin-venue-image-sync;venue-image-library\">\n<meta name=\"wjo-v68-fixes\" content=\"verified-brackley-photo;venue-and-cms-image-sync;media-library-update\">"
+    },
+    {
+      "find": "function schoolBgPath(s){\n const id=s.id||'';\n const map={\n  'brackley-leisure':'assets/venue-real-brackley.png',",
+      "replace": "function schoolBgPath(s){\n const id=s.id||'';\n const map={\n  'brackley-leisure':'https://raw.githubusercontent.com/garyneesome/wjo-website-redesign/main/assets/venues/brackley-leisure-centre.webp',"
+    },
+    {
+      "find": "window.V67_VENUE_IMAGE_SOURCES=V67_VENUE_IMAGE_SOURCES;",
+      "replace": "window.V67_VENUE_IMAGE_SOURCES=V67_VENUE_IMAGE_SOURCES;\n\nconst V68_BRACKLEY_VENUE_URL='https://raw.githubusercontent.com/garyneesome/wjo-website-redesign/main/assets/venues/brackley-leisure-centre.webp';\n\n// Use the user-verified Brackley Leisure Centre photo in saved school records,\n// including the first visit after upgrading an existing local CMS dataset.\n(function v68HydrateBrackleyImage(){\n const d=cmsData(); let changed=false;\n d.schools=(d.schools||[]).map(s=>{\n   if(s.id!=='brackley-leisure'||s.image===V68_BRACKLEY_VENUE_URL)return s;\n   changed=true;return {...s,image:V68_BRACKLEY_VENUE_URL};\n });\n if(changed)cmsSaveData(d);\n})();\n\n// Keep the School Locations media library in sync with the public venue photo.\n// Remove old built-in Brackley stand-ins, but retain user-managed uploads.\nconst _v68BuiltInMediaSeed=v45BuiltInMediaSeed;\nv45BuiltInMediaSeed=function(){\n const items=_v68BuiltInMediaSeed().filter(m=>{\n   const src=String(m.src||'');\n   const ident=String(m.id||'');\n   return src!=='assets/venue-real-brackley.png'&&\n          !ident.includes('venue-brackley-leisure')&&\n          src!==V68_BRACKLEY_VENUE_URL;\n });\n items.push({\n   id:'v68-venue-brackley-leisure',\n   name:'brackley-leisure-centre.webp',\n   title:'Brackley Leisure Centre',\n   alt:'Front exterior of Brackley Leisure Centre',\n   folder:'School Locations',\n   src:V68_BRACKLEY_VENUE_URL,\n   seed:true,builtin:true,\n   createdAt:'2026-10-11T00:00:00.000Z',\n   source:'User-supplied, verified venue photo'\n });\n return items;\n};\nwindow.V68_BRACKLEY_VENUE_URL=V68_BRACKLEY_VENUE_URL;"
+    }
+  ]
+}

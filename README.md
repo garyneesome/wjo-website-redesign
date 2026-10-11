@@ -4,47 +4,41 @@ Interactive front-end concept for the **World Jado Kuin Do Organisation** websit
 
 ## Current version
 
-**V67**
+**V68**
 
-V67 builds on the V66 responsive website and front-end CMS baseline, with a venue-image audit across the school/location data. Missing photographs have been added where the venue could be confidently verified, and the incorrect placeholder images for Gateway School and The Barn Houlton have been replaced.
+V68 preserves the complete V67 venue-image audit and replaces the Brackley Leisure Centre photograph with the specific image supplied and verified by the project owner on 11 October 2026.
 
-The public venue pages, admin/CMS image previews and School Locations media library now use the same venue-image mapping.
+The same Brackley photograph is linked in the Find a School public venue listings, saved school details, admin/CMS school previews, and the School Locations media library. Previously saved Brackley placeholder photos are refreshed without overwriting the other schools.
 
-Wollaston Village Hall at **52 High Street, Wollaston, NN29 7QQ** deliberately remains on the WJO crest fallback because searches repeatedly surfaced a different Wollaston Village Hall near Stourbridge. V67 does not substitute an unverified image.
+- Photo: `assets/venues/brackley-leisure-centre.webp` (1536 × 864, WebP)
+- Venue record ID: `brackley-leisure`
+- Source: user-supplied photograph
+- Photo attribution and change: `releases/V68_RELEASE_NOTES.txt`
 
-## Run V67
+## Run V68
 
-For the self-contained demo:
+For a self-contained demo with the Brackley photo embedded:
 
 ```bash
-python tools/rebuild_v67.py
+python tools/rebuild_v68.py
 ```
 
-That creates:
+This creates `WJO_V68_SINGLE_FILE_DEMO.html`. Open it in a browser.
 
-```
-WJO_V67_SINGLE_FILE_DEMO.html
-```
-
-Then open that HTML file in a browser.
-
-You can also serve the repository over HTTP and open `index.html`:
+To use the repository's in-browser loader:
 
 ```bash
 python -m http.server
 ```
 
-V67 is stored as a small versioned patch over the complete V66 baseline, avoiding another duplicate 30+ MB source set while still reproducing the exact V67 single-file build.
+Then open `index.html`. The loader assembles the V66 source with the V67 and V68 versioned patches. GitHub Pages can serve the same loader and hosted venue photo.
 
-## V67 baseline
+## Previous work preserved
 
-- Everything from the V66 responsive/public/CMS baseline
-- Venue image audit across all school locations
-- New verified imagery for previously blank venue records
-- Correct Gateway School and The Barn Houlton imagery
-- Admin venue previews synchronised with public venue pages
-- New venue sources visible in the Media Library under **School Locations**
-- Image provenance documented in `releases/V67_VENUE_IMAGE_SOURCES.md`
-- Existing approved Jado crest, gi imagery and plain Black Belt presentation retained
+- All V66 responsive site and front-end CMS features
+- The V67 audited venue photograph mapping and media library updates
+- Approved Jado crest, gi imagery and plain black belt
+- Fallback WJO crest at Wollaston Village Hall, 52 High Street, Wollaston NN29 7QQ, until a correct venue photo is verified
+- Previously identified address discrepancies remain unchanged pending review
 
-**Current baseline: V67**
+**Current baseline: V68**

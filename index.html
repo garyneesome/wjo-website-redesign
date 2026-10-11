@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>World Jado Kuin Do Organisation • V67</title>
+<title>World Jado Kuin Do Organisation • V68</title>
 <style>
 html,body{margin:0;min-height:100%;background:#08090b;color:#f5f1eb;font-family:Arial,Helvetica,sans-serif}
 #loading{min-height:100vh;display:grid;place-items:center;text-align:center;padding:32px;box-sizing:border-box}
@@ -13,17 +13,18 @@ p{color:#b7bec8;line-height:1.6}
 </style>
 </head>
 <body>
-<div id="loading"><div class="card"><h1>Loading WJO V67…</h1><p>The interactive mockup is being assembled from the V66 baseline and the version-controlled V67 venue-image patch.</p></div></div>
+<div id="loading"><div class="card"><h1>Loading WJO V68…</h1><p>The interactive mockup is being assembled from the V66 baseline with the V67 and V68 venue-image patches.</p></div></div>
 <script>
 (async()=>{
   try{
-    const [manifest,patch]=await Promise.all([
+    const [manifest,patch,patch68]=await Promise.all([
       fetch("source/v66/manifest.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw new Error("V66 manifest");return r.json()}),
-      fetch("source/v67/patch.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw new Error("V67 patch");return r.json()})
+      fetch("source/v67/patch.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw new Error("V67 patch");return r.json()}),
+      fetch("source/v68/patch.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw new Error("V68 patch");return r.json()})
     ]);
     const chunks=await Promise.all(manifest.parts.map(p=>fetch(p,{cache:"no-store"}).then(r=>{if(!r.ok)throw new Error(p);return r.text()})));
     let html=chunks.join("");
-    for(const op of patch.replacements){
+    for(const op of [...patch.replacements,...patch68.replacements]){
       const hits=html.split(op.find).length-1;
       if(hits<(op.count||1))throw new Error("Patch target missing");
       for(let i=0;i<(op.count||1);i++)html=html.replace(op.find,op.replace);
@@ -32,7 +33,7 @@ p{color:#b7bec8;line-height:1.6}
     document.write(html);
     document.close();
   }catch(err){
-    document.getElementById("loading").innerHTML='<div class="card"><h1>V67 source is ready</h1><p>This loader needs to be served over HTTP. Use GitHub Pages, run <strong>python -m http.server</strong> in the repository, or run <strong>python tools/rebuild_v67.py</strong> to recreate the self-contained V67 HTML file.</p></div>';
+    document.getElementById("loading").innerHTML='<div class="card"><h1>V68 source is ready</h1><p>This loader needs to be served over HTTP. Use GitHub Pages, run <strong>python -m http.server</strong> in the repository, or run <strong>python tools/rebuild_v68.py</strong> to recreate the self-contained V67 HTML file.</p></div>';
     console.error(err);
   }
 })();

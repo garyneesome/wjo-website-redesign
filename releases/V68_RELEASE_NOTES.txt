@@ -1,0 +1,15 @@
+WJO WEBSITE REDESIGN — V68
+Date: 11 October 2026
+
+Brackley Leisure Centre user-confirmed venue image
+
+- Add original 1536 × 864 WebP photograph at assets/venues/brackley-leisure-centre.webp
+- Change the brackley-leisure venue image lookup to the new image
+- Refresh saved CMS school records for that venue to replace the prior placeholder
+- Register the supplied photo with the School Locations media library
+- Remove legacy built-in Brackley placeholder thumbnail entries from the seed list
+- Update the browser loader and add a V68 single-file rebuild script
+- Preserve V67 mappings and all other venue content
+- Source/permission note: image supplied directly by the project owner; no outside image source claimed
+
+The V68 patch is applied after V67. Rebuild: python tools/rebuild_v68.py
