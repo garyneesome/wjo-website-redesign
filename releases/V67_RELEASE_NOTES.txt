@@ -1,0 +1,34 @@
+WJO Website Redesign — V67
+==========================
+
+Venue image audit and school-location improvements based on the V66 GitHub baseline.
+
+Changes
+-------
+- Added/linked real venue imagery for Bushfield School.
+- Added/linked real venue imagery for Stoke Albany Village Hall.
+- Added/linked real venue imagery for Earls Barton Youth Club.
+- Added/linked real venue imagery for Nether Heyford Village Hall.
+- Added/linked real venue imagery for Montsaye Community Sports Centre.
+- Added/linked real venue imagery for Danesholme Community Centre.
+- Added/linked real venue imagery for Arncott Village Hall.
+- Added/linked a real on-site Paddox Primary School image.
+- Replaced the incorrect Gateway School placeholder with imagery from The Gateway School.
+- Replaced the incorrect Houlton placeholder with imagery from The Barn/Houlton.
+- Public school/venue detail pages and the front-end admin now use the same venue-image mapping.
+- Added the newly sourced venue images to the admin Media Library under School Locations.
+- Existing V66 functionality and approved Jado imagery remain intact.
+
+Not replaced
+------------
+- Wollaston Village Hall, 52 High Street, Wollaston, NN29 7QQ remains on the WJO crest fallback. Search results repeatedly returned the different Wollaston Village Hall near Stourbridge; no photograph was used unless the Northamptonshire venue could be verified.
+
+Address review notes (not changed in V67)
+-----------------------------------------
+During the image research, current official venue sources showed three differences from the existing WJO data. These have been deliberately left unchanged pending WJO confirmation:
+- Paddox Primary School: official school/GOV.UK sources currently use CV22 5HS; WJO data uses CV22 5JH.
+- Arncott Village Hall: Arncott Parish Council currently lists Greenfields, Upper Arncott, OX25 1QP; WJO data uses Murcott Road, OX25 1QH.
+- The Barn Houlton: Houlton's official venue page currently lists The Barn, Dollman Farm, Dollman Road, CV23 1EP; WJO data uses CV23 1AL.
+
+Build: V67
+Base: V66
