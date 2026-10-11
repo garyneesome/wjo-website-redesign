@@ -6,26 +6,46 @@ Interactive front-end concept for the **World Jado Kuin Do Organisation** websit
 
 **V66**
 
-This repository is the source-control home for the WJO redesign mockup.
+This repository is now the source-control home for the WJO redesign mockup.
 
-The current demo includes the responsive public site, training programmes, school finder, instructors and committee, events and calendar, news, safeguarding content, shop mockups, student areas and the front-end committee/admin CMS concept.
+The V66 baseline includes the responsive public website, training programmes, school finder, instructors and committee, events/calendar, news, safeguarding content, shop mockups, student areas and the front-end committee/admin CMS concept.
 
-## Run the demo
+## Run V66
 
-Open `index.html` in a modern web browser.
+For the easiest local copy of the original self-contained demo:
 
-V66 is a self-contained HTML mockup, with its imagery and interactive demo data embedded directly in the file.
+```bash
+python tools/rebuild_v66.py
+```
+
+That creates:
+
+```
+WJO_V66_SINGLE_FILE_DEMO.html
+```
+
+Then open that HTML file in a browser.
+
+You can also serve the repository over HTTP and open `index.html`:
+
+```bash
+python -m http.server
+```
+
+Then browse to the local address shown by Python.
+
+The repository stores the large V66 single-file source in ordered chunks under `source/v66/`. The manifest and rebuild script reassemble those chunks into the original standalone HTML mockup.
 
 ## V66 baseline
 
 - Corrected global JADO / KUIN / DO crest
-- Corrected opening Grand Master Ogden popup logo
+- Corrected opening Grand Master Jake Ogden popup logo
 - Corrected favicon/branding
 - Plain black Black Belt presentation
 - Approved varied Jado training image set
 - Responsive/mobile layouts
 - Interactive front-end admin/CMS concept
 
-Future mockup releases should be committed here so approved content, images and functionality remain under version control.
+Future releases should be committed here so approved content, images and functionality remain under version control.
 
 **Current baseline: V66**
