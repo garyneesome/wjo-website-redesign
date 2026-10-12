@@ -4,7 +4,16 @@ Interactive front-end concept for the **World Jado Kuin Do Organisation** websit
 
 ## Current version
 
-**V70**
+**V71**
+
+V71 builds on the real, Mark-approved Brackley club photographs and V70's family homepage. It adds a more documentary photo treatment, a quick-entry programme strip, a three-step interactive chooser without repeated photography, and responsive presentation improvements. Original belts, logo, gi, animals, programme routes, school finder, venues and admin/CMS are preserved.
+
+**Preview the latest work:** Open `preview.html` through an HTML preview service, or serve `index.html` over HTTP. `preview.html` fetches V66–V71 source files from this repository.
+
+Editable V71 design files: `source/v71/refinements.js`, `source/v71/refinements.css`. Compiled patch: `source/v71/patch.json`.
+Release notes: `releases/V71_RELEASE_NOTES.txt`.
+
+### V70 family experience preserved
 
 V70 introduces a warmer family homepage, a working three-choice programme guide, first-visit guidance, real Brackley photo stories and the Five Animals. Existing class information, school finder, belt meanings, events and admin remain accessible.
 
@@ -30,15 +39,15 @@ The same Brackley photograph is linked in the Find a School public venue listing
 - Source: user-supplied photograph
 - Photo attribution and change: `releases/V68_RELEASE_NOTES.txt`
 
-## Run V70
+## Run V71
 
 For a self-contained demo with the Brackley photo embedded:
 
 ```bash
-python tools/rebuild_v70.py
+python tools/rebuild_v71.py
 ```
 
-This creates `WJO_V70_SINGLE_FILE_DEMO.html`. Open it in a browser.
+This creates `WJO_V71_SINGLE_FILE_DEMO.html`. Open it in a browser.
 
 To use the repository's in-browser loader:
 
@@ -46,7 +55,7 @@ To use the repository's in-browser loader:
 python -m http.server
 ```
 
-Then open `index.html`. The loader assembles the V66 source with the V67 through V70 versioned patches. GitHub Pages can serve the same loader and hosted venue photo.
+Then open `index.html`. The loader assembles the V66 source with the V67 through V71 versioned patches. GitHub Pages can serve the same loader and hosted venue photo.
 
 ## Previous work preserved
 
@@ -56,4 +65,4 @@ Then open `index.html`. The loader assembles the V66 source with the V67 through
 - Fallback WJO crest at Wollaston Village Hall, 52 High Street, Wollaston NN29 7QQ, until a correct venue photo is verified
 - Previously identified address discrepancies remain unchanged pending review
 
-**Current baseline: V70**
+**Current baseline: V71**
