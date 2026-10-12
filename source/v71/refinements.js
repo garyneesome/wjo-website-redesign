@@ -69,3 +69,15 @@ routes.home=function(...args){
 // Make the programme chooser work with the revised journey content when navigating via hashes.
 const v71PreviousJourneyRoute=routes['your-journey'];
 routes['your-journey']=function(...args){return v71PreviousJourneyRoute.apply(this,args);};
+
+/* Correct legacy instructor/image error fallbacks, including when testing offline.
+ * If a portrait cannot be retrieved, show the approved WJO crest instead. */
+const v71InvalidImageError = "this.outerHTML='<div class='cms-person-placeholder'>WJO</div>'";
+const v71CrestImageError = "this.onerror=null;this.src=resolveAssetPath('assets/wjo-crest.png')";
+for(const routeName of Object.keys(routes)){
+  const v71OriginalRoute=routes[routeName];
+  routes[routeName]=function(...args){
+    const output=v71OriginalRoute.apply(this,args);
+    return typeof output==='string' ? output.split(v71InvalidImageError).join(v71CrestImageError) : output;
+  };
+}
