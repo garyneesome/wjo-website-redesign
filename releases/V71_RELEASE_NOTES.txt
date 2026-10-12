@@ -1,0 +1,36 @@
+WJO WEBSITE REDESIGN — V71
+12 October 2026
+
+Built directly on the V70 family-homepage release.
+
+Changes
+- Reworked first-page hero presentation: real photograph is unobstructed, the caption reads as a small documentary label, and the layout has a subtle Jado-coloured stripe.
+- Added a responsive "Find your place" strip linking directly to Super J’s (ages 3–6), Confident Kidz (ages 6–12), and teens/adults (13+).
+- Replaced the chooser's repeated portraits with a new non-photographic, Jado-themed editorial information panel. It changes when visitors choose My child / Myself / Our family.
+- Added three clear next-step prompts tailored to children, adult beginners, or whole families, using verified WJO programme descriptions.
+- Preserved the three Mark-approved authentic Brackley photographs, with each photo used only once on the homepage. No fake students, altered uniforms or invented testimonials.
+- Improved vertical rhythm, button states, contrast, photo presentation, mobile stacking and reduced-motion support.
+- Resolved homepage photographs through WJO's embedded-asset map so the single-file demo works without a separate photos directory.
+- Preserved the approved Jado gi/badges/animal artwork, venue photos including the user-supplied Brackley Leisure Centre, grade meanings, events, and front-end CMS.
+- Added preview.html, a browser-based loader for previewing current V71 without local hosting (requires internet and third-party HTML preview service).
+- Retained the reversible V66–V70 build patches. V71 is applied as one new versioned patch.
+
+Sources:
+Approved Brackley photos: releases/V69_IMAGE_SOURCES.md
+Programme details: https://wjo.org.uk/wjo-training-programmes/super-js/
+https://wjo.org.uk/wjo-training-programmes/confident-kidz/
+Existing V70 route descriptions and first-visit guidance remain unchanged.
+
+Editing:
+source/v71/refinements.js
+source/v71/refinements.css
+
+After edits, regenerate source/v71/patch.json so that its third replacement adds the JS and CSS before the existing hashchange/render marker. Then run:
+python tools/rebuild_v71.py
+
+Validation completed in this session:
+- JavaScript source syntax parsed successfully.
+- The versioned patch embeds the same JS and CSS source.
+- Both browser entry files include the V71 patch and original V66 manifest.
+- Existing non-V71 patch content was left untouched.
+Visual browser QA (desktop, 390px mobile, all menu routes, media and admin) is still required; do not treat this static validation as a live UI test.
