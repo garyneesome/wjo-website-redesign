@@ -1,0 +1,58 @@
+name: Build downloadable WJO V71 mockup
+
+on:
+  push:
+    paths:
+      - '.github/workflows/build-v71-demo.yml'
+      - 'tools/rebuild_v71.py'
+      - 'source/v71/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout GitHub repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Build fully embedded, offline single-file demo
+        run: python3 tools/rebuild_v71.py
+      - name: Validate generated mockup
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path("WJO_V71_SINGLE_FILE_DEMO.html")
+          data=p.read_text()
+          for token in ('World Jado Kuin Do Organisation • V71',
+                        'wjo-build" content="V71"',
+                        'v71-path-poster', 'v71-ribbon',
+                        'brackley-leisure-centre',
+                        'v70ChoosePath',
+                        'v69-brackley-photo-',
+                        'routes.home'):
+              assert token in data, f"Missing important V71 feature: {token}"
+          assert '<html' in data.lower() and '</html>' in data.lower()
+          assert len(data) > 1_000_000, "Build suspiciously small"
+          print(f"Single-file V71 HTML validated: {p.stat().st_size:,} bytes")
+          PY
+      - name: Publish downloadable HTML in repository
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f WJO_V71_SINGLE_FILE_DEMO.html
+          if git diff --cached --quiet; then
+            echo "No HTML changes to publish."
+          else
+            git commit -m "Build WJO V71 portable single-file demo"
+            git push
+          fi
+      - name: Upload HTML for easy download
+        uses: actions/upload-artifact@v4
+        with:
+          name: WJO-V71-Single-File-Demo
+          path: WJO_V71_SINGLE_FILE_DEMO.html
+          retention-days: 30
