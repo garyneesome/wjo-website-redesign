@@ -59,7 +59,7 @@ routes.home=function(...args){
   html=html.replace('<section class="v70-section v70-journey"',ribbon+'<section class="v70-section v70-journey"');
   // One clear call to action after the photos, before the existing Five Animals section.
   const moment=`<div class="wrap v71-photo-next"><div><strong>These are real Jado moments.</strong><span>Curious about the people and classes near you?</span></div><a href="#find-school">Find a nearby school <span aria-hidden="true">↗</span></a></div>`;
-  html=html.replace('</div></div></section>\n<section class="v70-section v70-animals"',moment+'</div></div></section>\n<section class="v70-section v70-animals"');
+  html=html.replace('</div></div></section>\n<section class="v70-section v70-animals"','</div>'+moment+'</div></section>\n<section class="v70-section v70-animals"');
   return html;
 };
 // Make the programme chooser work with the revised journey content when navigating via hashes.
