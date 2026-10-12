@@ -4,7 +4,15 @@ Interactive front-end concept for the **World Jado Kuin Do Organisation** websit
 
 ## Current version
 
-**V69**
+**V70**
+
+V70 introduces a warmer family homepage, a working three-choice programme guide, first-visit guidance, real Brackley photo stories and the Five Animals. Existing class information, school finder, belt meanings, events and admin remain accessible.
+
+Edit `source/v70/family.js` and `source/v70/family.css`, then run `python tools/prepare_v70_patch.py` before rebuilding.
+
+Release details and content sources: `releases/V70_RELEASE_NOTES.txt`.
+
+### V69 photography preserved
 
 V69 adds three approved real photographs from the Brackley club gallery. The homepage, Confident Kidz, teens/adults and programme overview now show real celebrations and partner practice. The responsive hero separates the headline from the photograph so faces remain visible.
 
@@ -22,15 +30,15 @@ The same Brackley photograph is linked in the Find a School public venue listing
 - Source: user-supplied photograph
 - Photo attribution and change: `releases/V68_RELEASE_NOTES.txt`
 
-## Run V69
+## Run V70
 
 For a self-contained demo with the Brackley photo embedded:
 
 ```bash
-python tools/rebuild_v69.py
+python tools/rebuild_v70.py
 ```
 
-This creates `WJO_V69_SINGLE_FILE_DEMO.html`. Open it in a browser.
+This creates `WJO_V70_SINGLE_FILE_DEMO.html`. Open it in a browser.
 
 To use the repository's in-browser loader:
 
@@ -38,7 +46,7 @@ To use the repository's in-browser loader:
 python -m http.server
 ```
 
-Then open `index.html`. The loader assembles the V66 source with the V67, V68 and V69 versioned patches. GitHub Pages can serve the same loader and hosted venue photo.
+Then open `index.html`. The loader assembles the V66 source with the V67 through V70 versioned patches. GitHub Pages can serve the same loader and hosted venue photo.
 
 ## Previous work preserved
 
@@ -48,4 +56,4 @@ Then open `index.html`. The loader assembles the V66 source with the V67, V68 an
 - Fallback WJO crest at Wollaston Village Hall, 52 High Street, Wollaston NN29 7QQ, until a correct venue photo is verified
 - Previously identified address discrepancies remain unchanged pending review
 
-**Current baseline: V69**
+**Current baseline: V70**

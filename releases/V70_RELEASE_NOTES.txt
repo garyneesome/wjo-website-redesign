@@ -1,0 +1,28 @@
+WJO WEBSITE REDESIGN — V70
+12 October 2026
+
+A warmer, family-oriented homepage
+- New cream, red and charcoal/green homepage with photography separated from text.
+- Working My child / Myself / Our family chooser with tailored programme links, beginner guidance and accurate separate-class information.
+- New first-visit section and expandable beginner FAQs.
+- Real Brackley photography and descriptive captions, without generated people, new uniforms, or invented testimonials.
+- Five Animals links retain the approved artwork and verified programme context.
+- WJO's three existing YouTube stories are presented as clearly labelled external links.
+- Direct links to the existing school finder, grading meanings, events and instructors.
+- Removes remaining internal uniform/design commentary from public route output.
+- No automatic splash screen or newsletter popup on the homepage or journey chooser.
+- Scoped responsive styles, keyboard focus states, large touch targets and reduced-motion support.
+- Existing crest, gi artwork, venue corrections, class pages, shop and admin remain available.
+
+Source references:
+https://wjo.org.uk/frequently-asked-questions/
+https://wjo.org.uk/wjo-training-programmes/super-js/
+https://wjo.org.uk/wjo-training-programmes/confident-kidz/
+https://wjo.org.uk/
+Photo permission and sources: V69_IMAGE_SOURCES.md
+
+Edit source/v70/family.js and family.css, then run:
+python tools/prepare_v70_patch.py
+python tools/rebuild_v70.py
+
+Validation: desktop 1440px and mobile 390px browser inspection; chooser states and programme links; beginner FAQ opening; loaded homepage photos/animal assets; navigation to class, school, belt and animal routes; no JavaScript page errors and no horizontal overflow at 390px.
