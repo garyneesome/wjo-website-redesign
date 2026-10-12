@@ -50,6 +50,10 @@ routes.home=function(...args){
     const path='assets/photos/'+name+'.webp';
     html=html.split('src="'+path+'"').join('src="'+resolveAssetPath(path)+'"');
   }
+  for(const animal of ['snake','tiger','crane','panther','dragon']){
+    const path='assets/mascot-'+animal+'.jpg';
+    html=html.split('src="'+path+'"').join('src="'+resolveAssetPath(path)+'"');
+  }
   const ribbon=`<aside class="v71-ribbon" aria-label="Explore your starting point"><div class="wrap v71-ribbon-inner">
     <span class="v71-ribbon-label">Find your place</span>
     <a href="#super-js"><b>Little learners</b><small>Super J’s · 3–6</small><span aria-hidden="true">↗</span></a>
