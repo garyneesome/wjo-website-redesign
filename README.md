@@ -43,6 +43,10 @@ The same Brackley photograph is linked in the Find a School public venue listing
 
 The owner-supplied, full-resolution 1536 × 696 photograph was added on 13 October 2026 at `assets/venues/deanshanger-primary-school.jpg` (original JPEG, no resizing). The venue entry ID is `deanshanger`. Both browser preview loaders now point to this GitHub-hosted asset rather than the previous external school website URL. `tools/rebuild_v71.py` embeds the photo in future offline single-file rebuilds. The already-committed V71 single-file HTML predates this venue-image update and must be regenerated before it will include the new photograph.
 
+### Earls Barton Youth Club venue photograph
+
+Owner-supplied photograph (13 October 2026) saved unchanged as `assets/venues/earls-barton-youth-club.jpg` (1536 × 864, JPEG). The `earls-youth` school record uses this image instead of the previous third-party URL. Both preview loaders load the GitHub-hosted image and offline builds embed it in the single HTML file. The existing committed standalone V71 HTML predates this photograph and must be rebuilt to reflect the change.
+
 ## Run V71
 
 For a self-contained demo with the Brackley photo embedded:

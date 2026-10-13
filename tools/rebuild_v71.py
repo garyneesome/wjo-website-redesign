@@ -28,6 +28,12 @@ def build():
     deanshanger_photo=ROOT/'assets/venues/deanshanger-primary-school.jpg'
     deanshanger_src=('data:image/jpeg;base64,'+base64.b64encode(deanshanger_photo.read_bytes()).decode()) if deanshanger_photo.is_file() else deanshanger_remote
     html=html.replace(deanshanger_old,deanshanger_src)
+    # Owner-supplied Earls Barton Youth Club photo; embed in standalone HTML.
+    earls_old="https://lh3.googleusercontent.com/sitesv/AA5AbUAVOInPyOrAqO4oyQFy3lZSo2NQdMDuUjeGboQV7riccJ0BfFYZA0uZTfhURg94u_cmxMarxCpq_x86-FSiJEMC5EJ5IrEYTNiqB4FkQtzoPNnoOue0SBc-t4hTz2F7CkPBpot8Nvutwb4Ytlu7l1Nf1QUyBoiEleM9beEcNyAzZsxXE9BxMMQCjCVJGsGzRabUe9sDhVEYHv8=w1280"
+    earls_remote="https://raw.githubusercontent.com/garyneesome/wjo-website-redesign/main/assets/venues/earls-barton-youth-club.jpg"
+    earls_photo=ROOT/'assets/venues/earls-barton-youth-club.jpg'
+    earls_src=('data:image/jpeg;base64,'+base64.b64encode(earls_photo.read_bytes()).decode()) if earls_photo.is_file() else earls_remote
+    html=html.replace(earls_old,earls_src)
     output=ROOT/'WJO_V71_SINGLE_FILE_DEMO.html'
     output.write_text(html)
     print(f'Built {output.name} ({len(html):,} characters)')
