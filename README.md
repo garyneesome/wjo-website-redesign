@@ -39,6 +39,10 @@ The same Brackley photograph is linked in the Find a School public venue listing
 - Source: user-supplied photograph
 - Photo attribution and change: `releases/V68_RELEASE_NOTES.txt`
 
+### Deanshanger Primary School venue photograph
+
+The owner-supplied, full-resolution 1536 × 696 photograph was added on 13 October 2026 at `assets/venues/deanshanger-primary-school.jpg` (original JPEG, no resizing). The venue entry ID is `deanshanger`. Both browser preview loaders now point to this GitHub-hosted asset rather than the previous external school website URL. `tools/rebuild_v71.py` embeds the photo in future offline single-file rebuilds. The already-committed V71 single-file HTML predates this venue-image update and must be regenerated before it will include the new photograph.
+
 ## Run V71
 
 For a self-contained demo with the Brackley photo embedded:

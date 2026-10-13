@@ -22,6 +22,12 @@ def build():
     photo=ROOT/'assets/venues/brackley-leisure-centre.webp'
     if photo.is_file():
         html=html.replace(venue,'data:image/webp;base64,'+base64.b64encode(photo.read_bytes()).decode())
+    # Owner-supplied Deanshanger Primary School photograph; embed for offline builds.
+    deanshanger_old='https://www.deanshangerprimary.co.uk/_site/data/files/images/slideshow/7/E789F04AF68B7D933404E93D895A3E14.JPG'
+    deanshanger_remote='https://raw.githubusercontent.com/garyneesome/wjo-website-redesign/main/assets/venues/deanshanger-primary-school.jpg'
+    deanshanger_photo=ROOT/'assets/venues/deanshanger-primary-school.jpg'
+    deanshanger_src=('data:image/jpeg;base64,'+base64.b64encode(deanshanger_photo.read_bytes()).decode()) if deanshanger_photo.is_file() else deanshanger_remote
+    html=html.replace(deanshanger_old,deanshanger_src)
     output=ROOT/'WJO_V71_SINGLE_FILE_DEMO.html'
     output.write_text(html)
     print(f'Built {output.name} ({len(html):,} characters)')

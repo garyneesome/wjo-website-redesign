@@ -34,6 +34,8 @@ p{color:#b7bec8;line-height:1.6}
       if(hits<(op.count||1))throw new Error("Patch target missing");
       for(let i=0;i<(op.count||1);i++)html=html.replace(op.find,op.replace);
     }
+    // Owner-supplied Deanshanger Primary School photo (13 October 2026).
+    html=html.replaceAll('https://www.deanshangerprimary.co.uk/_site/data/files/images/slideshow/7/E789F04AF68B7D933404E93D895A3E14.JPG','https://raw.githubusercontent.com/garyneesome/wjo-website-redesign/main/assets/venues/deanshanger-primary-school.jpg');
     document.open();
     document.write(html);
     document.close();
