@@ -34,6 +34,24 @@ def build():
     earls_photo=ROOT/'assets/venues/earls-barton-youth-club.jpg'
     earls_src=('data:image/jpeg;base64,'+base64.b64encode(earls_photo.read_bytes()).decode()) if earls_photo.is_file() else earls_remote
     html=html.replace(earls_old,earls_src)
+
+    # Embed owner-supplied Wollaston and Danesholme photos in the offline standalone build.
+    wollaston_photo=ROOT/'assets/venues/wollaston-village-hall.jpg'
+    danesholme_photo=ROOT/'assets/venues/danesholme-community-centre.jpg'
+    wollaston_remote="https://raw.githubusercontent.com/garyneesome/wjo-website-redesign/main/assets/venues/wollaston-village-hall.jpg"
+    danesholme_remote="https://raw.githubusercontent.com/garyneesome/wjo-website-redesign/main/assets/venues/danesholme-community-centre.jpg"
+    danesholme_old="https://danesholme-community.org.uk/assets/images/entrance800x540-800x540-68.jpg"
+    wollaston_src=('data:image/jpeg;base64,'+base64.b64encode(wollaston_photo.read_bytes()).decode()) if wollaston_photo.is_file() else wollaston_remote
+    danesholme_src=('data:image/jpeg;base64,'+base64.b64encode(danesholme_photo.read_bytes()).decode()) if danesholme_photo.is_file() else danesholme_remote
+    html=html.replace(danesholme_old,danesholme_src)
+    wjo_map_marker="function schoolBgPath(s){\n const id=s.id||'';\n const map={\n"
+    wjo_library_marker="const V67_VENUE_IMAGE_SOURCES = {\n"
+    wjo_hydrate_marker="window.V68_BRACKLEY_VENUE_URL=V68_BRACKLEY_VENUE_URL;"
+    if not all(x in html for x in (wjo_map_marker,wjo_library_marker,wjo_hydrate_marker)):
+        raise SystemExit('Owner-supplied venue photo injection marker missing')
+    html=html.replace(wjo_map_marker,wjo_map_marker+"  'wollaston':"+json.dumps(wollaston_src)+",\n",1)
+    html=html.replace(wjo_library_marker,wjo_library_marker+" 'wollaston':{title:'Wollaston Village Hall',src:"+json.dumps(wollaston_src)+",source:'Owner-supplied verified photo'},\n",1)
+    html=html.replace(wjo_hydrate_marker,wjo_hydrate_marker+"\n\n// Owner-supplied photos: refresh existing saved school records, without changing other venues.\n(function wjoRefreshApprovedVenuePhotos(){\n const d=cmsData(); let changed=false;\n d.schools=(d.schools||[]).map(s=>{\n   if(s.id!=='wollaston'&&s.id!=='danesholme')return s;\n   const img=schoolBgPath(s);\n   if(!img||s.image===img)return s;\n   changed=true; return {...s,image:img};\n });\n if(changed)cmsSaveData(d);\n})();",1)
     output=ROOT/'WJO_V71_SINGLE_FILE_DEMO.html'
     output.write_text(html)
     print(f'Built {output.name} ({len(html):,} characters)')

@@ -47,6 +47,10 @@ The owner-supplied, full-resolution 1536 × 696 photograph was added on 13 Octob
 
 Owner-supplied photograph (13 October 2026) saved unchanged as `assets/venues/earls-barton-youth-club.jpg` (1536 × 864, JPEG). The `earls-youth` school record uses this image instead of the previous third-party URL. Both preview loaders load the GitHub-hosted image and offline builds embed it in the single HTML file. The existing committed standalone V71 HTML predates this photograph and must be rebuilt to reflect the change.
 
+### Wollaston Village Hall and Danesholme Community Centre photos
+
+The owner-supplied original JPEG photographs were added on 13 October 2026. Wollaston Village Hall uses `assets/venues/wollaston-village-hall.jpg` (1536 × 1020) for school record `wollaston`, replacing the WJO crest fallback. Danesholme Community Centre uses `assets/venues/danesholme-community-centre.jpg` (1536 × 1037) for school record `danesholme`, replacing the earlier third-party image. Original image bytes are retained; the Wollaston upload had a misleading .webp filename but is actually JPEG. Website preview loaders and the standalone rebuild code now use these images in public listings, the school CMS and built-in venue media. Already compiled V71 standalone HTML needs rebuilding to include them.
+
 ## Run V71
 
 For a self-contained demo with the Brackley photo embedded:
