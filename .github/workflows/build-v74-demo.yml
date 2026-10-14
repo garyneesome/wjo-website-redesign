@@ -1,0 +1,66 @@
+name: Build WJO V74 portable demo
+on:
+  push:
+    paths:
+      - 'source/v74/**'
+      - 'tools/rebuild_v74.py'
+      - 'tools/test_v74.cjs'
+      - '.github/workflows/build-v74-demo.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: wjo-v74-build
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify JavaScript parses
+        run: node --check source/v74/experience.js
+      - name: Build self-contained V74 HTML and ZIP
+        run: python3 tools/rebuild_v74.py
+      - name: Verify brand and generated archives
+        run: |
+          python3 - <<'PY'
+          import zipfile,base64
+          from pathlib import Path
+          raw=base64.b64decode(Path('source/v74/world-wjo-logo.b64').read_text().strip(),validate=True)
+          assert raw[:8]==b'\x89PNG\r\n\x1a\n'
+          h=Path('WJO_V74_SINGLE_FILE_DEMO.html')
+          z=Path('WJO_V74_DOWNLOAD.zip')
+          web=Path('dist/index.html')
+          assert h.stat().st_size>1000000
+          assert z.stat().st_size>1000000
+          assert web.stat().st_size>100000
+          t=web.read_text()
+          for key in ["routes['school-directory']", "routes.jado=", "j74TeacherCard", "Watch on YouTube", "WJO_V74_LOGO", "V74"]:
+              assert key in t,key
+          with zipfile.ZipFile(z) as zz:
+              assert zz.testzip() is None
+              assert 'WJO_V74_SINGLE_FILE_DEMO.html' in zz.namelist()
+          PY
+      - name: Install lightweight DOM test dependency
+        run: npm install --no-save --ignore-scripts jsdom@30.1.2
+      - name: Exercise Jado guidance, menus, school photos and videos
+        run: node tools/test_v74.cjs dist/index.html
+      - name: Save downloadable build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: WJO-V74-downloads
+          path: |
+            WJO_V74_SINGLE_FILE_DEMO.html
+            WJO_V74_DOWNLOAD.zip
+          retention-days: 30
+      - name: Commit V74 downloads to main
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f WJO_V74_SINGLE_FILE_DEMO.html WJO_V74_DOWNLOAD.zip
+          if ! git diff --cached --quiet; then
+            git commit -m 'Build WJO V74 portable HTML and ZIP'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
