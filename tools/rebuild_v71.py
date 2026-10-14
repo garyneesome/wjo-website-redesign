@@ -4,7 +4,7 @@ from pathlib import Path
 import base64, hashlib, json
 ROOT = Path(__file__).resolve().parents[1]
 
-def build():
+def build(write=True):
     manifest=json.loads((ROOT/'source/v66/manifest.json').read_text())
     html=''.join((ROOT/p).read_text() for p in manifest['parts'])
     for v in (67,68,69,70,71):
@@ -53,6 +53,8 @@ def build():
     html=html.replace(wjo_library_marker,wjo_library_marker+" 'wollaston':{title:'Wollaston Village Hall',src:"+json.dumps(wollaston_src)+",source:'Owner-supplied verified photo'},\n",1)
     html=html.replace(wjo_hydrate_marker,wjo_hydrate_marker+"\n\n// Owner-supplied photos: refresh existing saved school records, without changing other venues.\n(function wjoRefreshApprovedVenuePhotos(){\n const d=cmsData(); let changed=false;\n d.schools=(d.schools||[]).map(s=>{\n   if(s.id!=='wollaston'&&s.id!=='danesholme')return s;\n   const img=schoolBgPath(s);\n   if(!img||s.image===img)return s;\n   changed=true; return {...s,image:img};\n });\n if(changed)cmsSaveData(d);\n})();",1)
     output=ROOT/'WJO_V71_SINGLE_FILE_DEMO.html'
-    output.write_text(html)
-    print(f'Built {output.name} ({len(html):,} characters)')
+    if write:
+        output.write_text(html)
+        print(f'Built {output.name} ({len(html):,} characters)')
+    return html
 if __name__=='__main__': build()

@@ -1,0 +1,39 @@
+name: Build WJO V72 portable demo
+on:
+  push:
+    paths:
+      - 'source/v72/**'
+      - 'assets/archive/**'
+      - 'tools/rebuild_v72.py'
+      - '.github/workflows/build-v72-demo.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: wjo-v72-build
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build complete demo
+        run: python3 tools/rebuild_v72.py
+      - name: Validate release identity
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          s=Path('WJO_V72_SINGLE_FILE_DEMO.html').read_text()
+          for marker in ('YOUR JADO JOURNEY', "routes['my-jado']", 'jFit', 'jSubmit', 'source', 'V72'):
+              assert marker in s, marker
+          assert Path('dist/index.html').stat().st_size > 100000
+          PY
+      - name: Commit portable download
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f WJO_V72_SINGLE_FILE_DEMO.html
+          if ! git diff --cached --quiet; then
+            git commit -m 'Build WJO V72 portable single-file demo'
+            git push
+          fi

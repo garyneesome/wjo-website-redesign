@@ -4,7 +4,19 @@ Interactive front-end concept for the **World Jado Kuin Do Organisation** websit
 
 ## Current version
 
-**V71**
+**V72**
+
+[Test V72](https://jado-kuin-do-demo.peachypark2.chatgpt.site) — private hosted test site.
+
+V72 adds the complete guided class journey, venue visit planning, remembered My Jado school, internal member resources and animal pages. Public content stays inside the demo. Sample enquiries and checkout do not send bookings or take payments.
+
+Build: `python3 tools/rebuild_v72.py` (Python standard library only).
+
+Editable source: `source/v72/journey.js` and `source/v72/journey.css`.
+
+Release details and verification limits: `releases/V72_RELEASE_NOTES.md`.
+
+### V71 foundation preserved
 
 V71 builds on the real, Mark-approved Brackley club photographs and V70's family homepage. It adds a more documentary photo treatment, a quick-entry programme strip, a three-step interactive chooser without repeated photography, and responsive presentation improvements. Original belts, logo, gi, animals, programme routes, school finder, venues and admin/CMS are preserved.
 
@@ -77,4 +89,4 @@ Then open `index.html`. The loader assembles the V66 source with the V67 through
 - Fallback WJO crest at Wollaston Village Hall, 52 High Street, Wollaston NN29 7QQ, until a correct venue photo is verified
 - Previously identified address discrepancies remain unchanged pending review
 
-**Current baseline: V71**
+**Current release: V72**

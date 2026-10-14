@@ -1,0 +1,1 @@
+{"name":"wjo-website-redesign","private":true,"scripts":{"build":"python3 tools/rebuild_v72.py","test":"node tools/test_v72.cjs"},"devDependencies":{"jsdom":"30.1.2"}}
