@@ -279,3 +279,25 @@ jCleanDom=function(){
   }
  });
 };
+
+
+// The legacy instructor directory used an older card renderer. Own this route explicitly.
+// Keep biographies readable on a phone: portrait or labelled class image first, expandable detail.
+function j74CompactTeacherCard(p){
+ const image=j74InstructorMedia(p);
+ const summary=String(p.summary||'');
+ const short=summary.length>180?summary.slice(0,177).replace(/\s+\S*$/,'')+'…':summary;
+ return '<article class="j74-instructor-card"><figure><img src="'+image.src+'" alt="'+jEsc(image.alt)+'" loading="lazy" onerror="this.onerror=null;this.src=WJO_V74_LOGO"><figcaption>'+image.note+'</figcaption></figure>'+
+ '<div><h3>'+jEsc(p.name)+'</h3><p class="j74-instructor-role">'+jEsc(p.role||'Instructor')+'</p>'+
+ '<p>'+jEsc(short)+'</p>'+(summary.length>180?'<details class="j74-bio-more"><summary>Read full biography</summary><p>'+jEsc(summary)+'</p></details>':'')+
+ '<div class="j74-instructor-locations">'+(p.locations||String(p.school||'').split(/\s*\/\s*/)).filter(Boolean).map(l=>'<a href="#find-school?q='+encodeURIComponent(l)+'">'+jEsc(l)+'</a>').join('')+'</div></div></article>';
+}
+j74TeacherCard=j74CompactTeacherCard;
+routes.instructors=()=>jPage('Meet the people who teach.','Jado instructors from across the WJO network.',
+ '<div class="j74-teachers j74-instructor-directory">'+cmsCollection('instructors').filter(p=>String(p.status).toLowerCase()==='live').map(j74CompactTeacherCard).join('')+'</div>'+
+ '<div class="j72-actions">'+jBtn('school-directory','Find a local school')+jBtn('start','Help me choose a class',true)+'</div>');
+const j74PreviousMemberCards=jMemberCards;
+jMemberCards=function(){
+ return j74PreviousMemberCards().replace('Beyond the belts','Benefits of Jado training')
+ .replace('Reflect on confidence, coordination and learning.','Balance, coordination, life skills and self-defence.');
+};
