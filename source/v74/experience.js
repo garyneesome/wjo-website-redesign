@@ -210,3 +210,18 @@ render=function(){
  document.title=document.title.replace('V73','V74').replace('V72','V74');
 };
 Object.assign(window,{j74ToggleLocations});
+
+
+// A painted/distorted legacy news image is replaced with an approved, real Brackley class photograph.
+const j74PreviousNewsCard=cmsNewsCard;
+cmsNewsCard=function(record){
+ if(/social development and character building/i.test(String(record.title||''))){
+   return j74PreviousNewsCard({...record,image:resolveAssetPath('assets/photos/brackley-partner-practice.webp')});
+ }
+ return j74PreviousNewsCard(record);
+};
+const j74PreviousNews=routes.news;
+routes.news=function(){
+ return j74PreviousNews().replace(/<div class="cms-public-note"><\/div>/,
+ '<div class="j74-news-explainer"><h2>News from across Jado</h2><p>Updates and stories about WJO students, instructors and local communities. Check individual dates when planning events.</p></div>');
+};
