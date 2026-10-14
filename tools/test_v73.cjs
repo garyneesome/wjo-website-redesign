@@ -27,7 +27,7 @@ setTimeout(()=>{
     check('V73 home uses real guided interaction and no decorative poster',()=>{
       go('home');
       assert(main().includes('Your Jado family'));
-      assert(main().includes('Three'));
+      assert(main().includes('YOUR FIRST THREE STEPS'));
       assert(d.querySelector('.v73-path-guide'));
       assert(!d.querySelector('.v71-path-poster'));
       assert(d.querySelector('a[href="#new-to-jado"]'));
