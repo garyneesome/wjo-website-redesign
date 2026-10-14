@@ -61,6 +61,8 @@ jobs:
           git add -f WJO_V74_SINGLE_FILE_DEMO.html WJO_V74_DOWNLOAD.zip
           if ! git diff --cached --quiet; then
             git commit -m 'Build WJO V74 portable HTML and ZIP'
+            # Rebuilding updates tracked dist/index.html; reset only uncommitted build output.
+            git reset --hard HEAD
             git pull --rebase origin main
             git push origin HEAD:main
           fi
