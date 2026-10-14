@@ -1,0 +1,99 @@
+/* V74: authentic WJO content, useful location hierarchy and restrained polished mobile pages. */
+.j74-home-about{background:#eaece4;padding:clamp(40px,5vw,72px) 0}
+.j74-home-about>.wrap{display:grid;grid-template-columns:180px minmax(0,1fr);align-items:center;gap:32px}
+.j74-home-logo,.j74-brand-mark{display:grid;place-items:center;background:#fff;border:1px solid #d3d2c9;border-radius:50%;aspect-ratio:1}
+.j74-home-logo img,.j74-brand-mark img{display:block;width:86%;height:86%;object-fit:contain}
+.j74-home-about h2,.j74-brand-head h2{font-size:clamp(31px,4vw,50px);letter-spacing:-.05em;line-height:1.1;color:#202c26;margin:8px 0 13px}
+.j74-home-about p,.j74-brand-head p{color:#394b3f;line-height:1.65;max-width:700px;font-size:17px}
+.j74-home-about .j72-btn{margin-top:15px}
+.j74-brand-head{display:grid;grid-template-columns:145px 1fr;gap:32px;align-items:center}
+.j74-origin{padding:26px 30px;background:#fffdf8;border:1px solid #ddd6c7;border-radius:15px}
+.j74-history-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:24px}
+.j74-history-grid article{background:#f0ede4;border-radius:9px;padding:20px}
+.j74-history-grid h3{font-size:21px!important;margin:0 0 10px!important;color:#29362b}
+.j74-history-grid p{font-size:15px!important;margin:0!important;line-height:1.6}
+.j74-history{max-width:920px}
+.j74-history>p{font-size:17px}
+.j74-why-photo{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center;border-top:1px solid #d8d3c9;padding:35px 0 10px}
+.j74-why-photo img{width:100%;aspect-ratio:5/4;object-fit:cover;border-radius:12px}
+.j74-why-photo h2{font-size:clamp(30px,3vw,42px)}
+.j74-directory-intro{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.j74-directory-intro h2{font-size:clamp(26px,3vw,35px)}
+.j74-county-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;margin-top:24px}
+.j74-county-card{display:flex;flex-direction:column;justify-content:space-between;gap:20px;min-height:140px;background:#fffdf8;border:1px solid #dad2c4;border-radius:12px;padding:24px;text-decoration:none;color:#27352a;transition:border .2s,box-shadow .2s}
+.j74-county-card:hover{border-color:#a92330;box-shadow:0 6px 18px #0001}
+.j74-county-card h2{font-size:clamp(21px,2.5vw,27px);margin:0;overflow-wrap:anywhere}
+.j74-county-card span{display:flex;justify-content:space-between;align-items:center;color:#59685b;font-size:13px}
+.j74-county-card span b{color:#a52330}
+.j74-region-count{color:#616a61;font-size:13px;font-weight:700;margin:20px 0}
+.j74-venue-directory{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.j74-venue-link{display:grid;grid-template-columns:1fr auto;gap:5px 20px;text-decoration:none;align-items:center;background:#fffdf8;border:1px solid #ded6ca;border-radius:9px;padding:20px;min-height:82px}
+.j74-venue-link strong{font-size:17px;grid-column:1;color:#263229}
+.j74-venue-link small{font-size:13px;grid-column:1;color:#657063}
+.j74-venue-link>span{grid-column:2;grid-row:1/span 2;font-weight:750;color:#a62530}
+.j74-venue-link:hover{border-color:#ad2330}
+.j74-full-menu .mobile-nav{padding-bottom:90px!important}
+.j74-menu-group{border-top:1px solid #ffffff28;border-bottom:1px solid #ffffff28}
+.j74-menu-group>summary{font-size:17px;cursor:pointer;padding:18px 16px;font-weight:800;display:flex;justify-content:space-between;align-items:center}
+.j74-menu-group-content{padding:6px 10px 16px 20px}
+.j74-menu-group-content>a{display:block;padding:12px 10px;font-size:15px;color:inherit!important}
+.j74-mobile-county{border-top:1px solid #ffffff23;margin:0}
+.j74-mobile-county summary{cursor:pointer;display:flex;justify-content:space-between;align-items:center;min-height:44px;padding:10px 13px;font-weight:700;font-size:15px}
+.j74-mobile-county summary span{border-radius:50%;display:grid;place-items:center;min-width:25px;height:25px;background:#ffffff22;font-size:12px}
+.j74-county-links{padding:5px 5px 12px 20px}
+.j74-county-links>a{display:block;padding:9px 12px!important;min-height:43px;font-size:14px!important;border-top:1px solid #ffffff16}
+.j74-desktop-locations{position:relative}
+.j74-locations-toggle{font:inherit;font-size:13px;font-weight:700;color:#fff;border:0;background:none;cursor:pointer;padding:12px 8px}
+.j74-locations-panel{display:none;position:absolute;top:100%;left:0;min-width:240px;background:#fffdf8;border:1px solid #ddd4c8;border-radius:8px;box-shadow:0 12px 35px #0004;padding:8px;z-index:1500}
+.j74-locations-panel a{display:block;color:#27362a!important;padding:11px 13px;text-decoration:none!important;border-radius:4px;font-weight:650;font-size:13px;white-space:nowrap}
+.j74-locations-panel a:hover{background:#f2e9df!important}
+.j74-locations-toggle[aria-expanded="true"]+.j74-locations-panel,.j74-desktop-locations:focus-within .j74-locations-panel{display:block}
+.j74-teachers{display:grid;grid-template-columns:1fr;gap:18px}
+.j74-instructor-card{display:grid;grid-template-columns:minmax(155px,.42fr) 1fr;gap:22px;background:#fffdf8;border:1px solid #d9d1c5;padding:23px;border-radius:14px;align-items:start}
+.j74-instructor-card figure{margin:0}
+.j74-instructor-card img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 27%;background:#f7f1e9;border-radius:9px}
+.j74-instructor-card figure:has(img[src*="data:image/png"]) img{object-fit:contain;padding:10px}
+.j74-instructor-card figcaption{color:#666d64;font-size:11px;line-height:1.4;padding:7px 0}
+.j74-instructor-card h3{font-size:clamp(23px,2.8vw,31px);margin:0 0 8px}
+.j74-instructor-card p{font-size:15px;line-height:1.6;margin:9px 0}
+.j74-instructor-role{font-weight:650;color:#8b2730!important;font-size:13px!important}
+.j74-instructor-locations{display:flex;flex-wrap:wrap;gap:8px;padding-top:16px}
+.j74-instructor-locations a{padding:8px 10px;background:#eef0e9;border-radius:5px;color:#34533b;text-decoration:none;font-size:12px}
+.instructor-grid:has(.j74-instructor-card){grid-template-columns:repeat(2,minmax(0,1fr))!important;align-items:stretch}
+.instructor-grid .j74-instructor-card{grid-template-columns:1fr}
+.instructor-grid .j74-instructor-card img{aspect-ratio:16/9;object-fit:cover}
+.j74-video-list{display:grid;gap:17px;margin:24px 0}
+.j74-video-card{display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:center;padding:20px;border:1px solid #d5cec0;background:#fffdf8;border-radius:14px}
+.j74-video-art{aspect-ratio:16/9;position:relative;overflow:hidden;border-radius:9px;background:#202d26}
+.j74-video-art img{width:100%;height:100%;object-fit:cover;opacity:.72}
+.j74-video-art span{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:#b32431;color:#fff;border-radius:14px;padding:10px 18px;font-size:22px}
+.j74-video-card h2{font-size:29px}
+.j74-video-card p{color:#4b594d}
+.j74-video-card .j72-btn{margin-top:8px}
+@media(max-width:1150px){.j74-desktop-locations{display:none}}
+@media(max-width:830px){
+ .j74-county-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .j74-history-grid{grid-template-columns:1fr}
+ .j74-why-photo,.j74-video-card{grid-template-columns:1fr}
+}
+@media(max-width:680px){
+ .j74-home-about>.wrap{grid-template-columns:96px minmax(0,1fr);gap:17px}
+ .j74-home-about h2{font-size:29px}
+ .j74-home-about p{font-size:15px}
+ .j74-home-about .j72-btn{padding:11px 15px;font-size:12px}
+ .j74-brand-head{grid-template-columns:95px 1fr;gap:16px}
+ .j74-brand-head h2{font-size:29px}
+ .j74-brand-head p{font-size:15px}
+ .j74-origin{padding:20px}
+ .j74-county-cards,.j74-venue-directory{grid-template-columns:1fr}
+ .j74-directory-intro{display:block}
+ .j74-county-card{min-height:100px}
+ .j74-instructor-card{grid-template-columns:1fr;padding:20px}
+ .j74-instructor-card img{aspect-ratio:16/10}
+ .instructor-grid:has(.j74-instructor-card){grid-template-columns:1fr!important}
+ .j74-video-card{padding:14px;gap:15px}
+ .j74-video-card>div:last-child{padding:4px 6px 12px}
+ .j74-video-card .j72-btn{width:100%}
+ .j74-mobile-county summary{font-size:15px}
+}
+@media print{.j74-desktop-locations,.j74-full-menu{display:none!important}}
