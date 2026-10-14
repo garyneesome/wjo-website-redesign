@@ -1,22 +1,26 @@
-# WJO Website Redesign
+# World Jado Kuin Do Organisation — website redesign
 
-Interactive front-end concept for the **World Jado Kuin Do Organisation** website.
+## Latest release: V74
 
-## Current version: V73
+The portable website is built from the latest source, with approved class photography and the **supplied World WJO JADO logo** used for page branding and fallback images.
 
-The latest source and downloadable demo are on the main branch:
+**Downloads (after the successful GitHub Actions build):**
+- [Complete V74 ZIP — recommended for mobile](WJO_V74_DOWNLOAD.zip)
+- [Complete V74 single-file HTML](WJO_V74_SINGLE_FILE_DEMO.html)
+- [Release notes](releases/V74_RELEASE_NOTES.md)
 
-- [V73 HTML download](WJO_V73_SINGLE_FILE_DEMO.html) (GitHub's browser preview may reject this large, image-rich file; use **Download raw file**).
-- [V73 ZIP download](WJO_V73_DOWNLOAD.zip) (recommended: unzip and open the HTML in Chrome).
-- [What changed in V73](releases/V73_RELEASE_NOTES.md).
+V74 keeps the popular V73 guided class finder and its mobile quick-access menu. It adds the World Jado organisation background, original factual Jado explanation, accessible county-by-county venue menu, instructor photo panels, direct YouTube story links, corrected news imagery and more natural enquiry wording. The downloaded HTML is a local preview, **not** a booking or payment service.
 
-V73 makes the mobile Menu always accessible, replaces the tall decorative panel with functional first-class steps, adds a New-to-Jado guide and first-visit reassurance, and improves the interactive class chooser. Existing schools, photographs, grades, animals and committee tools are retained.
+**Source of truth:** `source/v74/experience.js`, `source/v74/experience.css`, `source/v74/world-wjo-logo.b64` (approved WJO artwork), and `tools/rebuild_v74.py`.
 
-**Important:** The old [private V72 hosted site](https://jado-kuin-do-demo.peachypark2.chatgpt.site) is a separate deployment and must not be treated as V73 unless it has been updated.
+Build: `python3 tools/rebuild_v74.py` (standard library).
+Test: `npm install --no-save jsdom@30.1.2 && node tools/test_v74.cjs`.
 
-Build locally: `python3 tools/rebuild_v73.py`
+The separate private hosted website was created for V72 and is **not** automatically deployed from this repository. Use the versioned downloads to evaluate V74.
 
-Editable additions: `source/v73/experience.js` and `source/v73/experience.css`.
+### V73 foundation preserved
+
+V73 introduced the practical three-step guide, beginner routes and fixed four-item mobile bar, with the entire V72 school and CMS dataset retained.
 
 ### V72 foundation preserved
 
