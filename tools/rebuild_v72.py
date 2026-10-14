@@ -28,7 +28,11 @@ def build():
     repairs=[]
     def repair(m):
         try:
-            data=base64.b64decode(m[2],validate=True)
+            payload=m[2]
+            # Python versions differ on excess padding; enforce a canonical shape first.
+            if len(payload)%4 or len(payload)-len(payload.rstrip('='))>2 or '=' in payload.rstrip('='):
+                raise ValueError('Non-canonical legacy image encoding')
+            data=base64.b64decode(payload,validate=True)
             digest=hashlib.sha256(data).hexdigest()[:20]
             if digest in damaged:return originals[damaged[digest]]
             return m[0]
