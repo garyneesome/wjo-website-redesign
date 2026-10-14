@@ -2,19 +2,27 @@
 
 Interactive front-end concept for the **World Jado Kuin Do Organisation** website.
 
-## Current version
+## Current version: V73
 
-**V72**
+The latest source and downloadable demo are on the main branch:
 
-[Test V72](https://jado-kuin-do-demo.peachypark2.chatgpt.site) — private hosted test site.
+- [V73 HTML download](WJO_V73_SINGLE_FILE_DEMO.html) (GitHub's browser preview may reject this large, image-rich file; use **Download raw file**).
+- [V73 ZIP download](WJO_V73_DOWNLOAD.zip) (recommended: unzip and open the HTML in Chrome).
+- [What changed in V73](releases/V73_RELEASE_NOTES.md).
 
-V72 adds the complete guided class journey, venue visit planning, remembered My Jado school, internal member resources and animal pages. Public content stays inside the demo. Sample enquiries and checkout do not send bookings or take payments.
+V73 makes the mobile Menu always accessible, replaces the tall decorative panel with functional first-class steps, adds a New-to-Jado guide and first-visit reassurance, and improves the interactive class chooser. Existing schools, photographs, grades, animals and committee tools are retained.
 
-Build: `python3 tools/rebuild_v72.py` (Python standard library only).
+**Important:** The old [private V72 hosted site](https://jado-kuin-do-demo.peachypark2.chatgpt.site) is a separate deployment and must not be treated as V73 unless it has been updated.
 
-Editable source: `source/v72/journey.js` and `source/v72/journey.css`.
+Build locally: `python3 tools/rebuild_v73.py`
 
-Release details and verification limits: `releases/V72_RELEASE_NOTES.md`.
+Editable additions: `source/v73/experience.js` and `source/v73/experience.css`.
+
+### V72 foundation preserved
+
+V72 introduced the complete guided class journey, venue visit planning, remembered My Jado school, internal member resources and animal pages. Sample enquiries and checkout do not transmit anything or take payment.
+
+Build: `python3 tools/rebuild_v72.py`. Source: `source/v72/`. Release notes: `releases/V72_RELEASE_NOTES.md`.
 
 ### V71 foundation preserved
 
