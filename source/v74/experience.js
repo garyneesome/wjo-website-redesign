@@ -225,3 +225,57 @@ routes.news=function(){
  return j74PreviousNews().replace(/<div class="cms-public-note"><\/div>/,
  '<div class="j74-news-explainer"><h2>News from across Jado</h2><p>Updates and stories about WJO students, instructors and local communities. Check individual dates when planning events.</p></div>');
 };
+
+
+// Curated public articles follow published WJO titles and dates. Committee-added posts still work.
+const J74_VERIFIED_NEWS=[
+ {id:'official-grading-sep-oct',title:'September and October at Jado Kuin Do',date:'16 September 2026',category:'Gradings',
+  text:'WJO explains how students can prepare for gradings: keep attending, practise stance and technique, listen to instructors and remember that progression continues beyond Black Belt through Level and Degree gradings.',
+  image:'assets/photos/brackley-belt-celebration.webp'},
+ {id:'official-reflection-2025',title:'2025 reflection letter from Grand Master Ogden',date:'17 December 2025',category:'From the founder',
+  text:'Grand Master Jake Ogden reflects on the commitment of Jado students and instructors, the organisation’s family-led character and its focus on healthier communities, personal growth, wellbeing and unity.',
+  image:''},
+ {id:'official-social-development',title:'Social Development and Character Building',date:'',category:'Articles',
+  text:'WJO describes Jado Kuin Do as a way to develop personal and social skills as well as martial techniques, placing confidence, shared values, responsibility and a sense of belonging at the centre of its community.',
+  image:'assets/photos/brackley-partner-practice.webp'},
+ {id:'official-january-newsletter',title:'Jado January Newsletter',date:'January 2026',category:'WJO news',
+  text:'Organisation updates from the January newsletter, including winter grading preparations and opportunities for members to participate in the wider WJO community.',
+  image:''}
+];
+function j74EditorialImage(item){
+ return item.image?resolveAssetPath(item.image):j74WorldLogo();
+}
+function j74EditorialCard(item){
+ return '<a class="j74-editorial-card" href="#article?id='+encodeURIComponent(item.id)+'">'+
+ '<img src="'+j74EditorialImage(item)+'" alt="'+(item.image?'Jado students at training':'World Jado Organisation logo')+'" loading="lazy">'+
+ '<div><span class="j72-eyebrow">'+jEsc(item.category||'WJO NEWS')+'</span><h2>'+jEsc(item.title)+'</h2>'+
+ '<p>'+jEsc(item.text||item.summary||'')+'</p><span class="j74-article-meta">'+jEsc(item.date||'')+'</span><strong>Read story →</strong></div></a>';
+}
+const j74CmsPublic=()=>cmsCollection('news').filter(x=>x.seed===false&&String(x.status||'').toLowerCase()==='published').map(x=>({
+ id:x.id,title:x.title,category:x.category||'WJO News',date:cmsFmtDate(x.date),text:x.summary,body:x.body,
+ image:(x.image&&/^assets\/photos\//.test(x.image))?x.image:''
+}));
+routes.news=()=>jPage('News from Jado.','Training, gradings and community stories from the World Jado Organisation.',
+ '<div class="j74-editorials">'+[...j74CmsPublic(),...J74_VERIFIED_NEWS].map(j74EditorialCard).join('')+'</div>');
+routes.article=()=>{
+ const id=hashParams().get('id');
+ const story=[...j74CmsPublic(),...J74_VERIFIED_NEWS].find(x=>x.id===id);
+ if(!story)return jPage('Story not found.','Browse the latest Jado news.',jBtn('news','All WJO news'));
+ return jPage(story.title,story.date||story.category,
+ '<div class="j74-article"><div class="j74-article-photo"><img src="'+j74EditorialImage(story)+'" alt="'+(story.image?'Jado students':'World Jado Organisation logo')+'"></div>'+
+ '<div class="j74-article-copy"><span class="j72-eyebrow">'+jEsc(story.category||'WJO news')+'</span><h2>'+jEsc(story.title)+'</h2>'+
+ '<p>'+jEsc(story.body||story.text||'')+'</p><p class="j72-small">This is a concise account of the published WJO story, presented within this website.</p>'+
+ '<div class="j72-actions">'+jBtn('news','More Jado news',true)+jBtn('events','Events & gradings',true)+'</div></div></div>',
+ ['news','Jado news']);
+};
+const j74CleanImages=jCleanDom;
+jCleanDom=function(){
+ j74CleanImages();
+ // Retire the smeared legacy article background in homepage teasers.
+ document.querySelectorAll('.news-card').forEach(card=>{
+  const title=card.querySelector('h3')?.textContent||'';
+  if(/social development and character building/i.test(title)){
+   card.style.setProperty('--newsbg',"url('"+resolveAssetPath('assets/photos/brackley-partner-practice.webp')+"')");
+  }
+ });
+};
