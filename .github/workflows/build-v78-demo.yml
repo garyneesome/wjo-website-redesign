@@ -1,0 +1,84 @@
+name: Build WJO V78 portable demo
+on:
+  push:
+    paths:
+      - 'source/v78/**'
+      - 'tools/rebuild_v78.py'
+      - 'tools/test_v78.cjs'
+      - '.github/workflows/build-v78-demo.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: wjo-v78-build
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify JavaScript parses
+        run: node --check source/v78/experience.js
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install background-only logo transparency dependency
+        run: python -m pip install Pillow
+      - name: Build self-contained V78 HTML and ZIP
+        run: python3 tools/rebuild_v78.py
+      - name: Verify brand and generated archives
+        run: |
+          python3 - <<'PY'
+          import zipfile,base64
+          from pathlib import Path
+          raw=base64.b64decode(Path('source/v74/world-wjo-logo.b64').read_text().strip(),validate=True)
+          assert raw[:8]==b'\x89PNG\r\n\x1a\n'
+          h=Path('WJO_V78_SINGLE_FILE_DEMO.html')
+          z=Path('WJO_V78_DOWNLOAD.zip')
+          web=Path('dist/index.html')
+          assert h.stat().st_size>1000000
+          assert z.stat().st_size>1000000
+          assert web.stat().st_size>100000
+          t=web.read_text()
+          for key in ["routes['school-directory']", "j77ProductGallery", "j77-primary-picture", "j75-brand", "WJO_V78_SHOP_VIEWS", "V78"]:
+              assert key in t,key
+          with zipfile.ZipFile(z) as zz:
+              assert zz.testzip() is None
+              assert 'WJO_V78_SINGLE_FILE_DEMO.html' in zz.namelist()
+          PY
+      - name: Install lightweight DOM test dependency
+        run: npm install --no-save --ignore-scripts jsdom@30.1.2
+      - name: Exercise Jado guidance, menus, school photos and videos
+        run: node tools/test_v78.cjs dist/index.html
+      - name: Save downloadable build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: WJO-V78-downloads
+          path: |
+            WJO_V78_SINGLE_FILE_DEMO.html
+            WJO_V78_DOWNLOAD.zip
+          retention-days: 30
+      - name: Commit V78 downloads to main without ZIP rebase conflicts
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          cp WJO_V78_SINGLE_FILE_DEMO.html "$RUNNER_TEMP/WJO_V78_SINGLE_FILE_DEMO.html"
+          cp WJO_V78_DOWNLOAD.zip "$RUNNER_TEMP/WJO_V78_DOWNLOAD.zip"
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            cp "$RUNNER_TEMP/WJO_V78_SINGLE_FILE_DEMO.html" WJO_V78_SINGLE_FILE_DEMO.html
+            cp "$RUNNER_TEMP/WJO_V78_DOWNLOAD.zip" WJO_V78_DOWNLOAD.zip
+            git add -f WJO_V78_SINGLE_FILE_DEMO.html WJO_V78_DOWNLOAD.zip
+            if git diff --cached --quiet; then
+              echo "V78 downloads are already published"
+              exit 0
+            fi
+            git commit -m 'Build WJO V78 portable HTML and ZIP'
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            echo "Remote moved; retrying without conflicting with generated ZIP"
+          done
+          exit 1
