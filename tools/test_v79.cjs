@@ -55,7 +55,7 @@ try{
   assert(d.querySelectorAll('main details').length>=7);
  });
  test('Original WJO site topics have internal routes',()=>{
-  const required=['home','about','vision','jado','leadership','faq','grade-order','safe-practice','safeguarding-children',
+  const required=['home','about','vision','jado','committee','faq','grade-order','safe-practice','safeguarding-children',
    'safeguarding-adults','programmes','super-js','confident-kidz','adults','chi','school-directory',
    'community','news','events','contact','shop','members','training-app','privacy-notice','cookie-policy'];
   const routes=w.eval('Object.keys(routes)');
