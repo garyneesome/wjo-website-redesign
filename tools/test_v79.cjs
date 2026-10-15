@@ -147,7 +147,7 @@ try{
   assert.equal(d.querySelectorAll('.j76-view-select').length,0);
   assert.equal(d.querySelectorAll('.j76-view-close').length,0);
   const buttons=[...d.querySelectorAll('.j77-gallery-thumb')];
-  const data=w.WJO_V79_SHOP_VIEWS||{};
+  const data=w.WJO_V77_SHOP_VIEWS||{};
   const expected=1+(data.sp1a||[]).length;
   assert.equal(buttons.length,expected===1?0:expected);
   if(buttons.length>1){
@@ -160,7 +160,7 @@ try{
  });
 
  test('Original WJO timetable imports all published sessions across seven regions',()=>{
-   const source=w.WJO_V79_TIMETABLES;
+   const source=w.WJO_V78_TIMETABLES;
    assert.equal(Object.keys(source.sources).length,7);
    assert.equal(Object.keys(source.venues).length,31);
    assert.equal(Object.values(source.venues).reduce((n,s)=>n+s.sessions.length,0),80);
