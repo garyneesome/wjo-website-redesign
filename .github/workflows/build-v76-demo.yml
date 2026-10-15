@@ -1,0 +1,70 @@
+name: Build WJO V76 portable demo
+on:
+  push:
+    paths:
+      - 'source/v76/**'
+      - 'tools/rebuild_v76.py'
+      - 'tools/test_v76.cjs'
+      - '.github/workflows/build-v76-demo.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: wjo-v76-build
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify JavaScript parses
+        run: node --check source/v76/experience.js
+      - name: Install background-only logo transparency dependency
+        run: python3 -m pip install --user Pillow
+      - name: Build self-contained V76 HTML and ZIP
+        run: python3 tools/rebuild_v76.py
+      - name: Verify brand and generated archives
+        run: |
+          python3 - <<'PY'
+          import zipfile,base64
+          from pathlib import Path
+          raw=base64.b64decode(Path('source/v74/world-wjo-logo.b64').read_text().strip(),validate=True)
+          assert raw[:8]==b'\x89PNG\r\n\x1a\n'
+          h=Path('WJO_V76_SINGLE_FILE_DEMO.html')
+          z=Path('WJO_V76_DOWNLOAD.zip')
+          web=Path('dist/index.html')
+          assert h.stat().st_size>1000000
+          assert z.stat().st_size>1000000
+          assert web.stat().st_size>100000
+          t=web.read_text()
+          for key in ["routes['school-directory']", "j76ProductGallery", "j76-gallery-main", "j75-brand", "WJO_V74_LOGO", "V76"]:
+              assert key in t,key
+          with zipfile.ZipFile(z) as zz:
+              assert zz.testzip() is None
+              assert 'WJO_V76_SINGLE_FILE_DEMO.html' in zz.namelist()
+          PY
+      - name: Install lightweight DOM test dependency
+        run: npm install --no-save --ignore-scripts jsdom@30.1.2
+      - name: Exercise Jado guidance, menus, school photos and videos
+        run: node tools/test_v76.cjs dist/index.html
+      - name: Save downloadable build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: WJO-V76-downloads
+          path: |
+            WJO_V76_SINGLE_FILE_DEMO.html
+            WJO_V76_DOWNLOAD.zip
+          retention-days: 30
+      - name: Commit V76 downloads to main
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f WJO_V76_SINGLE_FILE_DEMO.html WJO_V76_DOWNLOAD.zip
+          if ! git diff --cached --quiet; then
+            git commit -m 'Build WJO V76 portable HTML and ZIP'
+            # Rebuilding updates tracked dist/index.html; reset only uncommitted build output.
+            git reset --hard HEAD
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
