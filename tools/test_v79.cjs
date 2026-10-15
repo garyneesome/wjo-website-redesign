@@ -33,7 +33,7 @@ try{
   w.closeMenu();
  });
  test('Guided first-class journey from V73 and school data retained',()=>{
-  go('home');assert(d.querySelector('.v73-path-guide'));assert(d.querySelector('.v71-ribbon'));
+  go('home');assert(d.querySelector('.v70-journey'));assert(d.querySelector('.v71-ribbon'));
   go('start');w.jWho('child');go('start?step=2');
   let f=d.querySelector('main form');f.elements.ages.value='8';f.elements.town.value='Brackley';
   w.j73Fit({target:f,preventDefault(){}});
