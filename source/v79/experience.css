@@ -1,0 +1,73 @@
+/* V79: one usable menu and generous real people photos, with readable original WJO story posters. */
+.j79-menu.mobile-overlay{position:fixed!important;inset:0!important;z-index:999999!important;overflow-y:auto!important;overscroll-behavior:contain;background:#0d1010!important;opacity:1!important;isolation:isolate;color:#fff!important;padding:0 max(16px,env(safe-area-inset-right)) calc(35px + env(safe-area-inset-bottom));}
+.j79-menu:before{display:none!important}
+.j79-menu .mobile-head{position:sticky;top:0;background:#0d1010!important;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:20px 6px!important;border-bottom:1px solid #383d3b}
+.j79-menu .mobile-head .j75-brand{flex:1;min-width:0}
+.j79-menu .mobile-head .j75-brand img{height:57px!important;width:57px!important;min-width:57px!important;max-width:57px!important}
+.j79-menu .mobile-head .j75-brand .brand-v38-copy b{font-size:12px!important;line-height:1.2!important}
+.j79-menu .mobile-head button.close{position:static!important;flex:0 0 49px;min-width:49px;min-height:49px;font-size:25px;border:1.5px solid #68746e;border-radius:50%;color:#fff!important;background:#252c28!important;cursor:pointer}
+.j79-menu-nav{display:block!important;max-width:760px;margin:0 auto;padding:12px 1px 25px}
+.j79-menu-nav a,.j79-menu-nav summary{box-sizing:border-box;min-height:56px;display:flex;align-items:center;justify-content:space-between;gap:14px;text-decoration:none!important;font-size:clamp(17px,4.5vw,20px)!important;font-weight:740;color:#fff!important;padding:13px 10px;border-bottom:1px solid #39443e;cursor:pointer;line-height:1.35!important}
+.j79-menu-nav a>span,.j79-menu-nav summary>span{flex:0 0 auto;color:#f0b7b3;font-weight:800;font-size:19px}
+.j79-menu-nav a:hover,.j79-menu-nav summary:hover{background:#213329!important}
+.j79-menu-nav summary{list-style:none}
+.j79-menu-nav summary::-webkit-details-marker{display:none}
+.j79-menu-nav details[open]>summary{color:#fff!important;background:#244233;border-bottom:2px solid #af2835}
+.j79-menu-nav details[open]>summary>span{transform:rotate(180deg)}
+.j79-menu-contents{padding:3px 0 12px 17px;border-left:3px solid #a32936}
+.j79-menu-contents .j79-main-link{font-size:16px!important;min-height:48px!important}
+.j79-county summary{font-size:15px!important;min-height:49px!important;padding-left:12px!important}
+.j79-county-items{padding-left:16px}
+.j79-county-items a{font-size:14px!important;line-height:1.35!important;padding:10px 9px!important;min-height:43px!important;color:#e3e9df!important}
+.j79-menu-directory{margin-top:23px;padding:7px 13px;border:2px solid #b74750;border-radius:10px;background:#261d20}
+.j79-menu-directory .j79-main-link{border-bottom:0;color:#fff!important}
+.j79-menu-nav :focus-visible{outline:3px solid #f3b474;outline-offset:2px!important}
+/* Instructor portraits and original five Jado animal character placeholders */
+.j74-instructor-directory{gap:22px!important}
+.j74-instructor-card{grid-template-columns:minmax(280px,48%) minmax(0,1fr)!important;gap:clamp(20px,4vw,46px)!important;padding:clamp(19px,3vw,37px)!important;align-items:start}
+.j74-instructor-card figure{margin:0!important;min-width:0;width:100%!important}
+.j74-instructor-card figure img{display:block!important;width:100%!important;height:auto!important;aspect-ratio:4/4!important;min-height:315px!important;max-height:520px!important;object-fit:contain!important;object-position:center center!important;background:#f0ede4!important;padding:0!important;border-radius:7px!important}
+.j74-instructor-card figure:has(img[src*="mascot-"]) img{object-fit:cover!important;object-position:center 18%!important}
+.j74-instructor-card figcaption{font-size:13px!important;color:#465649!important;line-height:1.5!important;padding:9px 0 0!important}
+.j74-instructor-card h3{font-size:clamp(26px,3vw,37px)!important;line-height:1.15!important;letter-spacing:-.03em}
+.j74-instructor-card .j74-instructor-role{font-size:15px!important;line-height:1.55!important}
+.j74-instructor-card p{font-size:16px!important;line-height:1.7!important}
+.j74-instructor-card details summary{font-size:16px;font-weight:750;color:#263c2f;cursor:pointer;padding:9px 0;text-decoration:underline;text-underline-offset:3px}
+.j74-instructor-card .j74-instructor-locations a{min-height:43px;display:inline-flex;align-items:center}
+/* Actual original testimonial-video previews, rather than play icons with no photographs */
+.j79-video-stories{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:stretch;margin-top:22px}
+.j79-video-story{display:flex;flex-direction:column;text-decoration:none!important;color:#202f24!important;border:1px solid #c9c7bd;border-radius:12px;background:#fffdf7;overflow:hidden;box-shadow:0 5px 13px #00000012}
+.j79-video-poster{position:relative;background:#101715;overflow:hidden;aspect-ratio:16/10;display:grid;place-items:center}
+.j79-video-poster img{width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block}
+.j79-video-poster:after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,#0d17154f,transparent 65%);pointer-events:none}
+.j79-video-play{position:absolute;z-index:2;top:50%;left:50%;transform:translate(-50%,-50%);background:#bd2534;color:#fff;border:2px solid #ffffffc9;border-radius:50%;width:66px;height:66px;display:grid;place-items:center;padding-left:5px;box-shadow:0 6px 24px #0007;font-size:25px}
+.j79-video-copy{padding:20px 20px 23px;display:flex;flex-direction:column;flex:1}
+.j79-video-copy small{color:#5d645b!important;font-size:14px}
+.j79-video-copy h3{font-size:clamp(23px,2.5vw,30px)!important;line-height:1.2!important;margin:12px 0 25px!important;color:#1d3226!important}
+.j79-video-copy strong{margin-top:auto;color:#9a2632!important;font-size:15px}
+.j79-video-story:hover{border-color:#b12d3b;box-shadow:0 8px 22px #0002}
+.j79-video-story:focus-visible{outline:3px solid #e29f5c;outline-offset:4px}
+.v70-home .v70-story-links{display:none!important}
+/* Only an optional concept/try-on mock-up; official shop photos remain product gallery source. */
+.j79-ai-uniform-panel{background:#e9eee8;padding:35px 0;border-top:1px solid #c7d1c6;border-bottom:1px solid #c7d1c6}
+.j79-ai-uniform-layout{display:grid;grid-template-columns:220px 1fr;align-items:center;gap:22px}
+.j79-ai-uniform-layout img{display:block;width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:8px;box-shadow:0 3px 11px #0003}
+.j79-ai-uniform-layout h2{font-size:clamp(23px,2.8vw,35px)!important;color:#233629;margin:5px 0 8px}
+.j79-ai-uniform-layout p{font-size:14px!important;line-height:1.5!important;color:#48614e!important;margin:0}
+.j79-ai-uniform-layout .j79-ai-notice{font-size:12px!important;line-height:1.4!important;margin-top:10px!important;font-weight:740}
+@media(max-width:900px){
+ .j79-video-stories{grid-template-columns:1fr 1fr}
+ .j74-instructor-card{grid-template-columns:1fr!important;gap:22px!important}
+ .j74-instructor-card figure img{width:100%!important;min-height:380px!important;max-height:540px!important;aspect-ratio:5/4!important}
+}
+@media(max-width:650px){
+ .j79-video-stories{grid-template-columns:1fr!important;gap:15px}
+ .j79-video-poster{aspect-ratio:16/9}
+ .j79-video-copy{padding:20px}
+ .j74-instructor-card figure img{min-height:325px!important;max-height:500px!important;aspect-ratio:4/3!important}
+ .j74-instructor-card{padding:20px!important}
+ .j79-ai-uniform-layout{grid-template-columns:1fr!important;gap:15px}
+ .j79-ai-uniform-layout img{max-width:340px}
+ .j79-menu-nav{padding-left:0;padding-right:0}
+}
+@media(prefers-reduced-motion:reduce){.j79-menu-nav *{transition:none!important}}
