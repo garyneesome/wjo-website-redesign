@@ -1,0 +1,9 @@
+/* V78: published WJO timetable audit, session verification, Market Harborough ambiguity. */
+.j78-area-warning{border:2px solid #a56f27;border-radius:9px;background:#fff5e6;color:#3d301c;padding:16px 19px;margin:15px 0}
+.j78-area-warning strong{display:block;font-size:17px;color:#513717;margin-bottom:5px}
+.j78-area-warning p{margin:6px 0 0;font-size:14px;line-height:1.6;color:#4d3b24}
+.j78-area-label{display:block!important;margin:13px 0!important;padding:9px 12px;border-left:4px solid #b07a29;background:#fff2de;color:#4b381b!important;font-size:13px!important;font-weight:750}
+.j78-times-footnote{color:#66736a!important;font-size:13px!important;line-height:1.6;margin-top:14px}
+.j72-session-list article h3{margin:5px 0;font-size:20px}
+.j72-session-list article>div>strong{color:#e4a5a1;font-size:17px;letter-spacing:.02em}
+@media(max-width:650px){.j78-area-warning{padding:13px}.j72-session-list article>div>strong{font-size:16px}}
