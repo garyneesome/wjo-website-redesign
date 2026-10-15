@@ -128,3 +128,33 @@ jCleanDom=function(){
   };
  });
 };
+
+
+// One genuine AI-generated *illustration* is available as a shop try-on concept.
+// It is not an authoritative side/rear photograph of any physical merchandise.
+const j79ShopBefore=routes.shop;
+routes.shop=function(){
+ let html=j79ShopBefore();
+ const art=window.WJO_V79_AI_IMAGE;
+ if(!art)return html;
+ const feature='<section class="j79-ai-uniform-panel" aria-label="AI uniform-wearing illustration"><div class="wrap j79-ai-uniform-layout">'+
+ '<img src="'+art+'" alt="AI-created example of adults wearing black martial arts uniforms with red trim during a class">'+
+ '<div><span class="j72-eyebrow">SEE THE UNIFORM IN CONTEXT</span><h2>Imagine your first class.</h2>'+
+ '<p>Here is an AI-created scene showing the style of black martial arts uniforms worn at a welcoming family class.</p>'+
+ '<p class="j79-ai-notice">Illustration only: patches, fit and construction may differ. The official photograph on each product card is the correct reference for what you are buying.</p></div></div></section>';
+ const token='<section id="shop-products"';
+ if(html.includes(token))return html.replace(token,feature+token);
+ const token2='<div id="shop-products"';
+ if(html.includes(token2))return html.replace(token2,feature+token2);
+ return html;
+};
+const j79OfficialAltImages=j77AltImages;
+j77AltImages=function(p){
+ const source=j79OfficialAltImages(p);
+ const kind=String(p.category||'').toLowerCase();
+ if(window.WJO_V79_AI_IMAGE && /uniform/.test(kind)){
+  source.push({label:'AI wearing example',type:'ai',src:window.WJO_V79_AI_IMAGE,
+   desc:'AI illustration only. It is not a verified image of this exact product; details may differ.'});
+ }
+ return source;
+};
