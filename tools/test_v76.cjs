@@ -113,7 +113,7 @@ try{
  test('Product gallery shows original and authentic detail crops without inventing angles',()=>{
   go('product?id=sp1a');
   const mainImage=d.querySelector('.j76-gallery-main img');
-  assert(mainImage&&mainImage.src.includes('SP1A-2'));
+  assert(mainImage&&mainImage.src===w.eval('getProduct("sp1a").image'));
   const controls=d.querySelectorAll('.j76-view-select');assert.equal(controls.length,3);
   assert.equal(controls[0].getAttribute('aria-pressed'),'true');
   w.j76SelectView(controls[1]);
