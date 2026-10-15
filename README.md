@@ -1,22 +1,25 @@
-# World Jado Kuin Do Organisation — website redesign
+# World Jado Kuin Do Organisation — Website redesign
 
-## Latest release: V74
+## Latest version: V75 (family-focused experience)
 
-The portable website is built from the latest source, with approved class photography and the **supplied World WJO JADO logo** used for page branding and fallback images.
+**Test the complete demo**
+- [V75 ZIP — recommended for Android](WJO_V75_DOWNLOAD.zip)
+- [V75 single-file HTML](WJO_V75_SINGLE_FILE_DEMO.html)
+- [V75 improvements and full original-WJO-site coverage audit](releases/V75_RELEASE_NOTES.md)
 
-**Downloads (after the successful GitHub Actions build):**
-- [Complete V74 ZIP — recommended for mobile](WJO_V74_DOWNLOAD.zip)
-- [Complete V74 single-file HTML](WJO_V74_SINGLE_FILE_DEMO.html)
-- [Release notes](releases/V74_RELEASE_NOTES.md)
+V75 **keeps the guided V73–V74 school chooser** but improves the World Jado branding and warm family welcome. It uses the supplied WJO globe in header/footer/menu, makes interactive cards look clickable, brings the WJO FAQ, community news and Tai Chi into the demo, and links to existing safeguarding and student resources.
 
-V74 keeps the popular V73 guided class finder and its mobile quick-access menu. It adds the World Jado organisation background, original factual Jado explanation, accessible county-by-county venue menu, instructor photo panels, direct YouTube story links, corrected news imagery and more natural enquiry wording. The downloaded HTML is a local preview, **not** a booking or payment service.
+V75 is an **offline browser preview**: class enquiries do not send messages, checkout takes no payments and member login is not connected. The old separately hosted preview may still serve an earlier version.
 
-**Source of truth:** `source/v74/experience.js`, `source/v74/experience.css`, `source/v74/world-wjo-logo.b64` (approved WJO artwork), and `tools/rebuild_v74.py`.
+Build: python3 tools/rebuild_v75.py
 
-Build: `python3 tools/rebuild_v74.py` (standard library).
-Test: `npm install --no-save jsdom@30.1.2 && node tools/test_v74.cjs`.
+Browser tests: npm install --no-save --ignore-scripts jsdom@30.1.2 && node tools/test_v75.cjs
 
-The separate private hosted website was created for V72 and is **not** automatically deployed from this repository. Use the versioned downloads to evaluate V74.
+Source: source/v75/experience.js and source/v75/experience.css; earlier version sources are retained.
+
+### V74 foundation preserved
+
+V74 restored real WJO history, county and venue menus, approved class images, teaching biographies and direct YouTube video links. [V74 release notes](releases/V74_RELEASE_NOTES.md).
 
 ### V73 foundation preserved
 
