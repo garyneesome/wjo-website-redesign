@@ -1,22 +1,19 @@
-# World Jado Kuin Do Organisation — Website redesign
+# World Jado Kuin Do Organisation — website redesign
 
-## Latest test version: V78
+## New version: V79
 
-**Download after successful build:**
-- [V78 complete ZIP — recommended for Android](WJO_V78_DOWNLOAD.zip)
-- [V78 single-file HTML](WJO_V78_SINGLE_FILE_DEMO.html)
-- [V78 changes and original WJO timetable evidence](releases/V78_RELEASE_NOTES.md)
+- [Complete V79 ZIP — recommended for mobile](WJO_V79_DOWNLOAD.zip)
+- [V79 single-file offline HTML](WJO_V79_SINGLE_FILE_DEMO.html)
+- [V79 release notes](releases/V79_RELEASE_NOTES.md)
 
-All seven WJO regional timetable pages were reviewed on **15 October 2026**. V78 now includes the published days, starting **and finishing times**, age/class labels and levels for every listed session: **80 entries across 31 school or online records**. That includes 2 Market Harborough sessions displayed against both listed halls with **an explicit venue-to-be-confirmed warning** because the live county page does not name the exact hall. The full WJO-published timetable is also available inside each county page.
+**V79** focuses on making WJO easier to navigate: one simple mobile menu with expandable county/school entries, a clearly accessible **WJO Committee**, a larger gallery of people with animal imagery when a genuine portrait is missing, and photographic previews of the three original WJO testimonial videos. The repeated homepage guidance card has been removed while the age-and-location guided first-class journey remains.
 
-V78 retains V77's original product photographs, square Five Animals cards, guided first-class pathway and mobile improvements, family-friendly information, real venue images, and corrected WJO logo.
+The shop also includes **one labelled AI-generated uniform-wearing illustration for review**. This is an illustration, not a product-specific side or rear photograph; the 31 official product pictures and any confirmed Jado Online alternative photos remain the authoritative shopping images.
 
-**Please note:** These are the class times *published on the original WJO website*, not live availability. Ask the instructor to verify the current session before travelling. The demo does not send enquiries or take payments.
+All seven regions' published timetables and correct WJO globe logo from V78 remain. Times are checked against the live WJO source on 15 October 2026, but users should confirm them with their school.
 
-Rebuild: `python3 tools/rebuild_v78.py` (requires Pillow).
-Browser checks: `node tools/test_v78.cjs dist/index.html` (requires jsdom).
+A local demo only: no emails, booking requests or payments are submitted.
 
-### Previous releases
-- [V77 notes](releases/V77_RELEASE_NOTES.md)
-- [V76 notes](releases/V76_RELEASE_NOTES.md)
-- [V75 notes](releases/V75_RELEASE_NOTES.md)
+Build: `python3 tools/rebuild_v79.py`; checks: `node tools/test_v79.cjs dist/index.html` (Pillow and jsdom needed).
+
+[See V78 timetable release](releases/V78_RELEASE_NOTES.md).
