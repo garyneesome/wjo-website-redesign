@@ -19,7 +19,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Verify JavaScript parses
-        run: node --check source/v78/experience.js
+        run: node --check source/v78/timetables.js
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -41,7 +41,7 @@ jobs:
           assert z.stat().st_size>1000000
           assert web.stat().st_size>100000
           t=web.read_text()
-          for key in ["routes['school-directory']", "j77ProductGallery", "j77-primary-picture", "j75-brand", "WJO_V78_SHOP_VIEWS", "V78"]:
+          for key in ["routes['school-directory']", "j78ApplyTimetables", "j78-county-rows", "j75-brand", "WJO_V78_TIMETABLES", "V78"]:
               assert key in t,key
           with zipfile.ZipFile(z) as zz:
               assert zz.testzip() is None
