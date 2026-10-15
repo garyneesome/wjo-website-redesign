@@ -11,7 +11,7 @@ j74InstructorMedia=function(p){
     return {src:j74LocalImage(source),alt:'Photograph of '+String(p.name||'WJO instructor'),note:'Instructor photograph'};
  }
  const animal=j79Mascot(p);
- return {src:resolveAssetPath(animal),alt:'Jado '+animal.match(/mascot-([a-z]+)/)[1]+' character illustration',note:'Jado animal illustration'};
+ return {src:resolveAssetPath(animal),alt:'Jado '+animal.match(/mascot-([a-z]+)/)[1]+' animal character illustration',note:'Jado animal illustration'};
 };
 // The original creator/founder and committee portraits remain from the verified image library.
 const j79OriginalLeadership=routes.leadership;
