@@ -133,3 +133,11 @@ routes.county=function(){
  html=html.replace('<div class="j72-actions">',detail+'<div class="j72-actions">');
  return html;
 };
+
+
+// The inherited V77 render hook sets its version label; V78 owns the final public title.
+const j78PreviousRender=render;
+render=function(){
+ j78PreviousRender();
+ document.title=document.title.replace(/V7[2-7]/g,'V78');
+};
