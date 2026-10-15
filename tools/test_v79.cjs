@@ -261,12 +261,12 @@ try{
  test('Missing instructor portraits use Jado animal cards instead of WJO logo',()=>{
    const name='Sifu Mark Desborough';
    const pic=w.j74InstructorMedia({name,photo:''});
-   assert(pic.src.includes('mascot-'),pic.src.slice(0,100));
+   assert.equal(pic.src,w.eval('resolveAssetPath(j79Mascot({name:"Sifu Mark Desborough"}))'));
    assert(pic.alt.includes('animal'));
    go('instructors');
    const card=[...d.querySelectorAll('.j74-instructor-card')].find(c=>c.textContent.includes(name));
    assert(card,'Mark Desborough card exists');
-   assert(card.querySelector('img').getAttribute('src').includes('mascot-'));
+   assert.equal(card.querySelector('img').getAttribute('src'),w.eval('resolveAssetPath(j79Mascot({name:"Sifu Mark Desborough"}))'));
    const founder=[...d.querySelectorAll('.j74-instructor-card')].find(c=>c.textContent.includes('Grand Master Jake Ogden'));
    assert(founder&&founder.querySelector('img'));
  });
