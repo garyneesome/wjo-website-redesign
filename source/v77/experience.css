@@ -1,0 +1,83 @@
+/* V77 — square animal panels, readable steps, authentic gallery photographs and unclipped shop cards. */
+/* Do not fake alternative views with CSS zoom/crop/perspective. */
+.v70-home .v70-animal-grid a,
+.v70-home .v70-animal-grid a:first-child,
+.v70-home .v70-animal-grid a:last-child{
+ border-radius:5px!important;overflow:hidden!important;box-shadow:0 5px 15px #0003!important;
+ border:1px solid #526153!important;
+}
+.v70-home .v70-animal-grid img{display:block;width:100%;height:100%;min-height:0;aspect-ratio:4/5;object-fit:cover;object-position:center 28%;border-radius:0!important}
+.v70-home .v70-animal-grid a>span{
+ background:#344038!important;color:#fff!important;font-size:17px;
+ font-weight:800;display:flex;align-items:center;gap:10px;min-height:61px;
+ border-radius:0!important
+}
+.v70-home .v70-animal-grid a:hover,
+.v70-home .v70-animal-grid a:focus-visible{outline:3px solid #edbfb1;outline-offset:2px}
+.v70-home .v70-animals .v70-button.secondary,
+.v70-home .v70-animals a.v70-button.secondary,
+.v70-home .v70-animals .j72-btn.secondary,
+.v70-home .v70-animals a.j72-btn.secondary{
+ background:#fffaf4!important;color:#1c2d24!important;
+ border:2px solid #a4b0a5!important;box-shadow:0 4px 0 #9ca99a!important;
+ opacity:1!important;text-shadow:none!important;font-weight:850!important;
+}
+.v70-home .v70-animals .v70-button.secondary span,
+.v70-home .v70-animals a.v70-button.secondary span{color:#24372b!important}
+.v70-home .v70-choices button>span,
+.v70-home .v73-step-num,.shop-cat-index,
+.value-grid .value-card .num,
+.v70-home .v73-benefits article>span{display:none!important}
+.v70-home .v70-choices button{padding:19px 22px!important}
+.v70-home .v73-path-guide h4{color:#fffdf6!important}
+.v70-home .v73-path-guide p{color:#e3ebe2!important;opacity:1!important}
+.v70-home .v73-path-guide a{color:#fff6ef!important;text-decoration:underline;text-underline-offset:3px}
+.v70-home .v73-path-guide li{grid-template-columns:minmax(0,1fr)!important}
+.v70-home .v73-path-guide{background:#20382d!important}
+.v70-animals .v70-actions{gap:12px}
+.j77-product-gallery{min-width:0}
+.j77-primary-picture{background:#fff!important;border:1px solid #ddd4c8;border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.j77-primary-picture>img{display:block;width:100%;height:auto;max-height:620px;aspect-ratio:1/1;object-fit:contain!important;object-position:center!important;padding:22px;background:#fff}
+.j77-primary-picture p{margin:0;padding:11px 16px;background:#e8ece7;color:#243a2c;font-size:13px;font-weight:750}
+.j77-gallery-picker{display:grid;grid-template-columns:repeat(auto-fit,minmax(95px,1fr));gap:10px;margin-top:12px}
+.j77-gallery-thumb{min-width:0;cursor:pointer;padding:8px;background:#fffefb;border:2px solid #a4afa5;border-radius:9px;color:#23362a;font-weight:750;text-align:center;box-shadow:0 2px 0 #a8b2a7}
+.j77-gallery-thumb img{display:block;width:100%;height:70px;object-fit:contain;background:#fff}
+.j77-gallery-thumb span{display:block;font-size:11px;line-height:1.4;margin-top:7px}
+.j77-gallery-thumb.is-current{border-color:#b12837;background:#fff4f1}
+.j77-gallery-thumb:hover{border-color:#bd3a45}
+.j77-one-view,.j77-equipment-note{padding:13px 16px;border:1px solid #8eaa91;border-left:4px solid #8eaa91;color:#eaf1e8!important;background:#243a2e!important;border-radius:5px;font-size:13px!important;line-height:1.55}
+.j77-equipment-note{margin-top:13px}
+.shop-categories-v6 .shop-cat-v6{position:relative;overflow:hidden;background:#202a26!important}
+.shop-categories-v6 .shop-cat-v6 .shop-cat-photo{
+ width:100%!important;height:100%!important;max-height:100%!important;
+ object-fit:contain!important;object-position:center center!important;
+ padding:0!important;margin:0!important;
+ background:#202723!important;filter:brightness(.83)!important;
+ transform:none!important;scale:1!important;
+}
+.shop-categories-v6 .shop-cat-v6:before{background:linear-gradient(0deg,rgba(4,10,8,.88) 0%,rgba(4,10,8,.28) 44%,rgba(4,10,8,.12) 100%)!important}
+.shop-categories-v6 .shop-cat-v6 h3,
+.shop-categories-v6 .shop-cat-v6 p{color:#fff!important;text-shadow:0 2px 6px #0009!important}
+.shop-categories-v6 .shop-cat-v6 p{line-height:1.35!important;max-width:90%;margin-bottom:0!important}
+.shop-categories-v6 .shop-cat-v6 .shop-cat-index{display:none!important}
+.shop-categories-v6 .shop-cat-v6 .shop-cat-arrow{width:40px;height:40px;display:grid;place-items:center;background:#24352fcf;color:#fff;border:2px solid #ffffff80;border-radius:50%}
+.shop-categories-v6 .shop-cat-v6 .shop-cat-top{position:absolute;top:16px;right:16px;left:auto;z-index:2}
+.shop-categories-v6 .shop-cat-v6>div:last-child{position:relative;z-index:3}
+@media(max-width:850px){
+ .v70-home .v70-animal-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px!important}
+ .v70-home .v70-animal-grid a{max-width:none!important;min-width:0!important;width:100%!important}
+ .v70-home .v70-animal-grid a:last-child{grid-column:1/-1;display:grid;grid-template-columns:1.2fr 1fr;align-items:stretch;max-width:none!important}
+ .v70-home .v70-animal-grid a:last-child img{aspect-ratio:6/5;object-position:center 20%;height:100%;max-height:240px}
+ .v70-home .v70-animal-grid a:last-child>span{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:18px;font-size:21px}
+ .v70-home .v70-animal-grid img{aspect-ratio:4/5;height:auto}
+ .v70-home .v70-animals .v70-actions{display:flex!important;flex-direction:column;gap:14px!important}
+ .v70-home .v70-animals .v70-actions .v70-button{width:100%!important;max-width:none!important;justify-content:center}
+}
+@media(max-width:520px){
+ .shop-categories-v6 .shop-cat-v6{min-height:235px!important;height:235px!important;max-height:235px!important}
+ .shop-categories-v6 .shop-cat-v6 .shop-cat-photo{max-height:235px!important}
+ .v70-home .v70-animal-grid a>span{font-size:15px!important;padding:13px!important}
+ .v70-home .v70-animal-grid a:last-child>span{font-size:20px!important}
+ .j77-gallery-picker{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .j77-gallery-thumb img{height:65px}
+}
