@@ -1,0 +1,704 @@
+{
+  "checkedDate": "2026-10-15",
+  "source": "Original WJO county timetable pages",
+  "caveat": "Times are as published. Confirm current availability and class venue with instructor before attending.",
+  "schools": [
+    {
+      "id": "stantonbury",
+      "county": "Buckinghamshire",
+      "rows": [
+        [
+          "Tuesday",
+          "17:00–17:50",
+          "Super J’s",
+          "3–6yrs"
+        ],
+        [
+          "Tuesday",
+          "18:00–18:50",
+          "Confident Kidz",
+          "All"
+        ],
+        [
+          "Tuesday",
+          "19:00–20:00",
+          "Kids",
+          "Advanced"
+        ],
+        [
+          "Tuesday",
+          "20:00–21:00",
+          "Adults",
+          "Sparring"
+        ],
+        [
+          "Thursday",
+          "18:00–18:50",
+          "Confident Kidz",
+          "All"
+        ],
+        [
+          "Thursday",
+          "19:00–20:00",
+          "Adults",
+          "All"
+        ],
+        [
+          "Thursday",
+          "20:00–21:00",
+          "Adults",
+          "Advanced"
+        ]
+      ],
+      "sourceUrl": "https://wjo.org.uk/find-a-school/wjo-buckinghamshire/"
+    },
+    {
+      "id": "bushfield",
+      "county": "Buckinghamshire",
+      "rows": [
+        [
+          "Thursday",
+          "17:00–17:50",
+          "Confident Kidz",
+          "Advanced"
+        ],
+        [
+          "Thursday",
+          "18:00–18:50",
+          "Confident Kidz",
+          "All"
+        ],
+        [
+          "Thursday",
+          "19:00–20:00",
+          "Adults",
+          "All"
+        ],
+        [
+          "Thursday",
+          "20:00–21:00",
+          "Adults",
+          "Advanced"
+        ]
+      ],
+      "sourceUrl": "https://wjo.org.uk/find-a-school/wjo-buckinghamshire/"
+    },
+    {
+      "id": "harpenden",
+      "county": "Hertfordshire",
+      "rows": [
+        [
+          "Monday",
+          "17:00–17:50",
+          "Confident Kidz",
+          "All"
+        ],
+        [
+          "Monday",
+          "19:00–19:50",
+          "Advanced class",
+          "Advanced"
+        ],
+        [
+          "Monday",
+          "20:00–21:00",
+          "Adults & Teens",
+          "All"
+        ]
+      ],
+      "sourceUrl": "https://wjo.org.uk/find-a-school/wjo-hertfordshire/"
+    },
+    {
+      "id": "sunart",
+      "county": "Highlands",
+      "rows": [
+        [
+          "Monday",
+          "16:30–17:20",
+          "Confident Kidz",
+          "Beginners"
+        ],
+        [
+          "Monday",
+          "18:00–18:50",
+          "Adult and Advanced",
+          "Beginners"
+        ]
+      ],
+      "sourceUrl": "https://wjo.org.uk/find-a-school/wjo-highlands/"
+    },
+    {
+      "id": "stoke-albany",
+      "county": "Leicestershire",
+      "areaOnly": true,
+      "area": "Market Harborough",
+      "note": "WJO lists these Monday classes under Market Harborough, without identifying whether they meet at Stoke Albany or Great Bowden. Confirm the hall with the instructor before attending.",
+      "rows": [
+        [
+          "Monday",
+          "18:00–19:00",
+          "Confident Kidz",
+          "Beginners"
+        ],
+        [
+          "Monday",
+          "19:00–20:00",
+          "Adults",
+          "Beginners"
+        ]
+      ],
+      "sourceUrl": "https://wjo.org.uk/find-a-school/wjo-leicestershire/"
+    },
+    {
+      "id": "great-bowden",
+      "county": "Leicestershire",
+      "areaOnly": true,
+      "area": "Market Harborough",
+      "note": "WJO lists two Monday Market Harborough sessions but does not identify which of its two local halls hosts them. See the area timetable on Stoke Albany and confirm the venue before visiting.",
+      "rows": [],
+      "sourceUrl": "https://wjo.org.uk/find-a-school/wjo-leicestershire/"
+    },
+    {
+      "id": "egerton",
+      "county": "Northamptonshire",
+      "rows": [
+        [
+          "Monday",
+          "17:00–17:50",
+          "Super J’s",
+          "3–6yrs"
+        ],
+        [
+          "Monday",
+          "18:00–18:50",
+          "Confident Kidz",
+          "All"
+        ],
+        [
+          "Monday",
+          "19:00–20:00",
+          "Adults",
+          "All"
+        ]
+      ],
+      "sourceUrl": "https://wjo.org.uk/find-a-school/wjo-northampton/"
+    },
+    {
+      "id": "flore",
+      "county": "Northamptonshire",
+      "rows": [
+        [
+          "Monday",
+          "17:00–17:45",
+          "Kids",
+          "All"
+        ]
+      ],
+      "sourceUrl": "https://wjo.org.uk/find-a-school/wjo-northampton/"
+    },
+    {
+      "id": "deanshanger",
+      "county": "Northamptonshire",
+      "rows": [
+        [
+          "Monday",
+          "18:00–18:50",
+          "Confident Kidz",
+          "All"
+        ],
+        [
+          "Monday",
+          "19:00–20:00",
+          "Adults",
+          "All"
+        ]
+      ],
+      "sourceUrl": "https://wjo.org.uk/find-a-school/wjo-northampton/"
+    },
+    {
+      "id": "isham",
+      "county": "Northamptonshire",
+      "rows": [
+        [
+          "Monday",
+          "17:00–17:50",
+          "Kids",
+          "All"
+        ],
+        [
+          "Monday",
+          "18:00–19:00",
+          "Adults",
+          "All"
+        ]
+      ],
+      "sourceUrl": "https://wjo.org.uk/find-a-school/wjo-northampton/"
+    },
+    {
+      "id": "nether-heyford",
+      "county": "Northamptonshire",
+      "rows": [
+        [
+          "Tuesday",
+          "17:00–17:50",
+          "Confident Kidz",
+          "Beginners"
+        ],
+        [
+          "Tuesday",
+          "18:00–18:50",
+          "Confident Kidz",
+          "Advanced"
+        ],
+        [
+          "Tuesday",
+          "19:00–20:00",
+          "Adults",
+          "Beginners"
+        ],
+        [
+          "Tuesday",
+          "20:00–21:00",
+          "Adults",
+          "Advanced"
+        ]
+      ],
+      "sourceUrl": "https://wjo.org.uk/find-a-school/wjo-northampton/"
+    },
+    {
+      "id": "priors-hall",
+      "county": "Northamptonshire",
+      "rows": [
+        [
+          "Tuesday",
+          "17:30–18:20",
+          "Confident Kidz",
+          "Beginners"
+        ],
+        [
+          "Tuesday",
+          "18:30–19:20",
+          "Ladies Only",
+          "Beginners"
+        ]
+      ],
+      "sourceUrl": "https://wjo.org.uk/find-a-school/wjo-northampton/"
+    },
+    {
+      "id": "wollaston",
+      "county": "Northamptonshire",
+      "rows": [
+        [
+          "Tuesday",
+          "18:00–19:00",
+          "Kids",
+          "Beginners"
+        ]
+      ],
+      "sourceUrl": "https://wjo.org.uk/find-a-school/wjo-northampton/"
+    },
+    {
+      "id": "houlton",
+      "county": "Northamptonshire",
+      "rows": [
+        [
+          "Tuesday",
+          "16:45–17:30",
+          "Kids",
+          "Beginners"
+        ],
+        [
+          "Tuesday",
+          "19:30–20:30",
+          "Adults",
+          "Beginners"
+        ]
+      ],
+      "sourceUrl": "https://wjo.org.uk/find-a-school/wjo-northampton/"
+    },
+    {
+      "id": "montsaye",
+      "county": "Northamptonshire",
+      "rows": [
+        [
+          "Wednesday",
+          "17:30–18:30",
+          "Confident Kidz",
+          "7–12 Year Olds"
+        ],
+        [
+          "Wednesday",
+          "17:30–18:15",
+          "Super J’s",
+          "4–7 Year Olds"
+        ],
+        [
+          "Wednesday",
+          "18:30–19:30",
+          "Adults",
+          "All"
+        ]
+      ],
+      "sourceUrl": "https://wjo.org.uk/find-a-school/wjo-northampton/"
+    },
+    {
+      "id": "brackley-leisure",
+      "county": "Northamptonshire",
+      "rows": [
+        [
+          "Wednesday",
+          "17:00–17:50",
+          "Super J’s",
+          "3–6yrs"
+        ],
+        [
+          "Wednesday",
+          "18:00–18:50",
+          "Confident Kidz",
+          "All"
+        ],
+        [
+          "Wednesday",
+          "19:00–20:00",
+          "Adults",
+          "All"
+        ]
+      ],
+      "sourceUrl": "https://wjo.org.uk/find-a-school/wjo-northampton/"
+    },
+    {
+      "id": "gateway",
+      "county": "Northamptonshire",
+      "rows": [
+        [
+          "Wednesday",
+          "18:00–18:50",
+          "Kids",
+          "All"
+        ],
+        [
+          "Wednesday",
+          "19:00–20:00",
+          "Adults",
+          "All"
+        ],
+        [
+          "Wednesday",
+          "20:00–21:00",
+          "Adults",
+          "Advanced"
+        ]
+      ],
+      "sourceUrl": "https://wjo.org.uk/find-a-school/wjo-northampton/"
+    },
+    {
+      "id": "daventry",
+      "county": "Northamptonshire",
+      "rows": [
+        [
+          "Thursday",
+          "18:00–18:50",
+          "Confident Kidz",
+          "Beginners"
+        ],
+        [
+          "Thursday",
+          "19:00–19:50",
+          "Adults",
+          "All"
+        ]
+      ],
+      "sourceUrl": "https://wjo.org.uk/find-a-school/wjo-northampton/"
+    },
+    {
+      "id": "oakley-vale",
+      "county": "Northamptonshire",
+      "rows": [
+        [
+          "Thursday",
+          "17:30–18:20",
+          "Kids",
+          "Beginners"
+        ],
+        [
+          "Saturday",
+          "10:30–11:30",
+          "Jado Chi",
+          "Beginners"
+        ]
+      ],
+      "sourceUrl": "https://wjo.org.uk/find-a-school/wjo-northampton/"
+    },
+    {
+      "id": "earls-wmc",
+      "county": "Northamptonshire",
+      "rows": [
+        [
+          "Thursday",
+          "18:00–18:50",
+          "Kids",
+          "All"
+        ],
+        [
+          "Thursday",
+          "19:00–20:00",
+          "Adults",
+          "All"
+        ]
+      ],
+      "sourceUrl": "https://wjo.org.uk/find-a-school/wjo-northampton/"
+    },
+    {
+      "id": "danes-camp",
+      "county": "Northamptonshire",
+      "rows": [
+        [
+          "Saturday",
+          "09:00–09:50",
+          "Confident Kidz",
+          "All"
+        ],
+        [
+          "Saturday",
+          "10:00–11:00",
+          "Adults",
+          "All"
+        ]
+      ],
+      "sourceUrl": "https://wjo.org.uk/find-a-school/wjo-northampton/"
+    },
+    {
+      "id": "redwell",
+      "county": "Northamptonshire",
+      "rows": [
+        [
+          "Saturday",
+          "11:30–12:30",
+          "Confident Kidz",
+          "All"
+        ],
+        [
+          "Saturday",
+          "12:30–13:30",
+          "Adults",
+          "All"
+        ]
+      ],
+      "sourceUrl": "https://wjo.org.uk/find-a-school/wjo-northampton/"
+    },
+    {
+      "id": "earls-youth",
+      "county": "Northamptonshire",
+      "rows": [
+        [
+          "Saturday",
+          "08:00–09:00",
+          "Super J’s",
+          "3–6yrs"
+        ],
+        [
+          "Saturday",
+          "10:30–11:30",
+          "Confident Kidz",
+          "All"
+        ],
+        [
+          "Saturday",
+          "11:30–12:30",
+          "Kids",
+          "Advanced"
+        ],
+        [
+          "Saturday",
+          "12:30–13:30",
+          "Adults",
+          "All"
+        ]
+      ],
+      "sourceUrl": "https://wjo.org.uk/find-a-school/wjo-northampton/"
+    },
+    {
+      "id": "towcester",
+      "county": "Northamptonshire",
+      "rows": [
+        [
+          "Sunday",
+          "09:00–09:50",
+          "Super J’s & Confident Kidz",
+          "3–6yrs · Beginners"
+        ],
+        [
+          "Sunday",
+          "10:00–10:50",
+          "Confident Kidz",
+          "6–12yrs · Beginners"
+        ],
+        [
+          "Sunday",
+          "11:00–12:00",
+          "Adults",
+          "All"
+        ],
+        [
+          "Sunday",
+          "12:00–13:00",
+          "Adults",
+          "Advanced & Levels"
+        ]
+      ],
+      "sourceUrl": "https://wjo.org.uk/find-a-school/wjo-northampton/"
+    },
+    {
+      "id": "danesholme",
+      "county": "Northamptonshire",
+      "rows": [
+        [
+          "Sunday",
+          "09:00–09:45",
+          "Super J’s",
+          "4–7 Year Olds"
+        ],
+        [
+          "Sunday",
+          "10:00–10:50",
+          "Confident Kidz",
+          "7–12 Year Olds"
+        ],
+        [
+          "Sunday",
+          "11:00–12:00",
+          "Adults",
+          "All (13+)"
+        ]
+      ],
+      "sourceUrl": "https://wjo.org.uk/find-a-school/wjo-northampton/"
+    },
+    {
+      "id": "online-chi",
+      "county": "Northamptonshire",
+      "virtual": true,
+      "name": "Online Jado Chi (Zoom)",
+      "town": "Online",
+      "status": "Live",
+      "region": "Northamptonshire",
+      "postcode": "",
+      "address": "Online via Zoom — ask WJO for joining details.",
+      "rows": [
+        [
+          "Wednesday",
+          "19:15–20:15",
+          "Jado Chi",
+          "All"
+        ]
+      ],
+      "sourceUrl": "https://wjo.org.uk/find-a-school/wjo-northampton/"
+    },
+    {
+      "id": "bicester",
+      "county": "Oxfordshire",
+      "rows": [
+        [
+          "Saturday",
+          "09:00–09:50",
+          "Confident Kidz",
+          "All"
+        ],
+        [
+          "Saturday",
+          "11:00–11:50",
+          "Adults",
+          "All"
+        ]
+      ],
+      "sourceUrl": "https://wjo.org.uk/find-a-school/wjo-oxfordshire/"
+    },
+    {
+      "id": "arncott",
+      "county": "Oxfordshire",
+      "rows": [
+        [
+          "Monday",
+          "18:00–18:50",
+          "Confident Kidz",
+          "All"
+        ],
+        [
+          "Monday",
+          "19:00–20:00",
+          "Adults",
+          "All"
+        ]
+      ],
+      "sourceUrl": "https://wjo.org.uk/find-a-school/wjo-oxfordshire/"
+    },
+    {
+      "id": "banbury",
+      "county": "Oxfordshire",
+      "rows": [
+        [
+          "Thursday",
+          "18:00–18:50",
+          "Confident Kidz",
+          "Beginners"
+        ],
+        [
+          "Thursday",
+          "19:00–20:00",
+          "Levels",
+          "Black Belts"
+        ]
+      ],
+      "sourceUrl": "https://wjo.org.uk/find-a-school/wjo-oxfordshire/"
+    },
+    {
+      "id": "southam",
+      "county": "Warwickshire",
+      "rows": [
+        [
+          "Monday",
+          "17:00–17:45",
+          "Kids",
+          "Beginners"
+        ],
+        [
+          "Monday",
+          "18:00–18:50",
+          "Adults",
+          "Beginners"
+        ]
+      ],
+      "sourceUrl": "https://wjo.org.uk/find-a-school/wjo-warwickshire/"
+    },
+    {
+      "id": "paddox",
+      "county": "Warwickshire",
+      "rows": [
+        [
+          "Wednesday",
+          "15:20–16:20",
+          "Kids",
+          "Beginners"
+        ],
+        [
+          "Wednesday",
+          "16:30–17:20",
+          "Confident Kidz",
+          "Beginners"
+        ],
+        [
+          "Wednesday",
+          "17:30–18:30",
+          "Confident Kidz",
+          "Advanced"
+        ],
+        [
+          "Wednesday",
+          "18:30–19:30",
+          "Adults 16+",
+          "Beginners"
+        ]
+      ],
+      "sourceUrl": "https://wjo.org.uk/find-a-school/wjo-warwickshire/"
+    }
+  ]
+}
