@@ -87,9 +87,22 @@ routes.product=function(){
 // More legible category headings and less misleading shop illustration framing.
 const j77PriorShop=routes.shop;
 routes.shop=function(){
- return j77PriorShop()
+ let html=j77PriorShop()
   .replace(/<span class="shop-cat-index">[\s\S]*?<\/span>/g,'')
   .replace('Choose a category and jump straight to the matching products.','Choose what you are looking for. Tap a category to browse the products.');
+ // Source-of-truth product photographs, not invented lifestyle images with cut-off faces
+ // or incorrect logos and imaginary arrows.
+ const pictures={
+   Uniforms:'gia',Sparring:'sp1a',Clothing:'jkdha2020',Training:'fp',
+   Membership:'lic2',Gifts:'gft'
+ };
+ html=html.replace(/(<img class="shop-cat-photo" src=")[^"]*(" alt=")([^"]+)(">)/g,
+  function(all,begin,mid,category,end){
+   const item=pictures[category];
+   const src=item?getProduct(item).image:j74WorldLogo();
+   return begin+src+mid+category+end;
+  });
+ return html;
 };
 // A secondary button previously appeared blank against a light background.
 const j77PreviousRender=render;
