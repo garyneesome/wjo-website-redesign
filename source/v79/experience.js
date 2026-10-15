@@ -158,3 +158,11 @@ j77AltImages=function(p){
  }
  return source;
 };
+
+
+// The parent V78 router still labels pages V78; this is the final public title hook.
+const j79PreviousRender=render;
+render=function(){
+ j79PreviousRender();
+ document.title=document.title.replace(/V7[2-8]/g,'V79');
+};
