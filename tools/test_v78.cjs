@@ -201,7 +201,7 @@ try{
  });
  test('Incorrect Danes Camp and Paddox starts corrected',()=>{
    const danes=w.eval("jSchool('danes-camp')"),paddox=w.eval("jSchool('paddox')");
-   assert.deepEqual(danes.sessions.map(r=>r.slice(1,2)),[['09:00'],['10:00']]);
+   assert.equal(JSON.stringify(danes.sessions.map(r=>r.slice(1,2))),JSON.stringify([['09:00'],['10:00']]));
    assert.equal(paddox.sessions[0][1],'15:20');
    assert.equal(paddox.sessions[0][4],'16:20');
  });
