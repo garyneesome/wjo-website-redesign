@@ -136,6 +136,9 @@ try{
   assert.equal(d.querySelectorAll('.j76-shop-card').length,31);
   assert.equal(d.querySelectorAll('.shop-cat-index').length,0);
   assert.equal(d.querySelectorAll('.shop-cat-photo').length,8);
+  assert.equal(d.querySelector('.shop-cat-photo[alt="Uniforms"]').getAttribute('src'),w.eval('getProduct("gia").image'));
+  assert.equal(d.querySelector('.shop-cat-photo[alt="Sparring"]').getAttribute('src'),w.eval('getProduct("sp1a").image'));
+  assert.equal(d.querySelector('.shop-cat-photo[alt="Clothing"]').getAttribute('src'),w.eval('getProduct("jkdha2020").image'));
  });
  test('Authentic gallery has official source and optional supplier alt views only',()=>{
   go('product?id=sp1a');
