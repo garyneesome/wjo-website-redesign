@@ -1,21 +1,21 @@
-# World Jado Kuin Do Organisation — Website redesign
+# World Jado Kuin Do Organisation — website redesign
 
-## Latest version: V75 (family-focused experience)
+## Current release: V76
 
-**Test the complete demo**
-- [V75 ZIP — recommended for Android](WJO_V75_DOWNLOAD.zip)
-- [V75 single-file HTML](WJO_V75_SINGLE_FILE_DEMO.html)
-- [V75 improvements and full original-WJO-site coverage audit](releases/V75_RELEASE_NOTES.md)
+- [V76 portable ZIP (recommended)](WJO_V76_DOWNLOAD.zip)
+- [V76 standalone HTML demo](WJO_V76_SINGLE_FILE_DEMO.html)
+- [V76 release notes and important product photography limitations](releases/V76_RELEASE_NOTES.md)
 
-V75 **keeps the guided V73–V74 school chooser** but improves the World Jado branding and warm family welcome. It uses the supplied WJO globe in header/footer/menu, makes interactive cards look clickable, brings the WJO FAQ, community news and Tai Chi into the demo, and links to existing safeguarding and student resources.
+V76 keeps the complete guided WJO experience and fixes the founder title to **Grand Master Jake D. Ogden**. The WJO globe artwork itself is untouched; only the background outside the original logo is made transparent. The shop contains original supplier photographs for 31 products, more usable responsive cards and a thumbnail gallery with clearly named enlargement/detail views. We don't represent generated images as authentic alternative angles.
 
-V75 is an **offline browser preview**: class enquiries do not send messages, checkout takes no payments and member login is not connected. The old separately hosted preview may still serve an earlier version.
+This is a self-contained HTML demonstration. School enquiries and checkout are previews, not live connections.
 
-Build: python3 tools/rebuild_v75.py
+Rebuild: `python3 tools/rebuild_v76.py` with Pillow installed.
+Validate: `node tools/test_v76.cjs dist/index.html` after installing jsdom.
 
-Browser tests: npm install --no-save --ignore-scripts jsdom@30.1.2 && node tools/test_v75.cjs
+### V75 foundation preserved
 
-Source: source/v75/experience.js and source/v75/experience.css; earlier version sources are retained.
+V75 added a family-first welcome, WJO FAQs, full school menu and accessible mobile shortcuts.
 
 ### V74 foundation preserved
 
