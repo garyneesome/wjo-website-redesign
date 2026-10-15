@@ -77,7 +77,7 @@ const J75_TOPICS=[
  ['Explore Jado',[['jado','What is Jado Kuin Do?'],['about','About WJO'],['vision','Our vision'],['leadership','Committee & leadership'],['instructors','The people who teach'],['faq','Frequently asked questions']]],
  ['Find a class',[['start','Get guided help'],['programmes','Training programmes'],['super-js','Super J’s'],['confident-kidz','Confident Kidz'],['adults','Teens & adults'],['chi','Jado Tai Chi'],['school-directory','Locations by county']]],
  ['Learn & take part',[['grade-order','Grade order & meanings'],['jado-animals','Five Animals'],['events','Events & gradings'],['community','Jado in the community'],['news','News & articles'],['stories','Student & family stories']]],
- ['Students & families',[['new-to-jado','Your first visit'],['parents-information','For parents'],['members','Student information'],['my-jado','My Jado'],['training-app','myTraining app'],['resources','Training resources'],['membership','Memberships & shop']]],
+ ['Students & families',[['new-to-jado','Your first visit'],['parents-information','For parents'],['members','Student information'],['my-jado','My Jado'],['training-app','myTraining app'],['resources','Training resources'],['shop','Jado shop'],['membership','Memberships']]],
  ['Trust & support',[['safeguarding','Safeguarding guidance'],['safe-practice','Safe practice'],['safeguarding-children','Safeguarding children'],['safeguarding-adults','Safeguarding adults'],['privacy-notice','Privacy notice'],['cookie-policy','Cookie policy'],['contact','Contact WJO']]]
 ];
 routes['explore-wjo']=()=>jPage('Explore World Jado.','Everything from the World Jado Organisation in one place, with no links back to the old website.',
