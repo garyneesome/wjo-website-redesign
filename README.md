@@ -1,17 +1,21 @@
 # World Jado Kuin Do Organisation — website redesign
 
-## Current release: V76
+## Latest release — V77
 
-- [V76 portable ZIP (recommended)](WJO_V76_DOWNLOAD.zip)
-- [V76 standalone HTML demo](WJO_V76_SINGLE_FILE_DEMO.html)
-- [V76 release notes and important product photography limitations](releases/V76_RELEASE_NOTES.md)
+- [Download V77 ZIP — recommended on Android](WJO_V77_DOWNLOAD.zip)
+- [V77 single-file HTML](WJO_V77_SINGLE_FILE_DEMO.html)
+- [V77 release notes](releases/V77_RELEASE_NOTES.md)
 
-V76 keeps the complete guided WJO experience and fixes the founder title to **Grand Master Jake D. Ogden**. The WJO globe artwork itself is untouched; only the background outside the original logo is made transparent. The shop contains original supplier photographs for 31 products, more usable responsive cards and a thumbnail gallery with clearly named enlargement/detail views. We don't represent generated images as authentic alternative angles.
+**What changed:** Square rather than arched Five Animals cards, clear contrast for the pale animal-awards button, removed arbitrary numbers and repeated homepage panels, original product photos in shop category tiles instead of cropped staged people, and a cleaner product gallery that does not repeat a zoomed version of the original image.
 
-This is a self-contained HTML demonstration. School enquiries and checkout are previews, not live connections.
+**Shop imagery:** V77 checks the original Jado Online CDN for **verified alternate supplier photographs** and embeds them when available. Products without verified extra views retain their single real image. An AI example was created separately to explore future gallery presentation; this build does not claim to show invented rear/side views of real inventory.
 
-Rebuild: `python3 tools/rebuild_v76.py` with Pillow installed.
-Validate: `node tools/test_v76.cjs dist/index.html` after installing jsdom.
+The first-class guided chooser, full WJO location directory, approved venue photographs, member area, original logo, Grand Master Ogden wording, and existing class information remain.
+
+This HTML is a preview. Enquiries do not send, and checkout is not connected.
+
+**Build:** `python3 tools/rebuild_v77.py` with Pillow installed.
+**Browser tests:** `node tools/test_v77.cjs dist/index.html` after installing jsdom.
 
 ### V75 foundation preserved
 
