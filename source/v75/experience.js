@@ -121,3 +121,11 @@ routes['new-to-jado']=function(){
  '<div class="j75-family-guide"><p><strong>For a child:</strong> Please ask about the teaching group, collection arrangements and the WJO safeguarding policy before attending.</p>'+
  '<a href="#faq">See frequently asked questions <span aria-hidden="true">→</span></a></div><div class="j72-actions">'+jBtn('start','Help me choose a class'));
 };
+
+
+// Version label is set after the inherited router's render hook.
+const j75PreviousRender=render;
+render=function(){
+ j75PreviousRender();
+ document.title=document.title.replace(/V7[234]/g,'V75');
+};
