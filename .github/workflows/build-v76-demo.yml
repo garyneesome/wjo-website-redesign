@@ -20,8 +20,11 @@ jobs:
       - uses: actions/checkout@v4
       - name: Verify JavaScript parses
         run: node --check source/v76/experience.js
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
       - name: Install background-only logo transparency dependency
-        run: python3 -m pip install --user Pillow
+        run: python -m pip install Pillow
       - name: Build self-contained V76 HTML and ZIP
         run: python3 tools/rebuild_v76.py
       - name: Verify brand and generated archives
