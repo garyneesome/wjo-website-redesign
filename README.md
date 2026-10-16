@@ -1,19 +1,21 @@
-# World Jado Kuin Do Organisation — website redesign
+# World Jado Kuin Do Organisation — Website redesign
 
-## New version: V79
+## Latest build: V80
 
-- [Complete V79 ZIP — recommended for mobile](WJO_V79_DOWNLOAD.zip)
-- [V79 single-file offline HTML](WJO_V79_SINGLE_FILE_DEMO.html)
-- [V79 release notes](releases/V79_RELEASE_NOTES.md)
+Download the fully self-contained test website:
+- [V80 ZIP — recommended for Android](WJO_V80_DOWNLOAD.zip)
+- [V80 single-file HTML](WJO_V80_SINGLE_FILE_DEMO.html)
+- [V80 verified venue corrections and release notes](releases/V80_RELEASE_NOTES.md)
 
-**V79** focuses on making WJO easier to navigate: one simple mobile menu with expandable county/school entries, a clearly accessible **WJO Committee**, a larger gallery of people with animal imagery when a genuine portrait is missing, and photographic previews of the three original WJO testimonial videos. The repeated homepage guidance card has been removed while the age-and-location guided first-class journey remains.
+V80 builds on V79's shorter menus, original video testimonials and carefully labelled AI shop illustration. The complete WJO published seven-region timetables and the guided new-student journey are retained.
 
-The shop also includes **one labelled AI-generated uniform-wearing illustration for review**. This is an illustration, not a product-specific side or rear photograph; the 31 official product pictures and any confirmed Jado Online alternative photos remain the authoritative shopping images.
+### Venue corrections
+- Southam is now **Everyone Active Southam, Welsh Road West, CV47 0JW**, consistent with the original WJO directory and Warwickshire timetable.
+- The Sunart Centre already has the correct Monday 18:00–18:50 adult class time through the V78 importer.
+- Where legacy venue-image mappings show other buildings or unverified photographs, the real WJO badge is now used as the placeholder until an approved photo is provided. Existing verified venue pictures remain.
 
-All seven regions' published timetables and correct WJO globe logo from V78 remain. Times are checked against the live WJO source on 15 October 2026, but users should confirm them with their school.
+These are **published WJO timetables**, not live availability; students should confirm classes and venues before travelling. Demo enquiries and payments are not connected.
 
-A local demo only: no emails, booking requests or payments are submitted.
+Build: `python3 tools/rebuild_v80.py`; test: `node tools/test_v80.cjs dist/index.html` (requires jsdom and Pillow).
 
-Build: `python3 tools/rebuild_v79.py`; checks: `node tools/test_v79.cjs dist/index.html` (Pillow and jsdom needed).
-
-[See V78 timetable release](releases/V78_RELEASE_NOTES.md).
+[View V79 improvements](releases/V79_RELEASE_NOTES.md) · [View V78 timetable reconciliation](releases/V78_RELEASE_NOTES.md)
