@@ -310,7 +310,7 @@ try{
    assert.equal(s.sessions[1][1],'18:00');
    assert.equal(s.sessions[1][4],'18:50');
    assert.equal(w.eval("SCHOOLS.find(s=>s.id==='southam').name"),'Everyone Active Southam');
-   go('school-directory');
+   go('county?name=Warwickshire');
    assert(main().includes('Everyone Active Southam'));
    assert(!main().includes('Southam College Gymnasium'));
    go('school?id=southam');
