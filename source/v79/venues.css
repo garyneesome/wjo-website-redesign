@@ -1,0 +1,19 @@
+/* V79: official WJO badge is the honest fallback for unverifiable hall photographs. */
+.j79-venue-image-note{
+ display:flex;align-items:center;gap:10px;
+ background:#f3eee4;border:1px solid #d3c8b6;border-radius:9px;
+ padding:11px 14px;margin:0 0 18px;
+ color:#4a594d;font-size:13px;line-height:1.5;font-weight:650;
+}
+.j79-venue-image-note span{color:#a32b38;font-weight:900;font-size:20px}
+.j72-venue-hero img[src^="data:image/png"],
+.j72-school-photo img[src^="data:image/png"],
+.cms-school-card img[src^="data:image/png"]{
+ object-fit:contain!important;
+ object-position:center!important;
+ background:#f6f3e9!important;
+ padding:clamp(12px,3vw,28px)!important;
+}
+@media(max-width:640px){
+ .j79-venue-image-note{font-size:12px;padding:10px 12px}
+}
