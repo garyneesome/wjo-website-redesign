@@ -52,5 +52,5 @@ routes.school=function(){
 const j79OriginalRender=render;
 render=function(){
   j79OriginalRender();
-  document.title=document.title.replace(/V7[2-8]/g,'V79');
+  document.title=document.title.replace(/V7[2-9]/g,'V80');
 };
