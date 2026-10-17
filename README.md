@@ -1,21 +1,23 @@
 # World Jado Kuin Do Organisation — Website redesign
 
-## Latest build: V80
+## Latest demo: V81 — A place to belong. A path to grow.
 
-Download the fully self-contained test website:
-- [V80 ZIP — recommended for Android](WJO_V80_DOWNLOAD.zip)
-- [V80 single-file HTML](WJO_V80_SINGLE_FILE_DEMO.html)
-- [V80 verified venue corrections and release notes](releases/V80_RELEASE_NOTES.md)
+V81 uses the familiar guided class journey but makes the homepage simpler, more welcoming and more focused on the Jado family.
 
-V80 builds on V79's shorter menus, original video testimonials and carefully labelled AI shop illustration. The complete WJO published seven-region timetables and the guided new-student journey are retained.
+- **[V81 ZIP download — recommended for Android](WJO_V81_DOWNLOAD.zip)**
+- **[V81 single-file HTML download](WJO_V81_SINGLE_FILE_DEMO.html)**
+- **[V81 release details](releases/V81_RELEASE_NOTES.md)**
 
-### Venue corrections
-- Southam is now **Everyone Active Southam, Welsh Road West, CV47 0JW**, consistent with the original WJO directory and Warwickshire timetable.
-- The Sunart Centre already has the correct Monday 18:00–18:50 adult class time through the V78 importer.
-- Where legacy venue-image mappings show other buildings or unverified photographs, the real WJO badge is now used as the placeholder until an approved photo is provided. Existing verified venue pictures remain.
+The homepage now offers one primary action, **Find my Jado class**, which opens the working guided age-and-venue chooser. The programme cards are larger, the colour scheme matches the established WJO red/black/cream branding, and the progression message clearly explains that everyone develops at their own pace.
 
-These are **published WJO timetables**, not live availability; students should confirm classes and venues before travelling. Demo enquiries and payments are not connected.
+Four genuine photographs cropped from the user-provided “We’re so proud!” Jado collage are embedded into the standalone HTML and shown once each. Instructor profiles have been revised to avoid repeating the same opening biography when the expanded text is shown.
 
-Build: `python3 tools/rebuild_v80.py`; test: `node tools/test_v80.cjs dist/index.html` (requires jsdom and Pillow).
+The seven-county school menu, WJO-published class timetables, WJO logo, venue photographs, events, safeguarding, WJO shop and member resources are preserved from V80.
 
-[View V79 improvements](releases/V79_RELEASE_NOTES.md) · [View V78 timetable reconciliation](releases/V78_RELEASE_NOTES.md)
+**This is a standalone preview:** enquiry forms do not send messages and checkout is not connected. Published class times should be confirmed by an instructor before attending.
+
+**Rebuild:** `python3 tools/rebuild_v81.py`
+
+**Test:** `npm install --no-save --ignore-scripts jsdom@30.1.2 && node tools/test_v81.cjs dist/index.html`
+
+Previous: [V80](releases/V80_RELEASE_NOTES.md) · [V79](releases/V79_RELEASE_NOTES.md) · [V78](releases/V78_RELEASE_NOTES.md).
