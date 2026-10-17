@@ -1,0 +1,84 @@
+name: Build WJO V81 portable demo
+on:
+  push:
+    paths:
+      - 'source/v81/**'
+      - 'tools/rebuild_v81.py'
+      - 'tools/test_v81.cjs'
+      - '.github/workflows/build-v81-demo.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: wjo-v81-build
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify JavaScript parses
+        run: node --check source/v81/home.js
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install background-only logo transparency dependency
+        run: python -m pip install Pillow
+      - name: Build self-contained V81 HTML and ZIP
+        run: python3 tools/rebuild_v81.py
+      - name: Verify brand and generated archives
+        run: |
+          python3 - <<'PY'
+          import zipfile,base64
+          from pathlib import Path
+          raw=base64.b64decode(Path('source/v74/world-wjo-logo.b64').read_text().strip(),validate=True)
+          assert raw[:8]==b'\x89PNG\r\n\x1a\n'
+          h=Path('WJO_V81_SINGLE_FILE_DEMO.html')
+          z=Path('WJO_V81_DOWNLOAD.zip')
+          web=Path('dist/index.html')
+          assert h.stat().st_size>1000000
+          assert z.stat().st_size>1000000
+          assert web.stat().st_size>100000
+          t=web.read_text()
+          for key in ["routes['school-directory']", "j79CountyMenu", "j79-video-story", "WJO_V81_FAMILY_PHOTOS", "v81-hero-grid", "v81-instructor-list", "WJO_V78_TIMETABLES", "V81"]:
+              assert key in t,key
+          with zipfile.ZipFile(z) as zz:
+              assert zz.testzip() is None
+              assert 'WJO_V81_SINGLE_FILE_DEMO.html' in zz.namelist()
+          PY
+      - name: Install lightweight DOM test dependency
+        run: npm install --no-save --ignore-scripts jsdom@30.1.2
+      - name: Exercise Jado guidance, menus, school photos and videos
+        run: node tools/test_v81.cjs dist/index.html
+      - name: Save downloadable build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: WJO-V81-downloads
+          path: |
+            WJO_V81_SINGLE_FILE_DEMO.html
+            WJO_V81_DOWNLOAD.zip
+          retention-days: 30
+      - name: Commit V81 downloads to main without ZIP rebase conflicts
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          cp WJO_V81_SINGLE_FILE_DEMO.html "$RUNNER_TEMP/WJO_V81_SINGLE_FILE_DEMO.html"
+          cp WJO_V81_DOWNLOAD.zip "$RUNNER_TEMP/WJO_V81_DOWNLOAD.zip"
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            cp "$RUNNER_TEMP/WJO_V81_SINGLE_FILE_DEMO.html" WJO_V81_SINGLE_FILE_DEMO.html
+            cp "$RUNNER_TEMP/WJO_V81_DOWNLOAD.zip" WJO_V81_DOWNLOAD.zip
+            git add -f WJO_V81_SINGLE_FILE_DEMO.html WJO_V81_DOWNLOAD.zip
+            if git diff --cached --quiet; then
+              echo "V81 downloads are already published"
+              exit 0
+            fi
+            git commit -m 'Build WJO V81 portable HTML and ZIP'
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            echo "Remote moved; retrying without conflicting with generated ZIP"
+          done
+          exit 1
