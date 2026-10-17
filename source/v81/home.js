@@ -1,0 +1,15 @@
+/* V81 homepage: single family-first journey, no duplicate finders. */
+const v81PreviousHome=routes.home;
+routes.home=function(){
+ const stories=J79_VIDEO_STORIES.map(j79VideoCard).join('');
+ return '<main class="v81-home">'+
+ '<section class="v81-hero"><div class="v81-hero-copy"><p class="v81-eyebrow">WORLD JADO KUIN DO ORGANISATION</p><h1>Find your confidence. Find your people.</h1><p>Martial arts for children, teens and adults, with friendly instructors, supportive classes and a clear path to keep growing.</p><div class="v81-actions"><a class="v81-primary" href="#find-school">Find your local class →</a><a class="v81-secondary" href="#start">New to Jado? See how it works →</a></div></div><img src="'+resolveAssetPath('assets/photos/brackley-partner-practice.webp')+'" alt="Jado students practising together" /></section>'+
+ '<section class="v81-section v81-values"><p class="v81-eyebrow">MORE THAN MARTIAL ARTS</p><h2>Grow stronger, together.</h2><p>Everyone starts somewhere. Every step forward matters.</p><div class="v81-grid">'+
+ [['Confidence','Build belief in yourself, one achievable step at a time.'],['Belonging','Be part of a welcoming community that supports one another.'],['Personal growth','Develop focus, resilience and skills at your own pace.']].map(x=>'<article class="v81-tile"><h3>'+x[0]+'</h3><p>'+x[1]+'</p></article>').join('')+'</div></section>'+
+ '<section class="v81-section"><p class="v81-eyebrow">ONE JADO FAMILY</p><h2>There is a place for you here.</h2><div class="v81-grid">'+
+ [['Super J’s','A welcoming introduction for our youngest learners.'],['Confident Kidz','Develop confidence, coordination and positive habits.'],['Teens & Adults','Challenge yourself, learn new skills and progress together.']].map(x=>'<article class="v81-tile"><h3>'+x[0]+'</h3><p>'+x[1]+'</p><a href="#train">Explore training →</a></article>').join('')+'</div></section>'+
+ '<section class="v81-section v81-path"><p class="v81-eyebrow">YOUR JOURNEY</p><h2>Progress you can see. Support you can feel.</h2><ol class="v81-steps"><li>First class</li><li>Build confidence</li><li>Develop skills</li><li>Progress through grades</li><li>Keep growing</li></ol><p>Learn at your pace, supported by your instructor and the people training alongside you.</p><a href="#jado">Explore Jado and grading →</a></section>'+
+ '<section class="v81-section"><p class="v81-eyebrow">GETTING STARTED</p><h2>Three simple steps.</h2><div class="v81-grid"><article class="v81-tile"><h3>1. Find a class</h3><p>Choose a convenient local venue.</p></article><article class="v81-tile"><h3>2. Get in touch</h3><p>Ask your instructor any questions.</p></article><article class="v81-tile"><h3>3. Come and try</h3><p>Meet the group and discover Jado.</p></article></div></section>'+
+ '<section class="v81-section v81-stories"><h2>Hear from the Jado family.</h2><div class="j79-video-stories">'+stories+'</div></section>'+
+ '<section class="v81-final"><h2>Your journey can start here.</h2><p>New to martial arts? You are welcome.</p><a class="v81-primary" href="#find-school">Find your local class →</a></section></main>';
+};
