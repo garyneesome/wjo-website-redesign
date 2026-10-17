@@ -12,6 +12,7 @@ routes.home=function(){
  const group=j81Photo('group','assets/photos/brackley-belt-celebration.webp');
  const pupils=j81Photo('pupils','assets/photos/brackley-partner-practice.webp');
  const awards=j81Photo('awards','assets/photos/brackley-adult-training.webp');
+ const certificates=j81Photo('certificates','assets/photos/brackley-partner-practice.webp');
  const older=resolveAssetPath('assets/photos/brackley-adult-training.webp');
  const kids=resolveAssetPath('assets/photos/brackley-belt-celebration.webp');
  return shell('<main class="v81-home">'+
@@ -25,8 +26,8 @@ routes.home=function(){
  '</div><figure class="v81-hero-figure"><img src="'+group+'" alt="Real Jado students celebrating with their instructor" fetchpriority="high">'+
  '<figcaption>Real students. Shared achievements. A welcoming community.</figcaption></figure></div></section>'+
  '<section class="v81-family" aria-labelledby="v81-family-title"><div class="wrap v81-family-grid">'+
- '<div class="v81-family-pictures"><figure><img src="'+pupils+'" alt="Young Jado students proudly showing certificates" loading="lazy"><figcaption>Every achievement matters.</figcaption></figure>'+
- '<figure><img src="'+awards+'" alt="Jado instructor celebrating a young student’s achievement" loading="lazy"><figcaption>Encouragement along the way.</figcaption></figure></div>'+
+ '<div class="v81-family-pictures"><figure><img src="'+awards+'" alt="A Jado instructor celebrating a young student’s achievement" loading="lazy"><figcaption>Encouragement along the way.</figcaption></figure>'+
+ '<figure><img src="'+certificates+'" alt="Jado awards and white belts prepared for students" loading="lazy"><figcaption>Every milestone matters.</figcaption></figure></div>'+
  '<div class="v81-family-copy"><div class="v81-eyebrow">More than a martial arts club</div>'+
  '<h2 id="v81-family-title">You’re part of the Jado family.</h2>'+
  '<p>Beginning something new can feel daunting. Your local Jado instructor can help you understand the class, talk through practical questions and find a starting point that feels right.</p>'+
