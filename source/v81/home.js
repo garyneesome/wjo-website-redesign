@@ -1,15 +1,88 @@
-/* V81 homepage: single family-first journey, no duplicate finders. */
-const v81PreviousHome=routes.home;
+/* V81 — one carefully structured family-first home, with no repeated class-finder sections.
+   WJO values: warmth, practical support, real community photos and optional progression. */
+function j81Photo(which,fallback){
+  return window.WJO_V81_FAMILY_PHOTOS?.[which]||resolveAssetPath(fallback);
+}
+function j81Programme(name,ages,line,desc,link,src,alt){
+ return '<a class="v81-programme" href="#'+link+'"><div class="v81-programme-photo"><img src="'+src+'" alt="'+alt+'" loading="lazy"></div>'+
+ '<div class="v81-programme-text"><span class="v81-age">'+ages+'</span><h3>'+name+'</h3><strong>'+line+'</strong><p>'+desc+'</p>'+
+ '<span class="v81-programme-link">Explore this programme <span aria-hidden="true">→</span></span></div></a>';
+}
 routes.home=function(){
- const stories=J79_VIDEO_STORIES.map(j79VideoCard).join('');
- return '<main class="v81-home">'+
- '<section class="v81-hero"><div class="v81-hero-copy"><p class="v81-eyebrow">WORLD JADO KUIN DO ORGANISATION</p><h1>Find your confidence. Find your people.</h1><p>Martial arts for children, teens and adults, with friendly instructors, supportive classes and a clear path to keep growing.</p><div class="v81-actions"><a class="v81-primary" href="#find-school">Find your local class →</a><a class="v81-secondary" href="#start">New to Jado? See how it works →</a></div></div><img src="'+resolveAssetPath('assets/photos/brackley-partner-practice.webp')+'" alt="Jado students practising together" /></section>'+
- '<section class="v81-section v81-values"><p class="v81-eyebrow">MORE THAN MARTIAL ARTS</p><h2>Grow stronger, together.</h2><p>Everyone starts somewhere. Every step forward matters.</p><div class="v81-grid">'+
- [['Confidence','Build belief in yourself, one achievable step at a time.'],['Belonging','Be part of a welcoming community that supports one another.'],['Personal growth','Develop focus, resilience and skills at your own pace.']].map(x=>'<article class="v81-tile"><h3>'+x[0]+'</h3><p>'+x[1]+'</p></article>').join('')+'</div></section>'+
- '<section class="v81-section"><p class="v81-eyebrow">ONE JADO FAMILY</p><h2>There is a place for you here.</h2><div class="v81-grid">'+
- [['Super J’s','A welcoming introduction for our youngest learners.'],['Confident Kidz','Develop confidence, coordination and positive habits.'],['Teens & Adults','Challenge yourself, learn new skills and progress together.']].map(x=>'<article class="v81-tile"><h3>'+x[0]+'</h3><p>'+x[1]+'</p><a href="#train">Explore training →</a></article>').join('')+'</div></section>'+
- '<section class="v81-section v81-path"><p class="v81-eyebrow">YOUR JOURNEY</p><h2>Progress you can see. Support you can feel.</h2><ol class="v81-steps"><li>First class</li><li>Build confidence</li><li>Develop skills</li><li>Progress through grades</li><li>Keep growing</li></ol><p>Learn at your pace, supported by your instructor and the people training alongside you.</p><a href="#jado">Explore Jado and grading →</a></section>'+
- '<section class="v81-section"><p class="v81-eyebrow">GETTING STARTED</p><h2>Three simple steps.</h2><div class="v81-grid"><article class="v81-tile"><h3>1. Find a class</h3><p>Choose a convenient local venue.</p></article><article class="v81-tile"><h3>2. Get in touch</h3><p>Ask your instructor any questions.</p></article><article class="v81-tile"><h3>3. Come and try</h3><p>Meet the group and discover Jado.</p></article></div></section>'+
- '<section class="v81-section v81-stories"><h2>Hear from the Jado family.</h2><div class="j79-video-stories">'+stories+'</div></section>'+
- '<section class="v81-final"><h2>Your journey can start here.</h2><p>New to martial arts? You are welcome.</p><a class="v81-primary" href="#find-school">Find your local class →</a></section></main>';
+ const group=j81Photo('group','assets/photos/brackley-belt-celebration.webp');
+ const pupils=j81Photo('pupils','assets/photos/brackley-partner-practice.webp');
+ const awards=j81Photo('awards','assets/photos/brackley-adult-training.webp');
+ const older=resolveAssetPath('assets/photos/brackley-adult-training.webp');
+ const kids=resolveAssetPath('assets/photos/brackley-belt-celebration.webp');
+ return shell('<main class="v81-home">'+
+ '<section class="v81-hero"><div class="wrap v81-hero-grid"><div class="v81-hero-copy">'+
+ '<div class="v81-eyebrow">World Jado Kuin Do Organisation · Everyone belongs</div>'+
+ '<h1>A place to belong.<br><em>A path to grow.</em></h1>'+
+ '<p>From a child’s very first class to an adult’s next challenge, Jado Kuin Do brings people together through encouragement, shared achievements and progressive learning.</p>'+
+ '<p class="v81-hero-support"><strong>New to martial arts?</strong> You can ask questions, meet the instructor and choose a class suited to your stage.</p>'+
+ '<a class="v81-primary" href="#start">Find my Jado class <span aria-hidden="true">→</span></a>'+
+ '<a class="v81-simple-link" href="#school-directory">Already know your school? Browse locations <span aria-hidden="true">→</span></a>'+
+ '</div><figure class="v81-hero-figure"><img src="'+group+'" alt="Real Jado students celebrating with their instructor" fetchpriority="high">'+
+ '<figcaption>Real students. Shared achievements. A welcoming community.</figcaption></figure></div></section>'+
+ '<section class="v81-family" aria-labelledby="v81-family-title"><div class="wrap v81-family-grid">'+
+ '<div class="v81-family-pictures"><figure><img src="'+pupils+'" alt="Young Jado students proudly showing certificates" loading="lazy"><figcaption>Every achievement matters.</figcaption></figure>'+
+ '<figure><img src="'+awards+'" alt="Jado instructor celebrating a young student’s achievement" loading="lazy"><figcaption>Encouragement along the way.</figcaption></figure></div>'+
+ '<div class="v81-family-copy"><div class="v81-eyebrow">More than a martial arts club</div>'+
+ '<h2 id="v81-family-title">You’re part of the Jado family.</h2>'+
+ '<p>Beginning something new can feel daunting. Your local Jado instructor can help you understand the class, talk through practical questions and find a starting point that feels right.</p>'+
+ '<div class="v81-care"><div><strong>Feel welcome</strong><span>Get to know the people who teach and what to expect.</span></div>'+
+ '<div><strong>Feel supported</strong><span>Age-appropriate learning, clear guidance and safeguarding information.</span></div>'+
+ '<div><strong>Grow together</strong><span>Learn alongside others and celebrate personal progress.</span></div></div>'+
+ '<a class="v81-text-link" href="#community">Explore the Jado community <span aria-hidden="true">→</span></a>'+
+ '</div></div></section>'+
+ '<section class="v81-progress" aria-labelledby="v81-progress-title"><div class="wrap">'+
+ '<div class="v81-heading"><div class="v81-eyebrow">A progressive approach</div>'+
+ '<h2 id="v81-progress-title">A place for every stage.</h2>'+
+ '<p>Jado offers age-appropriate programmes and a clear route to keep learning. You don’t have to rush towards a belt: grading is optional, and everyone progresses differently.</p></div>'+
+ '<div class="v81-programmes">'+
+ j81Programme('Super J’s','Typically 3–6 years','Little steps. Big smiles.','The Five Animals introduce movement and confidence through age-appropriate activities.','super-js',pupils,'Young Jado students celebrating their awards')+
+ j81Programme('Confident Kidz','Typically 6–12 years','Growing skills. Growing confidence.','Practise techniques, respect and positive habits in a supportive group.','confident-kidz',kids,'Young Jado students celebrating new belts')+
+ j81Programme('Teens & adults','Typically 13+ years','Your challenge. Your pace.','Develop movement, practical self-defence skills and focus with others.','adults',older,'Adult Jado martial arts students during practice')+
+ '</div><div class="v81-progression-note"><strong>Progression is personal, not a race.</strong><a href="#grade-order">Discover belts and gradings <span aria-hidden="true">→</span></a></div>'+
+ '</div></section>'+
+ '<section class="v81-first" aria-labelledby="v81-first-title"><div class="wrap v81-first-grid">'+
+ '<div><div class="v81-eyebrow">A welcoming first step</div><h2 id="v81-first-title">Your first visit, made easier.</h2>'+
+ '<p>Not sure what to wear, where to go or whether a parent can watch? Ask your instructor — you do not need all the answers before you start.</p>'+
+ '<a class="v81-text-link" href="#new-to-jado">What to expect at your first class <span aria-hidden="true">→</span></a></div>'+
+ '<div class="v81-start-steps"><div><strong>Choose a suitable school</strong><span>Review published times and the right age group.</span></div>'+
+ '<div><strong>Talk things through</strong><span>Ask about trial arrangements, clothing and support needs.</span></div>'+
+ '<div><strong>Enjoy your first session</strong><span>Meet your instructor, try something new and learn at your pace.</span></div></div></div></section>'+
+ '<section class="v81-support"><div class="wrap"><div class="v81-eyebrow">People you can get to know</div>'+
+ '<h2>Friendly faces. Real experience.</h2><p>Find out who teaches, how your local school works and the support available before you join.</p>'+
+ '<div class="v81-support-links"><a href="#instructors">Meet our instructors →</a><a href="#safeguarding">Safeguarding and support →</a>'+
+ '<a href="#faq">Questions before joining →</a></div></div></section>'+
+ '</main>');
+};
+// Keep biographies human, factual and genuinely readable, without repeating the first paragraph.
+function j81InstructorCard(p){
+ const m=j74InstructorMedia(p);
+ const text=String(p.summary||'').trim();
+ const first=text.search(/[.!?]\s+[A-Z]/);
+ const lead=first>=35?text.slice(0,first+1):text.slice(0,185).replace(/\s+\S*$/,'')+(text.length>185?'…':'');
+ const remainder=first>=35?text.slice(first+1).trim():text.slice(lead.replace(/…$/,'').length).trim();
+ const extra=remainder&&remainder.replace(/^…/,'').trim().length>12?
+  '<details class="v81-instructor-details"><summary>Read more about '+jEsc(p.name)+'</summary><p>'+jEsc(remainder.replace(/^…/,'').trim())+'</p></details>':'';
+ return '<article class="v81-instructor"><figure><img src="'+m.src+'" alt="'+jEsc(m.alt)+'" loading="lazy" onerror="this.onerror=null;this.src=j74WorldLogo()">'+
+ '<figcaption>'+jEsc(m.note)+'</figcaption></figure><div><h3>'+jEsc(p.name)+'</h3>'+
+ '<p class="v81-instructor-role">'+jEsc(p.role||'Jado instructor')+'</p><p>'+jEsc(lead||'Ask your local school about your instructor.')+'</p>'+extra+
+ '<a class="v81-text-link" href="#school-directory">Find a local school →</a></div></article>';
+}
+j74TeacherCard=j81InstructorCard;
+j74CompactTeacherCard=j81InstructorCard;
+routes.instructors=function(){
+ const people=cmsCollection('instructors').filter(p=>String(p.status).toLowerCase()==='live');
+ return jPage('Meet the people who teach.','Get to know the instructors who welcome students across WJO.',
+ '<div class="v81-instructor-list">'+people.map(j81InstructorCard).join('')+'</div>'+
+ '<p class="v81-instructor-footer">Your school can confirm which instructor teaches the session you choose.</p>'+
+ '<div class="j72-actions">'+jBtn('school-directory','Find a local school')+'</div>');
+};
+const v81OldRender=render;
+render=function(){
+ v81OldRender();
+ document.title=document.title.replace(/V7[2-9]|V80/g,'V81');
 };
