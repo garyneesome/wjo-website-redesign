@@ -1,0 +1,10 @@
+/* V83 mobile/accessibility and first-class experience */
+.v83-first-intro{padding:clamp(22px,4vw,40px);border-radius:12px;background:#f7f1e8;margin:20px 0}
+.v83-first-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:25px 0}
+.v83-first-grid section,.v83-venue{padding:24px;border:1px solid #d5c9ba;border-radius:12px;background:#fffaf3}
+.v83-first-grid h2{font-size:1.4rem;line-height:1.2}
+.v83-first-grid p,.v83-venue p,.v83-venue li{line-height:1.65}
+.v83-venue ul{padding-left:20px}
+:where(a,button,input,select,summary):focus-visible{outline:3px solid #b62735!important;outline-offset:3px}
+@media(max-width:760px){.v83-first-grid{grid-template-columns:1fr}.j72-page h1{font-size:clamp(2rem,9vw,3.25rem);overflow-wrap:anywhere}.j72-page p{overflow-wrap:anywhere}body{padding-bottom:env(safe-area-inset-bottom)}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
