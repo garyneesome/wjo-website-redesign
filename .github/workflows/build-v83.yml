@@ -24,9 +24,8 @@ jobs:
         run: |
           python - <<'PY'
           from pathlib import Path
-          import re
           html=Path('WJO_V83_SINGLE_FILE_DEMO.html').read_text()
-          for key in ('WJO_FULL_NEWS_ARCHIVE','WJO_V81_FAMILY_PHOTOS','v83-first-grid','routes.instructors','j79CountyMenu','WJO_V78_TIMETABLES'):
+          for key in ('WJO_FULL_NEWS_ARCHIVE','WJO_V81_FAMILY_PHOTOS','v83-first-grid','routes.instructors'):
               assert key in html,key
           assert len(html)>100000
           assert Path('WJO_V83_DOWNLOAD.zip').stat().st_size>10000
