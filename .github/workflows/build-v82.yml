@@ -1,0 +1,32 @@
+name: Build V82 restored news
+on:
+  push:
+    paths:
+      - 'source/v82/**'
+      - 'tools/rebuild_v82.py'
+      - '.github/workflows/build-v82.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install pillow
+      - name: Build V82 including full WJO news
+        run: python tools/rebuild_v82.py
+      - name: Validate archived news
+        run: |
+          test -s WJO_V82_SINGLE_FILE_DEMO.html
+          test -s WJO_V82_DOWNLOAD.zip
+          grep -q 'WJO_FULL_NEWS_ARCHIVE' WJO_V82_SINGLE_FILE_DEMO.html
+      - name: Publish downloadable files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f WJO_V82_SINGLE_FILE_DEMO.html WJO_V82_DOWNLOAD.zip dist/index.html
+          git diff --cached --quiet || (git commit -m "Build V82 with restored news" && git push)
