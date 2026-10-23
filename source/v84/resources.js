@@ -66,7 +66,7 @@ routes.syllabus=function(){
  return jPage(g.name+' requirements.','World Jado Organisation · Official source sheet transcribed for accessibility.',
  '<div class="v84-sheet-toolbar"><a class="j72-btn secondary" href="#resources">← All grading resources</a>'+
  '<button type="button" class="j72-btn" onclick="j84Print()">Print / Save as PDF</button>'+
- '<button type="button" class="j72-btn secondary" onclick="j84Download('+JSON.stringify(g.id)+')">Download HTML sheet ↓</button></div>'+
+ '<button type="button" class="j72-btn secondary" onclick="j84Download(&quot;'+safe(g.id)+'&quot;)">Download HTML sheet ↓</button></div>'+
  sheet(g)+
  '<p class="v84-document-caveat">The requirements above follow the original WJO grading sheets supplied for the redesign. These archived versions carry their original copyright dates; ask your instructor to confirm current requirements. Downloaded HTML works offline. Use Print / Save as PDF for a PDF copy.</p>'+
  '<div class="v84-neighbours">'+(grades.filter(x=>x.group===g.group&&x.id!==g.id).map(gradeCard).join(''))+'</div>', ['resources','Resources']);
