@@ -1,0 +1,712 @@
+[
+  {
+    "id": "white",
+    "name": "White Belt",
+    "color": "#a5abb0",
+    "group": "Foundation",
+    "copyright": "2019 WJO",
+    "note": "Please Note : All techniques must be performed using the front and rear hands / feet and in Left and Right stances.",
+    "sections": [
+      [
+        "Basics",
+        "numbered",
+        [
+          "Ready position",
+          "Jab punch",
+          "Cross punch",
+          "Palm deflection",
+          "Push front kick – mid section",
+          "Downward hook deflection",
+          "Round house kick",
+          "Outside knee block"
+        ]
+      ],
+      [
+        "Footwork",
+        "bullets",
+        [
+          "Ready Stance moving forward, backward and sideways",
+          "Turn"
+        ]
+      ],
+      [
+        "Walking Techniques",
+        "bullets",
+        [
+          "Walk and punch – jab",
+          "Walk and punch – jab, Cross"
+        ]
+      ],
+      [
+        "Partner Work - 1 Attack defence*",
+        "bullets",
+        [
+          "Palm deflection against straight punches (front and rear hands)",
+          "Downward hook deflection against kicks (front and rear hands)"
+        ]
+      ],
+      [
+        "Patterns",
+        "lines",
+        [
+          "Pattern 1",
+          "Horse riding stance and punches"
+        ]
+      ]
+    ]
+  },
+  {
+    "id": "yellow",
+    "name": "Yellow Belt",
+    "color": "#d9ae00",
+    "group": "Foundation",
+    "copyright": "2015 WJO",
+    "note": "Please Note : All techniques must be performed using the front and rear hands / feet and in Left and Right stances.",
+    "sections": [
+      [
+        "Basics",
+        "numbered",
+        [
+          "Back-fist",
+          "Rising forearm block",
+          "Reverse punch",
+          "Downward hook deflection – against reverse punch",
+          "Hook punch – head and body",
+          "Outside forearm block – head and body",
+          "Roundhouse kick – mid section",
+          "Inside forearm block – head and body",
+          "Uppercut – head, body",
+          "Double forearm block",
+          "Back kick",
+          "Side kick – midsection"
+        ]
+      ],
+      [
+        "Footwork",
+        "bullets",
+        [
+          "Long Stance"
+        ]
+      ],
+      [
+        "Walking Technique",
+        "bullets",
+        [
+          "Sliding back-fist with reverse punch"
+        ]
+      ],
+      [
+        "Partner Work*",
+        "bullets",
+        [
+          "Defensive techniques against back fist and reverse punch attacks",
+          "2 Attack Defence - hand and foot techniques"
+        ]
+      ],
+      [
+        "Patterns",
+        "lines",
+        [
+          "Pattern 1",
+          "Horse riding stance with punches"
+        ]
+      ]
+    ]
+  },
+  {
+    "id": "orange",
+    "name": "Orange Belt",
+    "color": "#e87416",
+    "group": "Foundation",
+    "copyright": "2015 WJO",
+    "note": "Please Note : All techniques must be performed using the front and rear hands / feet and in Left and Right stances.",
+    "sections": [
+      [
+        "Basics",
+        "numbered",
+        [
+          "Front elbow strike",
+          "Roundhouse elbow",
+          "Rising elbow strike",
+          "Rising elbow block and counter",
+          "Spinning elbow",
+          "Vertical cross",
+          "Front snap kick (mid section)",
+          "Jart kick",
+          "Grab and front knee - mid section",
+          "Cross-arm knee block",
+          "Single long guard - front hand",
+          "Roundhouse kick - high section",
+          "Front kick – high section"
+        ]
+      ],
+      [
+        "Footwork Stance Work",
+        "bullets",
+        [
+          "Lunging Stance",
+          "Evasion: Downward, Backward, Sideward (lateral) with counter strikes"
+        ]
+      ],
+      [
+        "Walking Technique",
+        "bullets",
+        [
+          "Push front kick, Jab, Cross"
+        ]
+      ],
+      [
+        "Partner work*",
+        "bullets",
+        [
+          "3 Attack defence – hand and foot variations"
+        ]
+      ],
+      [
+        "Patterns",
+        "lines",
+        [
+          "Pattern 2",
+          "Horse riding stance with punches"
+        ]
+      ]
+    ]
+  },
+  {
+    "id": "red",
+    "name": "Red Belt",
+    "color": "#ca282d",
+    "group": "Foundation",
+    "copyright": "2015 WJO",
+    "note": "Please Note : All techniques must be performed using the front and rear hands / feet and in Left and Right stances.",
+    "sections": [
+      [
+        "Basics",
+        "numbered",
+        [
+          "Jumping jab",
+          "Knife hand block",
+          "Parry",
+          "Reverse elbow",
+          "Whipping elbow",
+          "Roundhouse knee - mid section",
+          "Side kick - high section - thrust",
+          "Spinning back fist",
+          "Downward elbow block and counter",
+          "Defensive double long-guard - with counter"
+        ]
+      ],
+      [
+        "Footwork Work",
+        "bullets",
+        [
+          "Diagonal Stance",
+          "Back Stance",
+          "Evasion: Lateral, Backward, Downward"
+        ]
+      ],
+      [
+        "Walking Techniques",
+        "bullets",
+        [
+          "Front leg roundhouse, jab, cross, rear leg roundhouse"
+        ]
+      ],
+      [
+        "Partner Work*",
+        "bullets",
+        [
+          "4 Attack Defence – varied combinations"
+        ]
+      ],
+      [
+        "Other applications",
+        "lines",
+        [
+          "Shadow Boxing",
+          "Pattern 2",
+          "Horse riding stance with punches"
+        ]
+      ]
+    ]
+  },
+  {
+    "id": "green",
+    "name": "Green Belt",
+    "color": "#147b3f",
+    "group": "Intermediate",
+    "copyright": "2015 WJO",
+    "note": "Please Note : All techniques must be performed using the front and rear hands / feet and in Left and Right stances.",
+    "sections": [
+      [
+        "Basics",
+        "numbered",
+        [
+          "Swing hook punch",
+          "Vertical Hammer fist",
+          "Rotational Hammer fist",
+          "Over-arm cross",
+          "Palm strike",
+          "Axe kick",
+          "Spinning back kick"
+        ]
+      ],
+      [
+        "Walking Technique",
+        "bullets",
+        [
+          "Rising forearm block, front snap kick rear, side snap kick front, reverse punch"
+        ]
+      ],
+      [
+        "Footwork",
+        "bullets",
+        [
+          "3 Way Toe Tap",
+          "Box Steps Complete",
+          "Evasion: Lateral, Backward, Downward"
+        ]
+      ],
+      [
+        "Partner Work*",
+        "bullets",
+        [
+          "Grab roundhouse & counter",
+          "Escape from grab roundhouse",
+          "Escape from grab front kick",
+          "Evasion – applied"
+        ]
+      ],
+      [
+        "Other applications",
+        "lines",
+        [
+          "Slow Controlled Sparring – Jado Point Stop, Jado Sport",
+          "Pattern 3",
+          "Horse riding stance and punches"
+        ]
+      ]
+    ]
+  },
+  {
+    "id": "blue",
+    "name": "Blue Belt",
+    "color": "#176fb9",
+    "group": "Intermediate",
+    "copyright": "2015 WJO",
+    "note": "Please Note : All techniques must be performed using the front and rear hands / feet and in Left and Right stances.",
+    "sections": [
+      [
+        "Basics",
+        "numbered",
+        [
+          "45° Roundhouse kick – close quarter and long range",
+          "Spinning side kick",
+          "Ridge Hand",
+          "Wedging block",
+          "Jumping knee",
+          "Sickle kick",
+          "Whipping roundhouse kick",
+          "Roundhouse front snap kick",
+          "Inside Crescent kick",
+          "Outside Crescent kick"
+        ]
+      ],
+      [
+        "Walking Technique",
+        "bullets",
+        [
+          "Backfist, side thrust-kick, spinning side-kick, reverse punch"
+        ]
+      ],
+      [
+        "Footwork",
+        "bullets",
+        [
+          "8 Basic Stances",
+          "Box Steps & Pivots"
+        ]
+      ],
+      [
+        "Partner work",
+        "bullets",
+        [
+          "Evasion*",
+          "Controlled sparring"
+        ]
+      ],
+      [
+        "Other applications",
+        "lines",
+        [
+          "Shadow boxing",
+          "Pattern 3",
+          "Horse riding stance and punches"
+        ]
+      ]
+    ]
+  },
+  {
+    "id": "purple",
+    "name": "Purple Belt",
+    "color": "#75359b",
+    "group": "Intermediate",
+    "copyright": "2015 WJO",
+    "note": "Please Note : All techniques must be performed using the front and rear hands / feet and in Left and Right stances.",
+    "sections": [
+      [
+        "Basics",
+        "numbered",
+        [
+          "Long side Jab",
+          "Downward hook",
+          "Side uppercut",
+          "Chop",
+          "Sliding axe kick",
+          "Spinning outside crescent kick",
+          "Spinning inside crescent kick",
+          "Snap side kick",
+          "Hook kick",
+          "Attacking double long guard – with roundhouse"
+        ]
+      ],
+      [
+        "Walking Techniques",
+        "bullets",
+        [
+          "Outside crescent kick, Jab, cross, hook kick"
+        ]
+      ],
+      [
+        "Footwork",
+        "bullets",
+        [
+          "Box steps & Pivots complete"
+        ]
+      ],
+      [
+        "Partner Work",
+        "bullets",
+        [
+          "Evasion*",
+          "Box Steps & Pivots*",
+          "Controlled Sparring"
+        ]
+      ],
+      [
+        "Other applications",
+        "lines",
+        [
+          "Multiple attack defence techniques – block & counter",
+          "Pattern 4",
+          "Horse riding stance and punches"
+        ]
+      ]
+    ]
+  },
+  {
+    "id": "brown",
+    "name": "Brown Belt",
+    "color": "#774122",
+    "group": "Advanced",
+    "copyright": "2015 WJO",
+    "note": "Please Note : All techniques must be performed using the front and rear hands / feet and in Left and Right stances.",
+    "sections": [
+      [
+        "Basics",
+        "numbered",
+        [
+          "Jumping cross",
+          "Switching ridge hand",
+          "Scissor block",
+          "Shovel punch – head and body",
+          "Twisting kick",
+          "Sliding double side kick",
+          "Spinning hook kick",
+          "Jumping front kick",
+          "Jump spinning back kick",
+          "Spinning roundhouse kick"
+        ]
+      ],
+      [
+        "Walking Technique",
+        "bullets",
+        [
+          "Inside crescent kick, sliding double side kick, spinning hook kick"
+        ]
+      ],
+      [
+        "Partner Work",
+        "bullets",
+        [
+          "Box Steps & Pivots *",
+          "Evasion *",
+          "Sparring – variation of basic and advanced techniques"
+        ]
+      ],
+      [
+        "Other applications",
+        "lines",
+        [
+          "Multiple attack defence techniques – block & counter",
+          "Pattern 4",
+          "Horse riding stance and punches"
+        ]
+      ]
+    ]
+  },
+  {
+    "id": "brown-1st-tag",
+    "name": "Brown Belt – 1st Tag",
+    "color": "#774122",
+    "group": "Advanced",
+    "copyright": "2015 WJO",
+    "note": "Students testing for this grade must show proficiency in the execution of all previous grading techniques and demonstrate with accuracy, precision, sharpness and intent.",
+    "intro": "Combinations of previous basics (may be called stationary, moving forward or backward)",
+    "sections": [
+      [
+        "Combinations of previous basics",
+        "bullets",
+        [
+          "Basics",
+          "Walking Techniques",
+          "Partner Work",
+          "Individual Patterns"
+        ]
+      ],
+      [
+        "Footwork",
+        "bullets",
+        [
+          "8 Basic Stances",
+          "Rotational Footwork: Box Steps & Pivots",
+          "Evasion: Lateral, Backward, Downward"
+        ]
+      ],
+      [
+        "Specific Applications",
+        "lines",
+        [
+          "Multiple attack defence techniques - unarmed (block & counter)",
+          "Controlled Sparring – Various types as specified by the grading panel",
+          "Patterns",
+          "Sets – Feng Tek",
+          "Forms – Feng"
+        ]
+      ],
+      [
+        "Black Belt etiquette and qualities",
+        "lines",
+        [
+          "Demonstrate continual Black Belt etiquette and qualities throughout."
+        ]
+      ],
+      [
+        "Jado Kuin Do student code",
+        "bullets",
+        [
+          "Attitude, Commitment, Honesty, Respect, Loyalty, Etiquette"
+        ]
+      ],
+      [
+        "The 5 Jado Animals",
+        "bullets",
+        [
+          "Dragon, Snake, Panther, Tiger, Crane."
+        ]
+      ]
+    ]
+  },
+  {
+    "id": "black-1st-degree",
+    "name": "Black Belt – 1st Degree",
+    "color": "#222222",
+    "group": "Advanced",
+    "copyright": "2015 WJO",
+    "note": "Students testing for this grade must show proficiency in the execution of all previous grading techniques; demonstrating accuracy, precision, sharpness and intent.",
+    "intro": "Combinations of previous basics (may be called stationary, advancing or retreating)",
+    "sections": [
+      [
+        "Footwork",
+        "bullets",
+        [
+          "Basic Stance Work",
+          "Methods of Advancing & Retreating: step, skip, slide, pivot, step-step, switch, spin, cross, pixie, leap, pendulum - with strikes & counters",
+          "Rotational Footwork: Box steps & pivots",
+          "Evasion: Lateral, Backward"
+        ]
+      ],
+      [
+        "Basics & Applications",
+        "lines",
+        [
+          "Combinations of previous basics (may be called stationary, advancing or retreating)",
+          "Walking techniques",
+          "Patterns"
+        ]
+      ],
+      [
+        "Pad Work - Display: Power, Accuracy, Intent & Effectiveness",
+        "bullets",
+        [
+          "Individual techniques",
+          "Offensive 1,2,3,",
+          "Defensive 1,2,3,",
+          "Any other combinations specified by the Grading Panel"
+        ]
+      ],
+      [
+        "Multiple attack defence techniques",
+        "lines",
+        [
+          "Multiple attack defence techniques – block & counter"
+        ]
+      ],
+      [
+        "Specific Partner Work",
+        "bullets",
+        [
+          "Head Evasion: Dip, Slip, Swayback - applied with 3 counter strikes",
+          "Box Steps & Pivots",
+          "Evasion",
+          "Any other partner work specified by the Grading Panel"
+        ]
+      ],
+      [
+        "Other applications",
+        "lines",
+        [
+          "Sparring - as specified by the Grading Panel",
+          "Sets - Feng Tek",
+          "Forms - Feng Jiang",
+          "Demonstrate continual Black Belt etiquette and qualities throughout."
+        ]
+      ],
+      [
+        "Jado Kuin Do student code",
+        "bullets",
+        [
+          "Attitude, Commitment, Honesty, Respect, Loyalty, Etiquette"
+        ]
+      ],
+      [
+        "The 5 Jado Animals",
+        "bullets",
+        [
+          "Dragon, Snake, Panther, Tiger, Crane."
+        ]
+      ]
+    ]
+  },
+  {
+    "id": "first-degree-level-1-yellow",
+    "name": "1st Degree – Level 1 (Yellow)",
+    "color": "#e0b400",
+    "group": "Degree / Level",
+    "copyright": "2019 WJO Martial Arts",
+    "note": "NB. Any of the previous level grading techniques can be called at any time. Techniques may be called in varying stances, using varying angles with punches and/or applied.",
+    "sections": [
+      [
+        "Basics",
+        "numbered",
+        [
+          "Stance: 1. Square  2. Toes In Stance TIS  3. Close Attacking Stance CAS",
+          "Guard: 1. Neutral  2. Half  3. Full",
+          "Quarter Angle",
+          "Half Angle",
+          "Overhand Punch (snap & push)",
+          "Palm Deflection",
+          "Beautiful Lady"
+        ]
+      ],
+      [
+        "Foot Work",
+        "bullets",
+        [
+          "Methods of Advancing and Retreating: all previous, Circle Step"
+        ]
+      ],
+      [
+        "Partner Work",
+        "bullets",
+        [
+          "Palm deflection against straight punches : square & using angles",
+          "Jado Boxing Combinations - Padwork 1 - 5"
+        ]
+      ],
+      [
+        "Sets",
+        "bullets",
+        [
+          "Palm Set"
+        ]
+      ],
+      [
+        "Theory",
+        "bullets",
+        [
+          "Understanding the three ranges of Jado Kuin Do",
+          "3 Primary Targets",
+          "3 Secondary Targets"
+        ]
+      ]
+    ]
+  },
+  {
+    "id": "second-degree-level-2-purple",
+    "name": "2nd Degree – Level 2 (Purple)",
+    "color": "#733a99",
+    "group": "Degree / Level",
+    "copyright": "2019 WJO Martial Arts",
+    "note": "NB. Any of the previous level grading techniques can be called at any time. Techniques may be called in varying stances, using varying angles with punches and/or applied.",
+    "sections": [
+      [
+        "Basics",
+        "numbered",
+        [
+          "Heel Palm",
+          "Lateral Forearm – single & double",
+          "Spay Hand",
+          "Hook Deflection",
+          "Slap",
+          "Point Kick"
+        ]
+      ],
+      [
+        "Footwork",
+        "lines",
+        [
+          "Linear : Methods of A&R, Offensive & Defensive V",
+          "Rotational : Box Steps & Pivots, Multi Directional Facing, Advanced Pivoting"
+        ]
+      ],
+      [
+        "Partner Work",
+        "bullets",
+        [
+          "Fighting for the Middle",
+          "Questions & Answers",
+          "Power Palm : freestyle",
+          "Crane’s Punch : freestyle",
+          "Jado Fighting"
+        ]
+      ],
+      [
+        "Strategy",
+        "bullets",
+        [
+          "Timing: Stop Hits – high, medium, low",
+          "6 Methods of Attack"
+        ]
+      ],
+      [
+        "Forms",
+        "bullets",
+        [
+          "Kiu Sau",
+          "Taam Lo – sections 3 & 4"
+        ]
+      ]
+    ]
+  }
+]
