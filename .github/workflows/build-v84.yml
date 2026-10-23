@@ -1,0 +1,56 @@
+name: Build V84 resources demo
+on:
+  push:
+    paths:
+      - 'source/v84/**'
+      - 'tools/rebuild_v84.py'
+      - '.github/workflows/build-v84.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: wjo-v84-build
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install legacy builder dependencies
+        run: python -m pip install pillow
+      - name: Validate V84 source before building
+        run: |
+          node --check source/v84/resources.js
+          python -m json.tool source/v84/grades.json > /dev/null
+          python -m py_compile tools/rebuild_v84.py
+      - name: Build standalone V84 website
+        run: python tools/rebuild_v84.py
+      - name: Verify output and required features
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from zipfile import ZipFile
+          grades=json.loads(Path('source/v84/grades.json').read_text())
+          assert len(grades)==12 and len({g['id'] for g in grades})==12
+          out=Path('WJO_V84_SINGLE_FILE_DEMO.html')
+          text=out.read_text()
+          for phrase in ('WJO_V84_GRADES','v84-sheet','j84Download','v84-code-letters','routes.syllabus','WJO_FULL_NEWS_ARCHIVE','WJO_V81_FAMILY_PHOTOS'):
+              assert phrase in text, phrase
+          with ZipFile('WJO_V84_DOWNLOAD.zip') as z:
+              assert z.namelist()==['WJO_V84_SINGLE_FILE_DEMO.html']
+          assert out.stat().st_size>100000
+          print('Validated',len(grades),'grading sheets; V84 HTML size',out.stat().st_size)
+          PY
+      - name: Commit new downloadable files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f WJO_V84_SINGLE_FILE_DEMO.html WJO_V84_DOWNLOAD.zip dist/index.html
+          git diff --cached --quiet || (git commit -m "Build V84 grading resources website" && git push)
