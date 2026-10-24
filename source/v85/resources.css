@@ -1,0 +1,32 @@
+/* V85 — Brown Belt 2nd Tag combined reference charts + Committee Hub links */
+.v85-chart-intro{margin:15px 0 27px;padding:clamp(19px,3.8vw,34px);border-left:6px solid #794628;background:#fff8ee;border-radius:10px}
+.v85-chart-intro h2{font-size:clamp(1.5rem,3vw,2.2rem);line-height:1.18;margin:7px 0 12px}
+.v85-chart-intro p{font-size:1rem;line-height:1.7;max-width:72ch}
+.v85-chart-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;align-items:start;margin:22px 0 30px}
+.v85-chart-card{border:1px solid #d9ccbc;border-radius:13px;overflow:hidden;box-shadow:0 5px 18px #35261c1c;background:#fffcf6}
+.v85-chart-preview{display:block;padding:12px;background:#f4ede5}
+.v85-chart-preview img{display:block;width:100%;height:auto;aspect-ratio:1840/2660;object-fit:contain;border-radius:5px;background:white}
+.v85-chart-details{padding:17px 21px 22px}
+.v85-chart-details h3{font-size:clamp(1.15rem,2vw,1.5rem);line-height:1.2;margin:5px 0 9px}
+.v85-chart-details p{margin:0 0 16px;line-height:1.5}
+.v85-chart-links,.v85-print-toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.v85-chart-links .j72-btn,.v85-print-toolbar .j72-btn{min-height:44px;cursor:pointer}
+.v85-chart-full{margin:22px auto 35px;max-width:900px;padding:18px;background:#fff;box-shadow:0 8px 25px #231b1b22;border:1px solid #ded7cf;border-radius:10px}
+.v85-chart-full img{display:block;width:100%;height:auto}
+.v85-chart-full figcaption{font-size:13px;color:#635f55;padding-top:15px;text-align:center}
+.v85-chart-note{margin:16px auto 23px;line-height:1.6;max-width:900px;color:#5d6158}
+.v85-footer-committee{padding:15px max(18px,calc((100% - 1120px)/2));display:flex;gap:24px;flex-wrap:wrap;background:#201f1c;color:#fff}
+.v85-footer-committee a{color:#ffefe2;text-decoration:underline}
+.v85-committee-shortcut{margin:25px 0}
+.v85-committee-nav{white-space:nowrap}
+@media(max-width:850px){.v85-chart-grid{grid-template-columns:1fr}.v85-chart-preview img{max-width:470px;margin:auto}}
+@media(max-width:540px){.v85-chart-card{border-radius:9px}.v85-chart-details{padding:14px}.v85-chart-full{padding:5px;margin:12px -8px 20px}.v85-print-toolbar .j72-btn{width:100%;justify-content:center}}
+@page{size:A4 portrait;margin:7mm}
+@media print{
+ header,.header,.footer,.topbar,.mobile-overlay,.j72-mobile-bar,.v85-footer-committee,
+ .j72-crumb,.j72-title,.v85-print-toolbar,.v85-chart-note,.j72-actions,
+ .v85-chart-full figcaption{display:none!important}
+ html,body,#site,.j72,.j72-page,.wrap,main{width:100%!important;max-width:none!important;padding:0!important;margin:0!important;background:white!important}
+ .v85-chart-full{border:0!important;box-shadow:none!important;max-width:100%!important;padding:0!important;margin:0!important;break-inside:avoid;page-break-inside:avoid}
+ .v85-chart-full img{max-width:100%!important;max-height:275mm!important;height:auto!important;object-fit:contain;print-color-adjust:exact;-webkit-print-color-adjust:exact}
+}
