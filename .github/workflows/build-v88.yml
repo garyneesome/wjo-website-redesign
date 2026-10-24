@@ -55,6 +55,7 @@ jobs:
           git add -f WJO_V88_SINGLE_FILE_DEMO.html WJO_V88_DOWNLOAD.zip dist/index.html assets/previews/wjo-v88-instructors-*.jpg
           if ! git diff --cached --quiet; then
             git commit -m "Publish V88 full-size uncropped instructor portraits"
+            git reset --hard HEAD
             for attempt in 1 2 3; do
               git pull --rebase origin main
               if git push; then
