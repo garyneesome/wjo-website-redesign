@@ -1,0 +1,65 @@
+name: Build V87 home CTA and Committee Hub login
+on:
+  push:
+    paths:
+      - 'source/v87/**'
+      - 'tests/v87-smoke.js'
+      - 'tests/v87-browser.py'
+      - 'tools/rebuild_v87.py'
+      - '.github/workflows/build-v87.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: wjo-v87-build
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install builder and browser-test dependencies
+        run: |
+          python -m pip install pillow playwright
+          python -m playwright install chromium
+      - name: Validate scripts and storage-denied Android login
+        run: |
+          node --check source/v87/experience.js
+          node tests/v87-smoke.js
+          python -m py_compile tools/rebuild_v87.py tests/v87-browser.py
+      - name: Rebuild the full V87 website
+        run: python tools/rebuild_v87.py
+      - name: Test the actual offline site in desktop and mobile Chromium
+        run: python tests/v87-browser.py
+      - name: Verify previous features and ZIP contents
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile
+          html=Path('WJO_V87_SINGLE_FILE_DEMO.html').read_text(encoding='utf-8')
+          required=('wjo-v87-experience-css','w86-hero','WJO_V85_CHART_IMAGES',
+                    'WJO_V84_GRADES','WJO_FULL_NEWS_ARCHIVE',"routes['committee-hub']",
+                    'window.submitAdminLogin = submitAdminLogin',
+                    'window.fillAdminDemo = fillAdminDemo',
+                    'Find my Jado class')
+          for item in required: assert item in html,item
+          assert html.count("window.addEventListener('hashchange',render);render()")==1
+          with ZipFile('WJO_V87_DOWNLOAD.zip') as archive:
+              assert 'WJO_V87_SINGLE_FILE_DEMO.html' in archive.namelist()
+              assert len([x for x in archive.namelist() if 'Brown_2nd_Tag' in x])==2
+          for v in ('mobile','desktop'):
+              assert (Path('assets/previews')/('wjo-v87-'+v+'.jpg')).is_file()
+          print('Verified complete V87 demo with mobile and desktop previews')
+          PY
+      - name: Publish tested V87 HTML, ZIP and screenshots
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f WJO_V87_SINGLE_FILE_DEMO.html WJO_V87_DOWNLOAD.zip dist/index.html assets/previews/wjo-v87-*.jpg
+          git diff --cached --quiet || (git commit -m "Publish tested V87 with working Committee Hub and improved mobile CTA" && git push)
