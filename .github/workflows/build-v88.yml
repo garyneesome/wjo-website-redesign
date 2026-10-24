@@ -53,4 +53,14 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -f WJO_V88_SINGLE_FILE_DEMO.html WJO_V88_DOWNLOAD.zip dist/index.html assets/previews/wjo-v88-instructors-*.jpg
-          git diff --cached --quiet || (git commit -m "Publish V88 full-size uncropped instructor portraits" && git push)
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish V88 full-size uncropped instructor portraits"
+            for attempt in 1 2 3; do
+              git pull --rebase origin main
+              if git push; then
+                exit 0
+              fi
+            done
+            echo "Unable to publish V88 after three clean retries" >&2
+            exit 1
+          fi
