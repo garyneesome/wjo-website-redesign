@@ -1,0 +1,63 @@
+name: Build V85 Committee Hub and Brown Tag resources
+on:
+  push:
+    paths:
+      - 'source/v85/**'
+      - 'tools/rebuild_v85.py'
+      - 'tools/render_v85_charts.py'
+      - '.github/workflows/build-v85.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: wjo-v85-build
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install required graphics library
+        run: python -m pip install pillow
+      - name: Check source syntax and inputs
+        run: |
+          node --check source/v85/resources.js
+          python -m json.tool source/v85/reference-charts.json > /dev/null
+          python -m json.tool source/v85/chart-content.json > /dev/null
+          python -m py_compile tools/rebuild_v85.py tools/render_v85_charts.py
+      - name: Build full single-file V85 and chart PNGs
+        run: python tools/rebuild_v85.py
+      - name: Verify completed V85 downloadable content
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from zipfile import ZipFile
+          from PIL import Image
+          source=json.loads(Path('source/v85/reference-charts.json').read_text())
+          assert len(source)==2
+          html=Path('WJO_V85_SINGLE_FILE_DEMO.html').read_text()
+          for phrase in ("WJO_V85_CHART_IMAGES","routes['brown-second-tag']","routes['committee-hub']","WJO_V84_GRADES","WJO_FULL_NEWS_ARCHIVE","href=\"#admin-hub\"","Brown Belt"):
+              assert phrase in html, phrase
+          files={c['filename'] for c in source}
+          for path in files:
+              file=Path('assets/grading/v85')/path
+              assert file.is_file() and file.stat().st_size>100000
+              with Image.open(file) as img:assert img.size==(1840,2660),img.size
+          with ZipFile('WJO_V85_DOWNLOAD.zip') as z:
+              assert set(z.namelist())=={'WJO_V85_SINGLE_FILE_DEMO.html',*files}
+          assert len(html)>250000
+          print("SUCCESS: two complete 1840 x 2660 charts; original committee hub linked; V85 ZIP complete")
+          PY
+      - name: Publish verified V85 files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f WJO_V85_SINGLE_FILE_DEMO.html WJO_V85_DOWNLOAD.zip dist/index.html assets/grading/v85/*.png
+          git diff --cached --quiet || (git commit -m "Build V85 grading charts and committee hub demo" && git push)
