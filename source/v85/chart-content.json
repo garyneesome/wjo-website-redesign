@@ -1,0 +1,385 @@
+{
+  "white": {
+    "name": "WHITE BELT",
+    "color": "#858585",
+    "sections": [
+      {
+        "kind": "numbered",
+        "items": [
+          "Ready position",
+          "Jab punch",
+          "Cross punch",
+          "Palm deflection",
+          "Push front kick – mid section",
+          "Downward hook deflection",
+          "Round house kick",
+          "Outside knee block"
+        ]
+      },
+      {
+        "title": "Footwork",
+        "items": [
+          "Ready Stance moving forward, backwards and sideways",
+          "Turn"
+        ]
+      },
+      {
+        "title": "Walking Techniques",
+        "items": [
+          "Walk and punch – jab",
+          "Walk and punch – jab, cross"
+        ]
+      },
+      {
+        "title": "Partner Work* – 1 Attack Defence",
+        "items": [
+          "Palm deflection against straight punches (front and rear hands)",
+          "Downward hook deflection against kicks (front and rear hands)"
+        ]
+      },
+      {
+        "kind": "lines",
+        "items": [
+          "Pattern 1",
+          "Horse riding stance and punches"
+        ]
+      }
+    ]
+  },
+  "yellow": {
+    "name": "YELLOW BELT",
+    "color": "#ebc320",
+    "sections": [
+      {
+        "kind": "numbered",
+        "items": [
+          "Back-fist",
+          "Rising forearm block",
+          "Reverse punch",
+          "Downward hook deflection – against reverse punch",
+          "Hook punch – head and body",
+          "Outside forearm block – head and body",
+          "Roundhouse kick – midsection",
+          "Inside forearm block – head and body",
+          "Uppercut – head and body",
+          "Double forearm block",
+          "Back kick",
+          "Side kick – midsection"
+        ]
+      },
+      {
+        "title": "Footwork",
+        "items": [
+          "Long Stance"
+        ]
+      },
+      {
+        "title": "Walking Techniques",
+        "items": [
+          "Sliding back-fist with reverse punch"
+        ]
+      },
+      {
+        "title": "Partner Work*",
+        "items": [
+          "Defensive techniques against back-fist and reverse punch attacks",
+          "2 Attack Defence – hand and foot techniques"
+        ]
+      },
+      {
+        "kind": "lines",
+        "items": [
+          "Pattern 1",
+          "Horse riding stance and punches"
+        ]
+      }
+    ]
+  },
+  "orange": {
+    "name": "ORANGE BELT",
+    "color": "#f47724",
+    "sections": [
+      {
+        "kind": "numbered",
+        "items": [
+          "Front elbow strike",
+          "Roundhouse elbow",
+          "Rising elbow strike",
+          "Rising elbow block and counter",
+          "Spinning elbow",
+          "Vertical cross",
+          "Front snap kick – midsection",
+          "Jart kick",
+          "Grab and front knee – midsection",
+          "Cross-arm knee block",
+          "Single long guard – front hand",
+          "Roundhouse kick – high-section",
+          "Front kick – high-section"
+        ]
+      },
+      {
+        "title": "Footwork",
+        "items": [
+          "Lunging Stance",
+          "Evasion: Downward, Backward, Sideward (lateral) with counter strikes"
+        ]
+      },
+      {
+        "title": "Walking Techniques",
+        "items": [
+          "Push front kick, jab, cross"
+        ]
+      },
+      {
+        "title": "Partner Work*",
+        "items": [
+          "3 Attack Defence – hand and foot techniques"
+        ]
+      },
+      {
+        "kind": "lines",
+        "items": [
+          "Pattern 2",
+          "Horse riding stance and punches"
+        ]
+      }
+    ]
+  },
+  "red": {
+    "name": "RED BELT",
+    "color": "#c82931",
+    "sections": [
+      {
+        "kind": "numbered",
+        "items": [
+          "Jumping jab",
+          "Knife hand block",
+          "Parry",
+          "Reverse elbow",
+          "Whipping elbow",
+          "Roundhouse knee – midsection",
+          "Side kick – high-section – thrust",
+          "Spinning back fist",
+          "Downward elbow block and counter",
+          "Defensive double long-guard – with counter"
+        ]
+      },
+      {
+        "title": "Footwork",
+        "items": [
+          "Diagonal Stance",
+          "Back Stance",
+          "Evasion: Lateral, Backward, Downward"
+        ]
+      },
+      {
+        "title": "Walking Techniques",
+        "items": [
+          "Front leg roundhouse, jab, cross, rear leg roundhouse"
+        ]
+      },
+      {
+        "title": "Partner Work*",
+        "items": [
+          "4 Attack Defence – varied combinations"
+        ]
+      },
+      {
+        "kind": "lines",
+        "items": [
+          "Shadow Boxing",
+          "Pattern 2",
+          "Horse riding stance and punches"
+        ]
+      }
+    ]
+  },
+  "green": {
+    "name": "GREEN BELT",
+    "color": "#178143",
+    "sections": [
+      {
+        "kind": "numbered",
+        "items": [
+          "Swing hook punch",
+          "Vertical Hammer fist",
+          "Rotational Hammer",
+          "Over-arm cross",
+          "Palm strike",
+          "Axe kick",
+          "Spinning back kick"
+        ]
+      },
+      {
+        "title": "Walking Techniques",
+        "items": [
+          "Rising forearm block, front snap kick rear, side snap kick front, reverse punch"
+        ]
+      },
+      {
+        "title": "Footwork",
+        "items": [
+          "3-Way Toe Tap",
+          "Box Steps Complete",
+          "Evasion: Lateral, Backward, Downward"
+        ]
+      },
+      {
+        "title": "Partner Work*",
+        "items": [
+          "Grab roundhouse & counter",
+          "Escape from grab roundhouse",
+          "Escape from grab front kick",
+          "Evasion – applied"
+        ]
+      },
+      {
+        "kind": "lines",
+        "items": [
+          "Slow Controlled Sparring – Jado Point Stop, Jado Sport",
+          "Pattern 3",
+          "Horse stance and punches"
+        ]
+      }
+    ]
+  },
+  "blue": {
+    "name": "BLUE BELT",
+    "color": "#176fb8",
+    "sections": [
+      {
+        "kind": "numbered",
+        "items": [
+          "45° Roundhouse kick – close quarter and long range",
+          "Spinning side kick",
+          "Ridge Hand",
+          "Wedging block",
+          "Jumping knee",
+          "Sickle kick",
+          "Whipping roundhouse kick",
+          "Roundhouse front snap kick",
+          "Inside Crescent kick",
+          "Outside Crescent kick"
+        ]
+      },
+      {
+        "title": "Walking Techniques",
+        "items": [
+          "Back-fist, side thrust kick, spinning side kick, reverse punch"
+        ]
+      },
+      {
+        "title": "Footwork",
+        "items": [
+          "8 Basic Stances",
+          "Box Steps & Pivots"
+        ]
+      },
+      {
+        "title": "Partner Work",
+        "items": [
+          "Evasion*",
+          "Controlled sparring"
+        ]
+      },
+      {
+        "kind": "lines",
+        "items": [
+          "Pattern 3",
+          "Horse riding stance and punches"
+        ]
+      }
+    ]
+  },
+  "purple": {
+    "name": "PURPLE BELT",
+    "color": "#763595",
+    "sections": [
+      {
+        "kind": "numbered",
+        "items": [
+          "Long side jab",
+          "Downward hook",
+          "Side uppercut",
+          "Chop",
+          "Spinning outside crescent kick",
+          "Snap side kick",
+          "Spinning inside crescent kick",
+          "Hook kick",
+          "Attacking double long guard – with roundhouse"
+        ]
+      },
+      {
+        "title": "Walking Techniques",
+        "items": [
+          "Outside crescent kick, jab, cross, hook kick"
+        ]
+      },
+      {
+        "title": "Footwork",
+        "items": [
+          "Box Steps & Pivots complete"
+        ]
+      },
+      {
+        "title": "Partner Work*",
+        "items": [
+          "Evasion*",
+          "Box Steps & Pivots*",
+          "Controlled Sparring"
+        ]
+      },
+      {
+        "kind": "lines",
+        "items": [
+          "Multiple attack defence techniques – block & counter",
+          "Pattern 4",
+          "Horse riding stance and punches"
+        ]
+      }
+    ]
+  },
+  "brown": {
+    "name": "BROWN BELT",
+    "color": "#7a4326",
+    "sections": [
+      {
+        "kind": "numbered",
+        "items": [
+          "Jumping cross",
+          "Switching ridge hand",
+          "Scissor block",
+          "Shovel punch – head and body",
+          "Twisting kick",
+          "Sliding double side kick",
+          "Spinning hook kick",
+          "Jumping front kick",
+          "Jump spinning back kick",
+          "Spinning roundhouse kick"
+        ]
+      },
+      {
+        "title": "Walking Techniques",
+        "items": [
+          "Inside crescent kick, sliding double side kick, spinning hook kick"
+        ]
+      },
+      {
+        "title": "Partner Work",
+        "items": [
+          "Box Steps & Pivots*",
+          "Evasion*",
+          "Sparring – variation of basic and advanced techniques"
+        ]
+      },
+      {
+        "kind": "lines",
+        "items": [
+          "Multiple attack defence techniques – block & counter",
+          "Pattern 4",
+          "Horse riding stance and punches"
+        ]
+      }
+    ]
+  }
+}
