@@ -1,0 +1,56 @@
+name: Build V88 instructor portrait fix
+on:
+  push:
+    paths:
+      - 'source/v88/**'
+      - 'tools/rebuild_v88.py'
+      - 'tests/v88-instructors.py'
+      - '.github/workflows/build-v88.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: wjo-v88-build
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: |
+          python -m pip install pillow playwright
+          python -m playwright install chromium
+      - name: Check build and test syntax
+        run: python -m py_compile tools/rebuild_v88.py tests/v88-instructors.py
+      - name: Rebuild full V88 portable demo
+        run: python tools/rebuild_v88.py
+      - name: Verify instructor photos do not crop or stretch
+        run: python tests/v88-instructors.py
+      - name: Verify package and previous site features
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile
+          html=Path('WJO_V88_SINGLE_FILE_DEMO.html').read_text()
+          for text in ('wjo-v88-instructors-css','wjo-v87-experience-css','v81-instructor',
+                       'WJO_V85_CHART_IMAGES','WJO_V84_GRADES',
+                       'WJO_FULL_NEWS_ARCHIVE',"routes['committee-hub']"):
+              assert text in html,text
+          with ZipFile('WJO_V88_DOWNLOAD.zip') as z:
+              assert 'WJO_V88_SINGLE_FILE_DEMO.html' in z.namelist()
+              assert len([x for x in z.namelist() if 'Brown_2nd_Tag' in x])==2
+          assert Path('assets/previews/wjo-v88-instructors-mobile.jpg').is_file()
+          assert Path('assets/previews/wjo-v88-instructors-desktop.jpg').is_file()
+          print('V88 passed all packaging and regression checks')
+          PY
+      - name: Publish verified V88 HTML, ZIP and previews
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f WJO_V88_SINGLE_FILE_DEMO.html WJO_V88_DOWNLOAD.zip dist/index.html assets/previews/wjo-v88-instructors-*.jpg
+          git diff --cached --quiet || (git commit -m "Publish V88 full-size uncropped instructor portraits" && git push)
