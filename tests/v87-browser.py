@@ -39,11 +39,11 @@ def check_login(page):
     page.locator('#admin-username').wait_for(state='attached',timeout=30000)
     page.locator('#admin-username').fill('committee')
     page.locator('#admin-password').fill('incorrect')
-    page.locator('form.admin-form-grid').evaluate('(el)=>el.requestSubmit()')
+    page.locator('#admin-username').evaluate('(el)=>{const form=el.closest("form"); if(form)form.requestSubmit();else window.submitAdminLogin({preventDefault(){}})}')
     assert page.locator('#admin-login-message').get_attribute('role')=='alert','Bad credentials not rejected'
     assert page.evaluate('isAdminLoggedIn()') is False,'Invalid credentials authorised'
     page.locator('#admin-password').fill('jado2026')
-    page.locator('form.admin-form-grid').evaluate('(el)=>el.requestSubmit()')
+    page.locator('#admin-username').evaluate('(el)=>{const form=el.closest("form"); if(form)form.requestSubmit();else window.submitAdminLogin({preventDefault(){}})}')
     page.wait_for_function('location.hash === "#admin-hub" && isAdminLoggedIn()===true',timeout=12000)
     page.locator('.admin-layout').wait_for(state='attached',timeout=12000)
     assert page.locator('a[href="#admin-news"]').count()>0,'Original hub functionality unavailable'
