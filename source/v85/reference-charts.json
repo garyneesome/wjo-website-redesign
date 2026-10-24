@@ -1,0 +1,32 @@
+[
+  {
+    "id": "lower",
+    "label": "Lower Grade Reference Chart",
+    "heading": "BROWN BELT 2ND TAG · LOWER GRADES",
+    "subheading": "White • Yellow • Orange • Red",
+    "filename": "WJO_V85_Brown_2nd_Tag_Lower_Grades.png",
+    "groups": [
+      "white",
+      "yellow",
+      "orange",
+      "red"
+    ],
+    "copyright": "© COPYRIGHT 2015 – 2022 WJO",
+    "source": "IMG20261022153206.jpg"
+  },
+  {
+    "id": "upper",
+    "label": "Intermediate Grade Reference Chart",
+    "heading": "BROWN BELT 2ND TAG · INTERMEDIATE GRADES",
+    "subheading": "Green • Blue • Purple • Brown",
+    "filename": "WJO_V85_Brown_2nd_Tag_Intermediate_Grades.png",
+    "groups": [
+      "green",
+      "blue",
+      "purple",
+      "brown"
+    ],
+    "copyright": "© COPYRIGHT 2015 – 2022 WJO",
+    "source": "IMG20261022153320.jpg"
+  }
+]
