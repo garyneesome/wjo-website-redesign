@@ -1,0 +1,94 @@
+/* V88: show instructor photographs in their full original aspect ratios.
+ * Source photographs are never cropped, stretched, regenerated or replaced.
+ * Changes cover main instructors directory plus school and compact instructor cards.
+ */
+.v81-instructor-list {
+  gap: 23px;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+.v81-instructor {
+  grid-template-columns: minmax(0, 46%) minmax(0, 1fr) !important;
+  gap: clamp(24px, 3.5vw, 48px) !important;
+  align-items: start;
+  padding: clamp(20px, 2.7vw, 32px) !important;
+  border-radius: 17px;
+}
+.v81-instructor figure,
+.j74-instructor-card figure {
+  min-width: 0;
+  width: 100%;
+  margin: 0;
+}
+.v81-instructor figure img,
+.j74-instructor-card figure img,
+.instructor-grid .j74-instructor-card figure img,
+.j74-instructor-directory .j74-instructor-card figure img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  aspect-ratio: auto !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  border-radius: 12px !important;
+  padding: 0 !important;
+  background: #f5f0e8;
+}
+.v81-instructor figure img {
+  box-shadow: 0 6px 22px #2823221c;
+}
+.v81-instructor figcaption,
+.j74-instructor-card figcaption {
+  padding: 9px 0 0;
+  font-size: 12px;
+  line-height: 1.45;
+  color: #60685f;
+}
+/* School cards retain the same non-cropping photo treatment. */
+.j74-teachers .j74-instructor-card {
+  grid-template-columns: minmax(0, 43%) minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(17px, 3vw, 30px);
+}
+.instructor-grid .j74-instructor-card {
+  grid-template-columns: 1fr;
+}
+@media (max-width: 850px) {
+  .v81-instructor {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 19px !important;
+  }
+  .j74-teachers .j74-instructor-card {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 17px;
+  }
+  .v81-instructor figure,
+  .j74-instructor-card figure {
+    width: 100%;
+  }
+}
+@media (max-width: 560px) {
+  .v81-instructor-list {
+    gap: 18px;
+  }
+  .v81-instructor {
+    padding: 17px !important;
+    border-radius: 14px;
+  }
+  .v81-instructor figure img,
+  .j74-instructor-card figure img {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: auto !important;
+    object-fit: contain !important;
+  }
+  .v81-instructor h3 {
+    font-size: clamp(24px, 6vw, 34px);
+    line-height: 1.15;
+  }
+  .j74-instructor-card {
+    padding: 17px;
+  }
+}
